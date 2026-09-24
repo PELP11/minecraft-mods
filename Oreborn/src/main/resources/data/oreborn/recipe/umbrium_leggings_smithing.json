@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:diamond_leggings",
+  "addition": "oreborn:umbrium_ingot",
+  "result": {
+    "id": "oreborn:umbrium_leggings"
+  }
+}

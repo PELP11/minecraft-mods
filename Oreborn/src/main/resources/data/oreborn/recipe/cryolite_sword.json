@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "oreborn:cryolite_crystal",
+    "#": "minecraft:stick"
+  },
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "result": {
+    "id": "oreborn:cryolite_sword",
+    "count": 1
+  }
+}

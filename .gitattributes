@@ -1,0 +1,11 @@
+# Stored with LF; Windows checkouts get CRLF, the Linux cloud VM gets LF.
+* text=auto
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary
+*.ogg binary
+*.wav binary
+*.nbt binary
+*.mesh binary

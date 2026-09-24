@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "arsenal:ore_uranium",
+    "arsenal:ore_uranium_buried"
+  ],
+  "step": "underground_ores"
+}

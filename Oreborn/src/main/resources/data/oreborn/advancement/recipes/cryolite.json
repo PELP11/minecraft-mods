@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreborn:cryolite_shard",
+              "oreborn:cryolite_crystal",
+              "oreborn:cryolite_ore",
+              "oreborn:deepslate_cryolite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oreborn:cryolite_block",
+      "oreborn:cryolite_crystal_from_block",
+      "oreborn:cryolite_crystal",
+      "oreborn:cryolite_sword",
+      "oreborn:cryolite_pickaxe",
+      "oreborn:cryolite_axe",
+      "oreborn:cryolite_shovel",
+      "oreborn:cryolite_hoe",
+      "oreborn:cryolite_helmet",
+      "oreborn:cryolite_chestplate",
+      "oreborn:cryolite_leggings",
+      "oreborn:cryolite_boots"
+    ]
+  }
+}

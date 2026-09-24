@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:diamond_hoe",
+  "addition": "oreborn:emberite_ingot",
+  "result": {
+    "id": "oreborn:emberite_hoe"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "oreborn:fulgurite_block",
+    "R": "#minecraft:lightning_rods"
+  },
+  "pattern": [
+    "  B",
+    " R ",
+    "R  "
+  ],
+  "result": {
+    "id": "oreborn:lightning_staff",
+    "count": 1
+  }
+}

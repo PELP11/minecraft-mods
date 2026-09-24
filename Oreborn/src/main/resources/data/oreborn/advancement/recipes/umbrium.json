@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreborn:raw_umbrium",
+              "oreborn:umbrium_ingot",
+              "oreborn:umbrium_ore",
+              "oreborn:deepslate_umbrium_ore",
+              "oreborn:umbrium_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oreborn:umbrium_block",
+      "oreborn:umbrium_ingot_from_block",
+      "oreborn:umbrium_scrap_from_smelting_raw_umbrium",
+      "oreborn:umbrium_scrap_from_blasting_raw_umbrium",
+      "oreborn:umbrium_scrap_from_smelting_umbrium_ore",
+      "oreborn:umbrium_scrap_from_blasting_umbrium_ore",
+      "oreborn:umbrium_scrap_from_smelting_deepslate_umbrium_ore",
+      "oreborn:umbrium_scrap_from_blasting_deepslate_umbrium_ore",
+      "oreborn:umbrium_ingot",
+      "oreborn:umbrium_sword_smithing",
+      "oreborn:umbrium_pickaxe_smithing",
+      "oreborn:umbrium_axe_smithing",
+      "oreborn:umbrium_shovel_smithing",
+      "oreborn:umbrium_hoe_smithing",
+      "oreborn:umbrium_helmet_smithing",
+      "oreborn:umbrium_chestplate_smithing",
+      "oreborn:umbrium_leggings_smithing",
+      "oreborn:umbrium_boots_smithing"
+    ]
+  }
+}

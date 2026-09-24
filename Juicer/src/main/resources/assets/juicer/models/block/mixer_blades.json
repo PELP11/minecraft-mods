@@ -1,0 +1,41 @@
+{
+  "textures": {
+    "particle": "juicer:block/mixer_side",
+    "blades": "juicer:block/mixer_blades"
+  },
+  "elements": [
+    {
+      "name": "blades",
+      "from": [
+        4.5,
+        7.5,
+        4.5
+      ],
+      "to": [
+        11.5,
+        7.5,
+        11.5
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#blades"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#blades"
+        }
+      }
+    }
+  ]
+}

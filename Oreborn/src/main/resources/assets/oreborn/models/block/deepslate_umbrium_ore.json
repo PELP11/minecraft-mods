@@ -1,0 +1,7 @@
+{
+  "parent": "oreborn:block/glowing_ore",
+  "textures": {
+    "base": "oreborn:block/deepslate_umbrium_ore",
+    "glow": "oreborn:block/umbrium_ore_glow"
+  }
+}

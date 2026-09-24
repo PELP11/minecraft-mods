@@ -1,0 +1,219 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": {
+        "model": "juicer:block/infuser"
+      }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": {
+        "model": "juicer:block/infuser",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": {
+        "model": "juicer:block/infuser",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": {
+        "model": "juicer:block/infuser",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "contents": "starfruit",
+        "level": "1"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_starfruit_1"
+      }
+    },
+    {
+      "when": {
+        "contents": "starfruit",
+        "level": "2"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_starfruit_2"
+      }
+    },
+    {
+      "when": {
+        "contents": "starfruit",
+        "level": "3"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_starfruit_3"
+      }
+    },
+    {
+      "when": {
+        "contents": "starfruit",
+        "level": "4"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_starfruit_4"
+      }
+    },
+    {
+      "when": {
+        "contents": "dragonfruit",
+        "level": "1"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_dragonfruit_1"
+      }
+    },
+    {
+      "when": {
+        "contents": "dragonfruit",
+        "level": "2"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_dragonfruit_2"
+      }
+    },
+    {
+      "when": {
+        "contents": "dragonfruit",
+        "level": "3"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_dragonfruit_3"
+      }
+    },
+    {
+      "when": {
+        "contents": "dragonfruit",
+        "level": "4"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_dragonfruit_4"
+      }
+    },
+    {
+      "when": {
+        "contents": "pomegranate",
+        "level": "1"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_pomegranate_1"
+      }
+    },
+    {
+      "when": {
+        "contents": "pomegranate",
+        "level": "2"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_pomegranate_2"
+      }
+    },
+    {
+      "when": {
+        "contents": "pomegranate",
+        "level": "3"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_pomegranate_3"
+      }
+    },
+    {
+      "when": {
+        "contents": "pomegranate",
+        "level": "4"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_pomegranate_4"
+      }
+    },
+    {
+      "when": {
+        "contents": "orange",
+        "level": "1"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_orange_1"
+      }
+    },
+    {
+      "when": {
+        "contents": "orange",
+        "level": "2"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_orange_2"
+      }
+    },
+    {
+      "when": {
+        "contents": "orange",
+        "level": "3"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_orange_3"
+      }
+    },
+    {
+      "when": {
+        "contents": "orange",
+        "level": "4"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_orange_4"
+      }
+    },
+    {
+      "when": {
+        "contents": "lime",
+        "level": "1"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_lime_1"
+      }
+    },
+    {
+      "when": {
+        "contents": "lime",
+        "level": "2"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_lime_2"
+      }
+    },
+    {
+      "when": {
+        "contents": "lime",
+        "level": "3"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_lime_3"
+      }
+    },
+    {
+      "when": {
+        "contents": "lime",
+        "level": "4"
+      },
+      "apply": {
+        "model": "juicer:block/infuser_liquid_lime_4"
+      }
+    }
+  ]
+}

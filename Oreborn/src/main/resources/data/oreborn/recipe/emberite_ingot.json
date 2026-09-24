@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "emberite_ingot",
+  "ingredients": [
+    "oreborn:emberite_scrap",
+    "oreborn:emberite_scrap",
+    "oreborn:emberite_scrap",
+    "oreborn:emberite_scrap",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "id": "oreborn:emberite_ingot"
+  }
+}

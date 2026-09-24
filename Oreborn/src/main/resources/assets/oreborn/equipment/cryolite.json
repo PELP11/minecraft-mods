@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "oreborn:cryolite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "oreborn:cryolite"
+      }
+    ]
+  }
+}

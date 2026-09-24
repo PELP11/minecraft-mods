@@ -1,0 +1,17 @@
+{
+  "values": [
+    "arsenal:ammo_9mm",
+    "arsenal:ammo_45acp",
+    "arsenal:ammo_50ae",
+    "arsenal:ammo_556",
+    "arsenal:ammo_762",
+    "arsenal:ammo_338",
+    "arsenal:ammo_50bmg",
+    "arsenal:shell_buckshot",
+    "arsenal:shell_slug",
+    "arsenal:grenade_40mm",
+    "arsenal:rocket_round",
+    "arsenal:rocket_thermobaric",
+    "arsenal:rail_slug"
+  ]
+}

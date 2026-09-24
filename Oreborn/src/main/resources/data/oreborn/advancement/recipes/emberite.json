@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreborn:raw_emberite",
+              "oreborn:emberite_ingot",
+              "oreborn:emberite_ore",
+              "oreborn:emberite_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oreborn:emberite_block",
+      "oreborn:emberite_ingot_from_block",
+      "oreborn:emberite_scrap_from_smelting_raw_emberite",
+      "oreborn:emberite_scrap_from_blasting_raw_emberite",
+      "oreborn:emberite_scrap_from_smelting_emberite_ore",
+      "oreborn:emberite_scrap_from_blasting_emberite_ore",
+      "oreborn:emberite_ingot",
+      "oreborn:emberite_sword_smithing",
+      "oreborn:emberite_pickaxe_smithing",
+      "oreborn:emberite_axe_smithing",
+      "oreborn:emberite_shovel_smithing",
+      "oreborn:emberite_hoe_smithing",
+      "oreborn:emberite_helmet_smithing",
+      "oreborn:emberite_chestplate_smithing",
+      "oreborn:emberite_leggings_smithing",
+      "oreborn:emberite_boots_smithing"
+    ]
+  }
+}

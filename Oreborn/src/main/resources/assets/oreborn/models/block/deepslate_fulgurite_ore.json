@@ -1,0 +1,7 @@
+{
+  "parent": "oreborn:block/glowing_ore",
+  "textures": {
+    "base": "oreborn:block/deepslate_fulgurite_ore",
+    "glow": "oreborn:block/fulgurite_ore_glow"
+  }
+}

@@ -1,0 +1,18 @@
+# Build output, dev game runs and IDE files of every mod (Gradle regenerates them)
+.gradle/
+/*/build/
+/*/run/
+/*/runs/
+/*/out/
+/*/bin/
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+__pycache__/
+*.pyc
+*.log
+.claude/settings.local.json
+desktop.ini
+Thumbs.db

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "oreborn:fulgurite_crystal",
+    "#": "minecraft:stick"
+  },
+  "pattern": [
+    "XX",
+    " #",
+    " #"
+  ],
+  "result": {
+    "id": "oreborn:fulgurite_hoe",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 2.0,
+  "ingredient": "oreborn:emberite_ore",
+  "result": {
+    "id": "oreborn:emberite_scrap"
+  }
+}

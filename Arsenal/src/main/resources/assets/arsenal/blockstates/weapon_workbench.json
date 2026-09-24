@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "arsenal:block/weapon_workbench"
+    },
+    "facing=east": {
+      "model": "arsenal:block/weapon_workbench",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "arsenal:block/weapon_workbench",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "arsenal:block/weapon_workbench",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "juicer:block/mixer_liquid_3",
+  "textures": {
+    "liquid": "juicer:block/orange_concentrate"
+  }
+}

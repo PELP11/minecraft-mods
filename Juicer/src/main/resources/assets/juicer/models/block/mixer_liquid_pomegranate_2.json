@@ -1,0 +1,6 @@
+{
+  "parent": "juicer:block/mixer_liquid_2",
+  "textures": {
+    "liquid": "juicer:block/pomegranate_concentrate"
+  }
+}

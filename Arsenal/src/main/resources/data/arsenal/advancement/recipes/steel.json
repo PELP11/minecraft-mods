@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot",
+              "arsenal:steel_blend",
+              "arsenal:steel_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arsenal:steel_blend",
+      "arsenal:steel_ingot_from_smelting",
+      "arsenal:steel_ingot_from_blasting",
+      "arsenal:steel_block",
+      "arsenal:steel_from_block"
+    ]
+  }
+}

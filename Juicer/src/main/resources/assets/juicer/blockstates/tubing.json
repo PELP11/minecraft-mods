@@ -1,0 +1,111 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "juicer:block/tubing_core"
+      }
+    },
+    {
+      "when": {
+        "north": "tube"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side"
+      }
+    },
+    {
+      "when": {
+        "north": "machine"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side_machine"
+      }
+    },
+    {
+      "when": {
+        "east": "tube"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": "machine"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side_machine",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "tube"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": "machine"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side_machine",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "west": "tube"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": "machine"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_side_machine",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "up": "tube"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_up"
+      }
+    },
+    {
+      "when": {
+        "down": "tube"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_down"
+      }
+    },
+    {
+      "when": {
+        "up": "machine"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_up_machine"
+      }
+    },
+    {
+      "when": {
+        "down": "machine"
+      },
+      "apply": {
+        "model": "juicer:block/tubing_down_machine"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "arsenal:loaded",
+    "on_true": {
+      "type": "minecraft:range_dispatch",
+      "property": "arsenal:round",
+      "entries": [
+        {
+          "threshold": 2.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "arsenal:item/rpg7_tbg"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "arsenal:item/rpg7"
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "arsenal:item/rpg7_empty"
+    }
+  }
+}

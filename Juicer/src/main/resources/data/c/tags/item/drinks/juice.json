@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "juicer:starfruit_juice",
+    "juicer:dragonfruit_juice",
+    "juicer:pomegranate_juice",
+    "juicer:orange_juice",
+    "juicer:lime_juice"
+  ]
+}

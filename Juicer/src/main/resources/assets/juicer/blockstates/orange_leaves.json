@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "juicer:block/orange_leaves_0"
+    },
+    "age=1": {
+      "model": "juicer:block/orange_leaves_1"
+    },
+    "age=2": {
+      "model": "juicer:block/orange_leaves_2"
+    },
+    "age=3": {
+      "model": "juicer:block/orange_leaves_3"
+    }
+  }
+}

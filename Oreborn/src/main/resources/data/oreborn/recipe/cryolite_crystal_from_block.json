@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "oreborn:cryolite_block"
+  ],
+  "result": {
+    "id": "oreborn:cryolite_crystal",
+    "count": 9
+  }
+}

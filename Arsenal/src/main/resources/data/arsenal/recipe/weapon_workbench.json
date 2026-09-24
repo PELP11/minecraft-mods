@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "C": "minecraft:crafting_table",
+    "S": "minecraft:smooth_stone"
+  },
+  "pattern": [
+    "III",
+    "ICI",
+    "SSS"
+  ],
+  "result": {
+    "id": "arsenal:weapon_workbench",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "juicer:block/infuser_liquid_4",
+  "textures": {
+    "liquid": "juicer:block/pomegranate_concentrate"
+  }
+}

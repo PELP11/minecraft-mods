@@ -1,0 +1,12 @@
+{
+  "values": [
+    "arsenal:frag_grenade",
+    "arsenal:incendiary_grenade",
+    "arsenal:flashbang",
+    "arsenal:smoke_grenade",
+    "arsenal:singularity_charge",
+    "arsenal:thermobaric_bomb",
+    "arsenal:ion_cannon_beacon",
+    "arsenal:chemical_warhead"
+  ]
+}

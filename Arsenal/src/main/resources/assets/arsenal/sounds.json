@@ -1,0 +1,1134 @@
+{
+  "gun.ak47.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/ak47_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/ak47_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/ak47_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.m4a1.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/m4a1_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/m4a1_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/m4a1_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.scar_h.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/scar_h_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/scar_h_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/scar_h_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.aug.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/aug_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/aug_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/aug_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.glock17.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/glock17_fire_1",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/glock17_fire_2",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/glock17_fire_3",
+        "attenuation_distance": 64
+      }
+    ]
+  },
+  "gun.m1911.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/m1911_fire_1",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/m1911_fire_2",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/m1911_fire_3",
+        "attenuation_distance": 64
+      }
+    ]
+  },
+  "gun.m9.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/m9_fire_1",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/m9_fire_2",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/m9_fire_3",
+        "attenuation_distance": 64
+      }
+    ]
+  },
+  "gun.deagle.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/deagle_fire_1",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/deagle_fire_2",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:gun/deagle_fire_3",
+        "attenuation_distance": 64
+      }
+    ]
+  },
+  "gun.barrett_m82.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/barrett_m82_fire_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/barrett_m82_fire_2",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/barrett_m82_fire_3",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "gun.svd_dragunov.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/svd_dragunov_fire_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/svd_dragunov_fire_2",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/svd_dragunov_fire_3",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "gun.awp.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/awp_fire_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/awp_fire_2",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/awp_fire_3",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "gun.remington_870.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/remington_870_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/remington_870_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/remington_870_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.spas12.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/spas12_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/spas12_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/spas12_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.aa12.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/aa12_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/aa12_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/aa12_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.sawed_off.fire": {
+    "subtitle": "subtitles.arsenal.gun.fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/sawed_off_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/sawed_off_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/sawed_off_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.rpg7.fire": {
+    "subtitle": "subtitles.arsenal.gun.launch",
+    "sounds": [
+      {
+        "name": "arsenal:gun/rpg7_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/rpg7_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/rpg7_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.m32_launcher.fire": {
+    "subtitle": "subtitles.arsenal.gun.launch",
+    "sounds": [
+      {
+        "name": "arsenal:gun/m32_launcher_fire_1",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/m32_launcher_fire_2",
+        "attenuation_distance": 80
+      },
+      {
+        "name": "arsenal:gun/m32_launcher_fire_3",
+        "attenuation_distance": 80
+      }
+    ]
+  },
+  "gun.railgun.fire": {
+    "subtitle": "subtitles.arsenal.gun.railgun",
+    "sounds": [
+      {
+        "name": "arsenal:gun/railgun_fire_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/railgun_fire_2",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:gun/railgun_fire_3",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "gun.suppressed.pistol": {
+    "subtitle": "subtitles.arsenal.gun.suppressed",
+    "sounds": [
+      {
+        "name": "arsenal:gun/suppressed_pistol_1",
+        "attenuation_distance": 24
+      },
+      {
+        "name": "arsenal:gun/suppressed_pistol_2",
+        "attenuation_distance": 24
+      },
+      {
+        "name": "arsenal:gun/suppressed_pistol_3",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "gun.suppressed.rifle": {
+    "subtitle": "subtitles.arsenal.gun.suppressed",
+    "sounds": [
+      {
+        "name": "arsenal:gun/suppressed_rifle_1",
+        "attenuation_distance": 28
+      },
+      {
+        "name": "arsenal:gun/suppressed_rifle_2",
+        "attenuation_distance": 28
+      },
+      {
+        "name": "arsenal:gun/suppressed_rifle_3",
+        "attenuation_distance": 28
+      }
+    ]
+  },
+  "gun.suppressed.heavy": {
+    "subtitle": "subtitles.arsenal.gun.suppressed",
+    "sounds": [
+      {
+        "name": "arsenal:gun/suppressed_heavy_1",
+        "attenuation_distance": 32
+      },
+      {
+        "name": "arsenal:gun/suppressed_heavy_2",
+        "attenuation_distance": 32
+      },
+      {
+        "name": "arsenal:gun/suppressed_heavy_3",
+        "attenuation_distance": 32
+      }
+    ]
+  },
+  "gun.distant.small": {
+    "subtitle": "subtitles.arsenal.gun.distant",
+    "sounds": [
+      {
+        "name": "arsenal:gun/distant_small_1",
+        "attenuation_distance": 192
+      },
+      {
+        "name": "arsenal:gun/distant_small_2",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "gun.distant.rifle": {
+    "subtitle": "subtitles.arsenal.gun.distant",
+    "sounds": [
+      {
+        "name": "arsenal:gun/distant_rifle_1",
+        "attenuation_distance": 256
+      },
+      {
+        "name": "arsenal:gun/distant_rifle_2",
+        "attenuation_distance": 256
+      }
+    ]
+  },
+  "gun.distant.heavy": {
+    "subtitle": "subtitles.arsenal.gun.distant",
+    "sounds": [
+      {
+        "name": "arsenal:gun/distant_heavy_1",
+        "attenuation_distance": 320
+      },
+      {
+        "name": "arsenal:gun/distant_heavy_2",
+        "attenuation_distance": 320
+      }
+    ]
+  },
+  "gun.railgun.charge": {
+    "subtitle": "subtitles.arsenal.railgun.charge",
+    "sounds": [
+      {
+        "name": "arsenal:gun/railgun_charge_1",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "gun.railgun.charged": {
+    "subtitle": "subtitles.arsenal.railgun.charged",
+    "sounds": [
+      {
+        "name": "arsenal:gun/railgun_charged_1",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "gun.railgun.overcharge": {
+    "subtitle": "subtitles.arsenal.railgun.overcharge",
+    "sounds": [
+      {
+        "name": "arsenal:gun/railgun_overcharge_1",
+        "attenuation_distance": 128
+      },
+      {
+        "name": "arsenal:gun/railgun_overcharge_2",
+        "attenuation_distance": 128
+      }
+    ]
+  },
+  "rocket.flight": {
+    "subtitle": "subtitles.arsenal.rocket.flight",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/rocket_flight_1",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "gun.dry_fire": {
+    "subtitle": "subtitles.arsenal.gun.dry_fire",
+    "sounds": [
+      {
+        "name": "arsenal:gun/dry_fire_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:gun/dry_fire_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "gun.headshot": {
+    "subtitle": "subtitles.arsenal.gun.headshot",
+    "sounds": [
+      {
+        "name": "arsenal:gun/headshot_1",
+        "attenuation_distance": 24
+      },
+      {
+        "name": "arsenal:gun/headshot_2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "reload.rifle.mag_out": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/rifle_mag_out_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/rifle_mag_out_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.rifle.mag_in": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/rifle_mag_in_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/rifle_mag_in_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.pistol.mag_out": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/pistol_mag_out_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/pistol_mag_out_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.pistol.mag_in": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/pistol_mag_in_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/pistol_mag_in_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.heavy.mag_out": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/heavy_mag_out_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/heavy_mag_out_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.heavy.mag_in": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/heavy_mag_in_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/heavy_mag_in_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.rifle.charge": {
+    "subtitle": "subtitles.arsenal.reload.charge",
+    "sounds": [
+      {
+        "name": "arsenal:reload/rifle_charge_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/rifle_charge_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.heavy.charge": {
+    "subtitle": "subtitles.arsenal.reload.charge",
+    "sounds": [
+      {
+        "name": "arsenal:reload/heavy_charge_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/heavy_charge_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.pistol.slide": {
+    "subtitle": "subtitles.arsenal.reload.charge",
+    "sounds": [
+      {
+        "name": "arsenal:reload/pistol_slide_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/pistol_slide_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.bolt.open": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/bolt_open_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/bolt_open_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.bolt.close": {
+    "subtitle": "subtitles.arsenal.reload.charge",
+    "sounds": [
+      {
+        "name": "arsenal:reload/bolt_close_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/bolt_close_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.shotgun.shell": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/shotgun_shell_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/shotgun_shell_2",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/shotgun_shell_3",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.shotgun.pump": {
+    "subtitle": "subtitles.arsenal.reload.charge",
+    "sounds": [
+      {
+        "name": "arsenal:reload/shotgun_pump_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/shotgun_pump_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.break.open": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/break_open_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/break_open_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.break.close": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/break_close_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/break_close_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.rocket": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/rocket_load_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/rocket_load_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.cylinder.open": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/cylinder_open_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/cylinder_open_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.cylinder.round": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/cylinder_round_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/cylinder_round_2",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/cylinder_round_3",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.cylinder.close": {
+    "subtitle": "subtitles.arsenal.reload",
+    "sounds": [
+      {
+        "name": "arsenal:reload/cylinder_close_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:reload/cylinder_close_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "reload.rail.charge": {
+    "subtitle": "subtitles.arsenal.reload.charge",
+    "sounds": [
+      {
+        "name": "arsenal:reload/rail_charge_1",
+        "attenuation_distance": 24
+      },
+      {
+        "name": "arsenal:reload/rail_charge_2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "grenade.throw": {
+    "subtitle": "subtitles.arsenal.grenade.throw",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/grenade_throw_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:ordnance/grenade_throw_2",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "grenade.bounce": {
+    "subtitle": "subtitles.arsenal.grenade.bounce",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/grenade_bounce_1",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:ordnance/grenade_bounce_2",
+        "attenuation_distance": 16
+      },
+      {
+        "name": "arsenal:ordnance/grenade_bounce_3",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "explosion.frag": {
+    "subtitle": "subtitles.arsenal.explosion",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/explosion_frag_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:ordnance/explosion_frag_2",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:ordnance/explosion_frag_3",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "explosion.big": {
+    "subtitle": "subtitles.arsenal.explosion",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/explosion_big_1",
+        "attenuation_distance": 128
+      },
+      {
+        "name": "arsenal:ordnance/explosion_big_2",
+        "attenuation_distance": 128
+      },
+      {
+        "name": "arsenal:ordnance/explosion_big_3",
+        "attenuation_distance": 128
+      }
+    ]
+  },
+  "explosion.thermobaric": {
+    "subtitle": "subtitles.arsenal.explosion",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/explosion_thermobaric_1",
+        "attenuation_distance": 192
+      },
+      {
+        "name": "arsenal:ordnance/explosion_thermobaric_2",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "explosion.distant": {
+    "subtitle": "subtitles.arsenal.explosion.distant",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/explosion_distant_1",
+        "attenuation_distance": 384
+      },
+      {
+        "name": "arsenal:ordnance/explosion_distant_2",
+        "attenuation_distance": 384
+      }
+    ]
+  },
+  "flashbang.bang": {
+    "subtitle": "subtitles.arsenal.flashbang",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/flashbang_bang_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:ordnance/flashbang_bang_2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "flashbang.ring": {
+    "subtitle": "subtitles.arsenal.flashbang.ring",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/flashbang_ring_1",
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "incendiary.ignite": {
+    "subtitle": "subtitles.arsenal.incendiary",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/incendiary_ignite_1",
+        "attenuation_distance": 48
+      },
+      {
+        "name": "arsenal:ordnance/incendiary_ignite_2",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "smoke.hiss": {
+    "subtitle": "subtitles.arsenal.smoke",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/smoke_hiss_1",
+        "attenuation_distance": 32
+      },
+      {
+        "name": "arsenal:ordnance/smoke_hiss_2",
+        "attenuation_distance": 32
+      }
+    ]
+  },
+  "chemical.release": {
+    "subtitle": "subtitles.arsenal.chemical",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/chemical_release_1",
+        "attenuation_distance": 48
+      },
+      {
+        "name": "arsenal:ordnance/chemical_release_2",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "singularity.collapse": {
+    "subtitle": "subtitles.arsenal.singularity",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/singularity_collapse_1",
+        "attenuation_distance": 128
+      },
+      {
+        "name": "arsenal:ordnance/singularity_collapse_2",
+        "attenuation_distance": 128
+      }
+    ]
+  },
+  "singularity.pulse": {
+    "subtitle": "subtitles.arsenal.singularity.pulse",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/singularity_pulse_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:ordnance/singularity_pulse_2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "ion.charge": {
+    "subtitle": "subtitles.arsenal.ion.charge",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/ion_charge_1",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "ion.strike": {
+    "subtitle": "subtitles.arsenal.ion.strike",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/ion_strike_1",
+        "attenuation_distance": 192
+      },
+      {
+        "name": "arsenal:ordnance/ion_strike_2",
+        "attenuation_distance": 192
+      },
+      {
+        "name": "arsenal:ordnance/ion_strike_3",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "nuke.detonate": {
+    "subtitle": "subtitles.arsenal.nuke",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/nuke_detonate_1",
+        "attenuation_distance": 1024
+      }
+    ]
+  },
+  "nuke.beep": {
+    "subtitle": "subtitles.arsenal.nuke.beep",
+    "sounds": [
+      {
+        "name": "arsenal:ordnance/nuke_beep_1",
+        "attenuation_distance": 32
+      }
+    ]
+  },
+  "jet.engine": {
+    "subtitle": "subtitles.arsenal.jet.engine",
+    "sounds": [
+      {
+        "name": "arsenal:jet/engine_1",
+        "attenuation_distance": 160
+      }
+    ]
+  },
+  "jet.afterburner": {
+    "subtitle": "subtitles.arsenal.jet.afterburner",
+    "sounds": [
+      {
+        "name": "arsenal:jet/afterburner_1",
+        "attenuation_distance": 240
+      }
+    ]
+  },
+  "jet.wind": {
+    "subtitle": "subtitles.arsenal.jet.wind",
+    "sounds": [
+      {
+        "name": "arsenal:jet/wind_1",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "jet.gun": {
+    "subtitle": "subtitles.arsenal.jet.gun",
+    "sounds": [
+      {
+        "name": "arsenal:jet/gun_1",
+        "attenuation_distance": 160
+      }
+    ]
+  },
+  "jet.gun_stop": {
+    "subtitle": "subtitles.arsenal.jet.gun",
+    "sounds": [
+      {
+        "name": "arsenal:jet/gun_stop_1",
+        "attenuation_distance": 64
+      },
+      {
+        "name": "arsenal:jet/gun_stop_2",
+        "attenuation_distance": 64
+      }
+    ]
+  },
+  "jet.missile": {
+    "subtitle": "subtitles.arsenal.jet.missile",
+    "sounds": [
+      {
+        "name": "arsenal:jet/missile_1",
+        "attenuation_distance": 128
+      },
+      {
+        "name": "arsenal:jet/missile_2",
+        "attenuation_distance": 128
+      }
+    ]
+  },
+  "jet.rocket": {
+    "subtitle": "subtitles.arsenal.jet.rocket",
+    "sounds": [
+      {
+        "name": "arsenal:jet/rocket_1",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:jet/rocket_2",
+        "attenuation_distance": 96
+      },
+      {
+        "name": "arsenal:jet/rocket_3",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "jet.bomb_release": {
+    "subtitle": "subtitles.arsenal.jet.bomb_release",
+    "sounds": [
+      {
+        "name": "arsenal:jet/bomb_release_1",
+        "attenuation_distance": 32
+      },
+      {
+        "name": "arsenal:jet/bomb_release_2",
+        "attenuation_distance": 32
+      }
+    ]
+  },
+  "jet.flare": {
+    "subtitle": "subtitles.arsenal.jet.flare",
+    "sounds": [
+      {
+        "name": "arsenal:jet/flare_1",
+        "attenuation_distance": 48
+      },
+      {
+        "name": "arsenal:jet/flare_2",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "jet.gear": {
+    "subtitle": "subtitles.arsenal.jet.gear",
+    "sounds": [
+      {
+        "name": "arsenal:jet/gear_1",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "jet.canopy": {
+    "subtitle": "subtitles.arsenal.jet.canopy",
+    "sounds": [
+      {
+        "name": "arsenal:jet/canopy_1",
+        "attenuation_distance": 16
+      }
+    ]
+  },
+  "jet.touchdown": {
+    "subtitle": "subtitles.arsenal.jet.touchdown",
+    "sounds": [
+      {
+        "name": "arsenal:jet/touchdown_1",
+        "attenuation_distance": 48
+      },
+      {
+        "name": "arsenal:jet/touchdown_2",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "jet.eject": {
+    "subtitle": "subtitles.arsenal.jet.eject",
+    "sounds": [
+      {
+        "name": "arsenal:jet/eject_1",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "jet.seeker": {
+    "subtitle": "subtitles.arsenal.jet.seeker",
+    "sounds": [
+      {
+        "name": "arsenal:jet/seeker_1",
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "jet.lock": {
+    "subtitle": "subtitles.arsenal.jet.lock",
+    "sounds": [
+      {
+        "name": "arsenal:jet/lock_1",
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "jet.warning": {
+    "subtitle": "subtitles.arsenal.jet.warning",
+    "sounds": [
+      {
+        "name": "arsenal:jet/warning_1",
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "jet.stall": {
+    "subtitle": "subtitles.arsenal.jet.stall",
+    "sounds": [
+      {
+        "name": "arsenal:jet/stall_1",
+        "attenuation_distance": 8
+      }
+    ]
+  }
+}

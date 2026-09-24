@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "armed=false": {
+      "model": "arsenal:block/tactical_nuke"
+    },
+    "armed=true": {
+      "model": "arsenal:block/tactical_nuke_armed"
+    }
+  }
+}

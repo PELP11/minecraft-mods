@@ -1,0 +1,67 @@
+{
+  "textures": {
+    "particle": "#liquid"
+  },
+  "elements": [
+    {
+      "name": "concentrate",
+      "from": [
+        4.5,
+        7,
+        4.5
+      ],
+      "to": [
+        11.5,
+        11.0,
+        11.5
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            4.5,
+            4.5,
+            11.5,
+            11.5
+          ],
+          "texture": "#liquid"
+        },
+        "north": {
+          "uv": [
+            4.5,
+            5.0,
+            11.5,
+            9
+          ],
+          "texture": "#liquid"
+        },
+        "south": {
+          "uv": [
+            4.5,
+            5.0,
+            11.5,
+            9
+          ],
+          "texture": "#liquid"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            5.0,
+            11.5,
+            9
+          ],
+          "texture": "#liquid"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            5.0,
+            11.5,
+            9
+          ],
+          "texture": "#liquid"
+        }
+      }
+    }
+  ]
+}

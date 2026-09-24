@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "arsenal:block/tactical_nuke_top",
+    "bottom": "arsenal:block/tactical_nuke_top",
+    "side": "arsenal:block/tactical_nuke_side_armed"
+  }
+}

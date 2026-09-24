@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "arsenal:block/weapon_workbench_top",
+    "front": "arsenal:block/weapon_workbench_front",
+    "side": "arsenal:block/weapon_workbench_side"
+  }
+}

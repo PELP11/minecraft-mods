@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "oreborn:fulgurite_block"
+  ],
+  "result": {
+    "id": "oreborn:fulgurite_crystal",
+    "count": 9
+  }
+}

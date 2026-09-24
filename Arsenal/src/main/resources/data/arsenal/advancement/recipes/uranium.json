@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arsenal:raw_uranium",
+              "arsenal:uranium_ingot",
+              "arsenal:uranium_ore",
+              "arsenal:deepslate_uranium_ore"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "arsenal:uranium_ingot_from_smelting",
+      "arsenal:uranium_ingot_from_blasting",
+      "arsenal:uranium_block",
+      "arsenal:uranium_from_block",
+      "arsenal:raw_uranium_block",
+      "arsenal:raw_uranium_from_block"
+    ]
+  }
+}

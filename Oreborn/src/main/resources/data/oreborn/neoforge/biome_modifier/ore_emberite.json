@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": [
+    "oreborn:ore_emberite",
+    "oreborn:ore_emberite_medium",
+    "oreborn:ore_emberite_buried"
+  ],
+  "step": "underground_ores"
+}

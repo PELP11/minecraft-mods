@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "oreborn:ore_umbrium",
+    "oreborn:ore_umbrium_medium",
+    "oreborn:ore_umbrium_buried"
+  ],
+  "step": "underground_ores"
+}

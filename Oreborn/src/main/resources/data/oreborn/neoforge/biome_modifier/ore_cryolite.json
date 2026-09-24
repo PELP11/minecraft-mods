@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "oreborn:ore_cryolite",
+    "oreborn:ore_cryolite_medium",
+    "oreborn:ore_cryolite_buried"
+  ],
+  "step": "underground_ores"
+}

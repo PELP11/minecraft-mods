@@ -1,0 +1,6 @@
+{
+  "parent": "juicer:block/infuser_liquid_2",
+  "textures": {
+    "liquid": "juicer:block/starfruit_concentrate"
+  }
+}

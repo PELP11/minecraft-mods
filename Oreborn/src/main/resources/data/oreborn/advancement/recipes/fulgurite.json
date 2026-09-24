@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreborn:fulgurite_shard",
+              "oreborn:fulgurite_crystal",
+              "oreborn:fulgurite_ore",
+              "oreborn:deepslate_fulgurite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oreborn:fulgurite_block",
+      "oreborn:fulgurite_crystal_from_block",
+      "oreborn:fulgurite_crystal",
+      "oreborn:fulgurite_sword",
+      "oreborn:fulgurite_pickaxe",
+      "oreborn:fulgurite_axe",
+      "oreborn:fulgurite_shovel",
+      "oreborn:fulgurite_hoe",
+      "oreborn:fulgurite_helmet",
+      "oreborn:fulgurite_chestplate",
+      "oreborn:fulgurite_leggings",
+      "oreborn:fulgurite_boots",
+      "oreborn:lightning_staff"
+    ]
+  }
+}

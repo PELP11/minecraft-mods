@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "juicer:block/starfruit_leaves_3"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "oreborn:umbrium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "oreborn:umbrium"
+      }
+    ]
+  }
+}

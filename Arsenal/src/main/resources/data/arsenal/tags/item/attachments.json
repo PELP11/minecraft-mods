@@ -1,0 +1,16 @@
+{
+  "values": [
+    "arsenal:suppressor",
+    "arsenal:muzzle_brake",
+    "arsenal:heavy_barrel",
+    "arsenal:red_dot_sight",
+    "arsenal:acog_scope",
+    "arsenal:thermal_scope",
+    "arsenal:extended_mag",
+    "arsenal:drum_mag",
+    "arsenal:quickdraw_mag",
+    "arsenal:laser_sight",
+    "arsenal:foregrip",
+    "arsenal:bipod"
+  ]
+}

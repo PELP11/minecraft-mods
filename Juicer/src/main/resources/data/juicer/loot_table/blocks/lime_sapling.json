@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "juicer:lime_sapling"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "juicer:blocks/lime_sapling"
+}

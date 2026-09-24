@@ -1,0 +1,7 @@
+{
+  "parent": "oreborn:block/glowing_ore",
+  "textures": {
+    "base": "oreborn:block/emberite_ore",
+    "glow": "oreborn:block/emberite_ore_glow"
+  }
+}

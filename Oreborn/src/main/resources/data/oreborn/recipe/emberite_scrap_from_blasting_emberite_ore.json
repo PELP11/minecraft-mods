@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 2.0,
+  "ingredient": "oreborn:emberite_ore",
+  "result": {
+    "id": "oreborn:emberite_scrap"
+  }
+}

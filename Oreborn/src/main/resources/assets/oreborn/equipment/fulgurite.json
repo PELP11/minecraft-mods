@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "oreborn:fulgurite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "oreborn:fulgurite"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:forest",
+    "minecraft:flower_forest",
+    "minecraft:dappled_forest"
+  ],
+  "features": "juicer:orange_tree",
+  "step": "vegetal_decoration"
+}

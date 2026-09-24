@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "juicer:starfruit",
+    "juicer:dragonfruit",
+    "juicer:pomegranate",
+    "juicer:orange",
+    "juicer:lime"
+  ]
+}

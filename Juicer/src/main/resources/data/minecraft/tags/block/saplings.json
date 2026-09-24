@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "juicer:starfruit_sapling",
+    "juicer:dragonfruit_sapling",
+    "juicer:pomegranate_sapling",
+    "juicer:orange_sapling",
+    "juicer:lime_sapling"
+  ]
+}

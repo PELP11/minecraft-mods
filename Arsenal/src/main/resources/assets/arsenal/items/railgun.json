@@ -1,0 +1,55 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "arsenal:loaded",
+    "on_true": {
+      "type": "minecraft:range_dispatch",
+      "property": "arsenal:charge",
+      "entries": [
+        {
+          "threshold": 0.01,
+          "model": {
+            "type": "minecraft:model",
+            "model": "arsenal:item/railgun_charge_1"
+          }
+        },
+        {
+          "threshold": 0.25,
+          "model": {
+            "type": "minecraft:model",
+            "model": "arsenal:item/railgun_charge_2"
+          }
+        },
+        {
+          "threshold": 0.5,
+          "model": {
+            "type": "minecraft:model",
+            "model": "arsenal:item/railgun_charge_3"
+          }
+        },
+        {
+          "threshold": 0.75,
+          "model": {
+            "type": "minecraft:model",
+            "model": "arsenal:item/railgun_charge_4"
+          }
+        },
+        {
+          "threshold": 1.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "arsenal:item/railgun_charge_5"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "arsenal:item/railgun"
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "arsenal:item/railgun_empty"
+    }
+  }
+}
