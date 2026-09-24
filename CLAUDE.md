@@ -9,7 +9,8 @@ Your training data predates Minecraft 26.x: verify 26.x APIs in the decompiled s
 ## 0. Cloud sessions (claude.ai/code)
 This folder is the user's private GitHub repo `minecraft-mods`; cloud sessions clone it onto a Linux VM (Ubuntu 24.04,
 4 CPUs, 16 GB RAM). There, sections 1-2 (Windows paths, `py`, CurseForge folders) don't apply:
-- JDK 25 isn't preinstalled (only 21): `apt-get install -y openjdk-25-jdk-headless` (prefix `sudo` if not root);
+- JDK 25 isn't preinstalled (only 21): `apt-get update -q && apt-get install -y openjdk-25-jdk-headless` (without
+  the update it 404s on stale package lists; prefix `sudo` if not root);
   Gradle's toolchain finds it in /usr/lib/jvm, no JAVA_HOME needed; don't rely on Gradle downloading a JDK.
   Python is `python3`; `apt-get install -y ffmpeg` for gen_sounds.py. Gradle: `(cd <Mod> && ./gradlew --no-configuration-cache ...)`.
 - Builds need maven.neoforged.net and the Mojang servers. If those downloads are blocked, the user must set the
