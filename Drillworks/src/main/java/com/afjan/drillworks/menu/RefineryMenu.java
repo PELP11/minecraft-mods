@@ -68,7 +68,7 @@ public class RefineryMenu extends AbstractContainerMenu {
     }
 
     private boolean isFuel(ItemStack stack) {
-        return this.player.level().fuelValues().isFuel(stack) && !stack.is(ModItems.CRUDE_OIL.get());
+        return stack.has(net.minecraft.core.component.DataComponents.COOKING_FUEL) && !stack.is(ModItems.CRUDE_OIL.get());
     }
 
     @Override

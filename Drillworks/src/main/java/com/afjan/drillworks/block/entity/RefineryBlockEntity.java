@@ -9,6 +9,7 @@ import com.afjan.drillworks.registry.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -20,6 +21,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.CookingFuel;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
@@ -107,7 +110,8 @@ public class RefineryBlockEntity extends BaseContainerBlockEntity implements Wor
         boolean canRefine = r.formed && crude.is(ModItems.CRUDE_OIL.get()) && r.gasoline + PER_CRUDE <= CAPACITY;
         if (r.burn <= 0 && canRefine) {
             ItemStack fuel = r.items.get(SLOT_FUEL);
-            int duration = fuel.isEmpty() ? 0 : level.fuelValues().burnDuration(fuel);
+            int duration = fuel.isEmpty() ? 0 : ResolvableInt.getFromItem(fuel, DataComponents.COOKING_FUEL, CookingFuel::burnTime,
+                    r.getLootContext(level, fuel), 0);
             if (duration > 0) {
                 r.burn = r.burnMax = duration;
                 if (fuel.is(Items.LAVA_BUCKET)) {
@@ -198,7 +202,7 @@ public class RefineryBlockEntity extends BaseContainerBlockEntity implements Wor
     public boolean canPlaceItem(int slot, ItemStack stack) {
         return switch (slot) {
             case SLOT_CRUDE -> stack.is(ModItems.CRUDE_OIL.get());
-            case SLOT_FUEL -> this.level != null && this.level.fuelValues().isFuel(stack) && !stack.is(ModItems.CRUDE_OIL.get());
+            case SLOT_FUEL -> stack.has(DataComponents.COOKING_FUEL) && !stack.is(ModItems.CRUDE_OIL.get());
             case SLOT_CAN_IN -> stack.is(ModItems.EMPTY_CANISTER.get());
             default -> false;
         };
