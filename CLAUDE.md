@@ -561,5 +561,9 @@ MC 26.x ships **unobfuscated** (official names everywhere). Versions are year-ba
   them in `broadcastChanges`), refinery = `block/RefineryBlock` + 2 `DistillationColumnBlock` on top.
 - Rendering: `client/MiningDrillRenderer` draws item models through `DataComponents.ITEM_MODEL` on a dummy stack
   (body, gauge fill scaled by fuel, the mounted head's own item model spinning) - no mesh code needed.
+  **Never build an ItemStack in a static field/constructor of client classes**: renderers are created during the first
+  resource reload, before item components are bound (`NullPointerException: Components not bound yet` = black main
+  menu, no crash screen). Create the stacks lazily in `extractRenderState`. Item/block model textures must live in
+  `textures/item|block/`, not `textures/entity/` (not in the atlas -> "Missing textures in model"). GameTests catch neither.
 - Generated: `tools/models.py` (all 3D models + atlases + `build/preview_*.png` software renders) and
   `tools/gen_assets.py` (everything else, en_us + de_de). Release: `drillworks-1.0.0.jar` in the project root.

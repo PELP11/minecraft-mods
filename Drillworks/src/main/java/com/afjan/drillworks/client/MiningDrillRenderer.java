@@ -34,8 +34,9 @@ public class MiningDrillRenderer extends EntityRenderer<MiningDrillEntity, Minin
     /** The head model's base (z = 17 units) relative to its centre. */
     private static final float HEAD_BASE = 0.5625F;
 
-    private static final ItemStack BODY = modelStack("drill_body");
-    private static final ItemStack GAUGE = modelStack("drill_gauge");
+    /** Built on first use: item components are not bound yet while renderers are created at startup. */
+    private static ItemStack body;
+    private static ItemStack gauge;
 
     public static class State extends EntityRenderState {
         final ItemStackRenderState body = new ItemStackRenderState();
@@ -74,8 +75,12 @@ public class MiningDrillRenderer extends EntityRenderer<MiningDrillEntity, Minin
         state.spin = Mth.lerp(partialTicks, entity.spinO, entity.spin);
         state.tilt = Mth.lerp(partialTicks, entity.tiltAnimO, entity.tiltAnim);
         state.fuel = entity.fuel() / (float) MiningDrillEntity.TANK;
-        this.itemModelResolver.updateForNonLiving(state.body, BODY, ItemDisplayContext.NONE, entity);
-        this.itemModelResolver.updateForNonLiving(state.gauge, GAUGE, ItemDisplayContext.NONE, entity);
+        if (body == null) {
+            body = modelStack("drill_body");
+            gauge = modelStack("drill_gauge");
+        }
+        this.itemModelResolver.updateForNonLiving(state.body, body, ItemDisplayContext.NONE, entity);
+        this.itemModelResolver.updateForNonLiving(state.gauge, gauge, ItemDisplayContext.NONE, entity);
         ItemStack head = entity.headForRender();
         state.hasHead = !head.isEmpty();
         if (state.hasHead) {

@@ -1,7 +1,7 @@
 {
  "textures": {
-  "t": "drillworks:entity/drill_body",
-  "particle": "drillworks:entity/drill_body"
+  "t": "drillworks:item/drill_body",
+  "particle": "drillworks:item/drill_body"
  },
  "elements": [
   {

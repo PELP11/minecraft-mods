@@ -310,8 +310,8 @@ def column(top):
 
 # name -> (boxes factory, texel density, texture folder, display kind)
 MODELS = {
-    'drill_body': (drill_body, 1, 'entity', None),
-    'drill_gauge': (drill_gauge, 1, 'entity', None),
+    'drill_body': (drill_body, 1, 'item', None),
+    'drill_gauge': (drill_gauge, 1, 'item', None),
     'mining_drill': (drill_icon, 1, 'item', 'vehicle'),
     'empty_canister': (lambda: canister(False), 2, 'item', 'canister'),
     'gasoline_canister': (lambda: canister(True), 2, 'item', 'canister'),
