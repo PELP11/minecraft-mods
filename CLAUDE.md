@@ -211,6 +211,9 @@ MC 26.x ships **unobfuscated** (official names everywhere). Versions are year-ba
 - Channelled items: `use` -> `player.startUsingItem(hand)` + `InteractionResult.CONSUME`, `getUseDuration` 72000,
   `onUseTick(level, entity, stack, remainingTicks)` runs every tick on both sides, `getUseAnimation` -> `ItemUseAnimation.NONE`
   (players move at 20% speed while using an item). Rapid hits: damage type in `#minecraft:bypasses_cooldown` (+ `no_knockback`).
+- Furnace fuel (26.3): `Level#fuelValues()` is gone; fuel = data component `DataComponents.COOKING_FUEL`
+  (`stack.has(...)` = is fuel), burn time = `ResolvableInt.getFromItem(stack, DataComponents.COOKING_FUEL,
+  CookingFuel::burnTime, blockEntity.getLootContext(serverLevel, stack), 0)` (BaseContainerBlockEntity has getLootContext).
 - 26.x oddities: `Items.LIGHTNING_ROD` is a `WeatheringCopperCollection` (rods oxidise) -> recipes use `#minecraft:lightning_rods`,
   code looks the item up by id. Hunger: `player.getFoodData().setFoodLevel/setSaturation`.
 - Beams that interact with the world: trace with `level.clip` twice (`ClipContext.Fluid.NONE` and `ClipContext.Fluid.WATER`,
@@ -549,3 +552,14 @@ MC 26.x ships **unobfuscated** (official names everywhere). Versions are year-ba
   target velocity * time-to-go, turn the velocity towards it by at most `turnRate` a tick, slerp on the unit
   sphere), proximity fuse server-side; heat seekers may switch to a flare near the target; the target vehicle gets a
   synced warning flag for the cockpit tone. Launch from the jet's velocity (+ a kick), not from rest.
+
+## 14. Drillworks project map (`Drillworks/`, built in a cloud session)
+- Mod id `drillworks`, package `com.afjan.drillworks`, same build setup as Arsenal. Rideable `entity/MiningDrillEntity`
+  (server-simulated: reads `ServerPlayer.getLastClientInput()`, no own packets; `drive()` is public for GameTests),
+  `drill/Boring` (bore layer, drops with a virtual enchanted netherite pickaxe, smelting, void filter, vein seeker),
+  `drill/HeadMaterial` (7 heads), `drill/Module` + `DrillModules` component (modules live on the head; the menu mirrors
+  them in `broadcastChanges`), refinery = `block/RefineryBlock` + 2 `DistillationColumnBlock` on top.
+- Rendering: `client/MiningDrillRenderer` draws item models through `DataComponents.ITEM_MODEL` on a dummy stack
+  (body, gauge fill scaled by fuel, the mounted head's own item model spinning) - no mesh code needed.
+- Generated: `tools/models.py` (all 3D models + atlases + `build/preview_*.png` software renders) and
+  `tools/gen_assets.py` (everything else, en_us + de_de). Release: `drillworks-1.0.0.jar` in the project root.
