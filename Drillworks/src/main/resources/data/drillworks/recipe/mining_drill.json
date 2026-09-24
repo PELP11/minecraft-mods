@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "E": "drillworks:drill_engine",
+    "T": "drillworks:track",
+    "C": "minecraft:chest",
+    "B": "minecraft:iron_block"
+  },
+  "pattern": [
+    "IEI",
+    "TCT",
+    "IBI"
+  ],
+  "result": {
+    "id": "drillworks:mining_drill",
+    "count": 1
+  }
+}

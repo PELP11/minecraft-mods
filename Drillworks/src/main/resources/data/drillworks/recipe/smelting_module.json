@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:blast_furnace"
+  ],
+  "result": {
+    "id": "drillworks:smelting_module",
+    "count": 1
+  }
+}

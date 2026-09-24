@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": "minecraft:gold_nugget",
+    "R": "minecraft:redstone",
+    "G": "minecraft:glass_pane",
+    "C": "minecraft:comparator"
+  },
+  "pattern": [
+    "NRN",
+    "GCG",
+    "NRN"
+  ],
+  "result": {
+    "id": "drillworks:blank_module",
+    "count": 2
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "drillworks:item/fuel_saver_module"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot",
+              "drillworks:crude_oil"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "drillworks:mining_drill",
+      "drillworks:drill_engine",
+      "drillworks:track",
+      "drillworks:stone_drill_head",
+      "drillworks:copper_drill_head",
+      "drillworks:iron_drill_head",
+      "drillworks:golden_drill_head",
+      "drillworks:amethyst_drill_head",
+      "drillworks:diamond_drill_head",
+      "drillworks:netherite_drill_head",
+      "drillworks:blank_module",
+      "drillworks:fortune_module",
+      "drillworks:efficiency_module",
+      "drillworks:silk_touch_module",
+      "drillworks:smelting_module",
+      "drillworks:reinforced_module",
+      "drillworks:wide_bore_module",
+      "drillworks:vein_seeker_module",
+      "drillworks:void_filter_module",
+      "drillworks:fuel_saver_module",
+      "drillworks:refinery",
+      "drillworks:distillation_column",
+      "drillworks:empty_canister"
+    ]
+  }
+}

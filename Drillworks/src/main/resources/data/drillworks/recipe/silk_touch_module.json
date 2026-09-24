@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:slime_ball",
+    "minecraft:white_wool"
+  ],
+  "result": {
+    "id": "drillworks:silk_touch_module",
+    "count": 1
+  }
+}

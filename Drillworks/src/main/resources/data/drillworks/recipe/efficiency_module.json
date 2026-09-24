@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:redstone_block",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "drillworks:efficiency_module",
+    "count": 1
+  }
+}

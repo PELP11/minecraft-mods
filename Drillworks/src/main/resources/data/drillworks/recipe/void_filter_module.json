@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:cactus",
+    "minecraft:ender_pearl"
+  ],
+  "result": {
+    "id": "drillworks:void_filter_module",
+    "count": 1
+  }
+}

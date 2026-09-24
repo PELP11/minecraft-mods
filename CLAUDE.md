@@ -15,6 +15,10 @@ This folder is the user's private GitHub repo `minecraft-mods`; cloud sessions c
   Python is `python3`; `apt-get install -y ffmpeg` for gen_sounds.py. Gradle: `(cd <Mod> && ./gradlew --no-configuration-cache ...)`.
 - Builds need maven.neoforged.net and the Mojang servers. If those downloads are blocked, the user must set the
   environment's network access to **Full** (claude.ai/code, environment settings): tell them, don't work around it.
+  Check before the first build: `curl -s -o /dev/null -w "%{http_code}" https://maven.neoforged.net/releases/` (000 +
+  proxy "connect_rejected" = blocked). Maven Central (repo.maven.apache.org) sometimes answers 429: just re-run.
+  While blocked, everything but compiling can go ahead: Python generators, JSON, textures, Java written against
+  Arsenal/Juicer/Oreborn code (which compiles on 26.3) as the API reference.
 - No game window in the cloud: test with `runGameTestServer` only. A new mod = a new top-level folder (section 3).
 - Hand-over: the user can't reach the VM. Commit the jar as `<Mod>/<modid>-<version>.jar`, push, and give them the
   GitHub link to download it; they put it into the CurseForge "Juicer" instance's `mods/` themselves.

@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "drillworks:ore_crude_oil_upper",
+    "drillworks:ore_crude_oil_lower"
+  ],
+  "step": "underground_ores"
+}

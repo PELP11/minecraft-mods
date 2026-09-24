@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:obsidian",
+    "minecraft:iron_block"
+  ],
+  "result": {
+    "id": "drillworks:reinforced_module",
+    "count": 1
+  }
+}

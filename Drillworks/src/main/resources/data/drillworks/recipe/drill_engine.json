@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "P": "minecraft:piston",
+    "R": "minecraft:redstone",
+    "F": "minecraft:furnace",
+    "C": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "IPI",
+    "RFR",
+    "ICI"
+  ],
+  "result": {
+    "id": "drillworks:drill_engine",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "top=false": {
+      "model": "drillworks:block/distillation_column"
+    },
+    "top=true": {
+      "model": "drillworks:block/distillation_column_top"
+    }
+  }
+}

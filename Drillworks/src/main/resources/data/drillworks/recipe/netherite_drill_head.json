@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "drillworks:diamond_drill_head",
+  "addition": "minecraft:netherite_ingot",
+  "result": {
+    "id": "drillworks:netherite_drill_head"
+  }
+}

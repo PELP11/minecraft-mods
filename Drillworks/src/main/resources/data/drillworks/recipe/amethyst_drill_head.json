@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": "minecraft:amethyst_shard",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    " M ",
+    "MMM",
+    "MIM"
+  ],
+  "result": {
+    "id": "drillworks:amethyst_drill_head",
+    "count": 1
+  }
+}

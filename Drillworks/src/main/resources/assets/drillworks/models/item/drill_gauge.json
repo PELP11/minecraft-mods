@@ -1,0 +1,148 @@
+{
+ "textures": {
+  "t": "drillworks:entity/drill_gauge",
+  "particle": "drillworks:entity/drill_gauge"
+ },
+ "elements": [
+  {
+   "from": [
+    1.76,
+    -5.28,
+    15.44
+   ],
+   "to": [
+    3.36,
+    -1.76,
+    15.68
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      2.5,
+      0.0,
+      3.0,
+      4.0
+     ],
+     "texture": "#t"
+    },
+    "south": {
+     "uv": [
+      3.0,
+      0.0,
+      3.5,
+      4.0
+     ],
+     "texture": "#t"
+    },
+    "east": {
+     "uv": [
+      3.5,
+      0.0,
+      3.75,
+      4.0
+     ],
+     "texture": "#t"
+    },
+    "west": {
+     "uv": [
+      3.75,
+      0.0,
+      4.0,
+      4.0
+     ],
+     "texture": "#t"
+    },
+    "up": {
+     "uv": [
+      6.0,
+      0.0,
+      6.5,
+      1.0
+     ],
+     "texture": "#t"
+    },
+    "down": {
+     "uv": [
+      6.5,
+      0.0,
+      7.0,
+      1.0
+     ],
+     "texture": "#t"
+    }
+   },
+   "light_emission": 15,
+   "shade": false
+  },
+  {
+   "from": [
+    -6.24,
+    -5.28,
+    25.12
+   ],
+   "to": [
+    -2.08,
+    1.76,
+    25.28
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0.0,
+      0.0,
+      1.0,
+      7.0
+     ],
+     "texture": "#t"
+    },
+    "south": {
+     "uv": [
+      1.0,
+      0.0,
+      2.0,
+      7.0
+     ],
+     "texture": "#t"
+    },
+    "east": {
+     "uv": [
+      2.0,
+      0.0,
+      2.25,
+      7.0
+     ],
+     "texture": "#t"
+    },
+    "west": {
+     "uv": [
+      2.25,
+      0.0,
+      2.5,
+      7.0
+     ],
+     "texture": "#t"
+    },
+    "up": {
+     "uv": [
+      4.0,
+      0.0,
+      5.0,
+      1.0
+     ],
+     "texture": "#t"
+    },
+    "down": {
+     "uv": [
+      5.0,
+      0.0,
+      6.0,
+      1.0
+     ],
+     "texture": "#t"
+    }
+   },
+   "light_emission": 15,
+   "shade": false
+  }
+ ]
+}

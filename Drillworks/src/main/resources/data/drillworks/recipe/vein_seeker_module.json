@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:ender_eye",
+    "minecraft:compass"
+  ],
+  "result": {
+    "id": "drillworks:vein_seeker_module",
+    "count": 1
+  }
+}

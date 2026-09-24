@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:piston",
+    "minecraft:diamond",
+    "minecraft:piston"
+  ],
+  "result": {
+    "id": "drillworks:wide_bore_module",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "drillworks:block/deepslate_crude_oil_ore"
+  }
+}

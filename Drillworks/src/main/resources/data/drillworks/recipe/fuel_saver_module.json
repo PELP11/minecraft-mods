@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "drillworks:blank_module",
+    "minecraft:copper_block",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "drillworks:fuel_saver_module",
+    "count": 1
+  }
+}

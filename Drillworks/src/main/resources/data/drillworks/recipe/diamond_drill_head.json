@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": "minecraft:diamond",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    " M ",
+    "MMM",
+    "MIM"
+  ],
+  "result": {
+    "id": "drillworks:diamond_drill_head",
+    "count": 1
+  }
+}
