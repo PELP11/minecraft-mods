@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "stonesift:netherite_fragment",
+    "stonesift:netherite_fragment",
+    "stonesift:netherite_fragment",
+    "stonesift:netherite_fragment"
+  ],
+  "result": {
+    "id": "minecraft:netherite_scrap",
+    "count": 1
+  }
+}

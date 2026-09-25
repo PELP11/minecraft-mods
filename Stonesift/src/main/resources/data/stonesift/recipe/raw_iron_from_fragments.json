@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "stonesift:iron_ore_fragment",
+    "stonesift:iron_ore_fragment",
+    "stonesift:iron_ore_fragment",
+    "stonesift:iron_ore_fragment"
+  ],
+  "result": {
+    "id": "minecraft:raw_iron",
+    "count": 1
+  }
+}

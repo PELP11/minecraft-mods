@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "R": "minecraft:redstone_block",
+    "B": "minecraft:iron_block",
+    "P": "minecraft:piston",
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    "DRD",
+    "BPB",
+    "DOD"
+  ],
+  "result": {
+    "id": "stonesift:deep_drill",
+    "count": 1
+  }
+}

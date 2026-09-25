@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:glass",
+    "I": "minecraft:iron_ingot",
+    "C": "minecraft:copper_block",
+    "R": "minecraft:redstone_block"
+  },
+  "pattern": [
+    "GIG",
+    "ICI",
+    "IRI"
+  ],
+  "result": {
+    "id": "stonesift:flotation_cell",
+    "count": 1
+  }
+}

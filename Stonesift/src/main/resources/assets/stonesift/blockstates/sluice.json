@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "stonesift:block/sluice"
+    },
+    "facing=east": {
+      "model": "stonesift:block/sluice",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "stonesift:block/sluice",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "stonesift:block/sluice",
+      "y": 270
+    }
+  }
+}

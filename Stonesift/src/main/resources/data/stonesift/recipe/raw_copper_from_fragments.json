@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "stonesift:copper_ore_fragment",
+    "stonesift:copper_ore_fragment",
+    "stonesift:copper_ore_fragment",
+    "stonesift:copper_ore_fragment"
+  ],
+  "result": {
+    "id": "minecraft:raw_copper",
+    "count": 1
+  }
+}

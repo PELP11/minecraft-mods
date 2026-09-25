@@ -567,3 +567,18 @@ MC 26.x ships **unobfuscated** (official names everywhere). Versions are year-ba
   `textures/item|block/`, not `textures/entity/` (not in the atlas -> "Missing textures in model"). GameTests catch neither.
 - Generated: `tools/models.py` (all 3D models + atlases + `build/preview_*.png` software renders) and
   `tools/gen_assets.py` (everything else, en_us + de_de). Release: `drillworks-1.0.0.jar` in the project root.
+
+## 15. Stonesift project map (`Stonesift/`, cloud session)
+- Mod id `stonesift`: rock -> gravel -> ore fragments + rock flour -> fine slurry -> concentrate. `rock/Rock` (7 rocks,
+  mineral profile = expected units per gravel), `rock/Resource` (tier = mesh needed), `rock/Yields` (all balancing:
+  sieve, sluice per segment, flotation; rich = 3 rolls), `rock/Veins` (chunk vein from a seed/chunk hash, nothing stored).
+- `machine/`: ONE generic `MachineBlockEntity` + `MachineMenu` + `client/MachineScreen` driven by the `MachineType`
+  table (slots with filters, hopper faces, synced data, gauges) - a new machine = one enum entry + a serverTick.
+  FE via NeoForge's new transfer API (`transfer/energy/SimpleEnergyHandler`, `Capabilities.Energy.BLOCK`,
+  `EnergyHandlerUtil.move(from, to, n, tx)` inside `Transaction.openRoot()`); energy > 32767 goes through two
+  15-bit ContainerData slots. Custom blocks: `block/HandSieve*` (BER pile), `block/Sluice*` (controller + BER).
+- Pitfall found by the GameTests: a helper that rebuilds `items` must not replace INPUT stacks - callers still hold
+  the old objects and `shrink` them (inputs were never consumed). Water next to lava in a test turns the lava into
+  obsidian: sink liquids into the floor. `Player.drop` needs a third arg (`Prediction.SERVER_ONLY`).
+- Generated: `tools/models.py` (machines, hand sieve per mesh, sluice, piles; kinds `water` = alpha 170, `mesh` = grid
+  with holes) and `tools/gen_assets.py`. 14 GameTests incl. the 4/9/14 raw-iron balance.

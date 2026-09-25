@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "CIC",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "id": "stonesift:geologist_hammer",
+    "count": 1
+  }
+}

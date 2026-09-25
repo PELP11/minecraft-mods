@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "stonesift:item/advanced_speed_upgrade"
+  }
+}

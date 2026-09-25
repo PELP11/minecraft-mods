@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "mesh=0": {
+      "model": "stonesift:block/hand_sieve_mesh0"
+    },
+    "mesh=1": {
+      "model": "stonesift:block/hand_sieve_mesh1"
+    },
+    "mesh=2": {
+      "model": "stonesift:block/hand_sieve_mesh2"
+    },
+    "mesh=3": {
+      "model": "stonesift:block/hand_sieve_mesh3"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "stonesift:diamond_drill_bit",
+  "addition": "minecraft:netherite_ingot",
+  "result": {
+    "id": "stonesift:netherite_drill_bit"
+  }
+}

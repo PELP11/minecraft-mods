@@ -1,0 +1,63 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:cobblestone",
+              "minecraft:stick"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stonesift:advanced_speed_upgrade",
+      "stonesift:coal_generator",
+      "stonesift:copper_concentrate_blasting",
+      "stonesift:copper_concentrate_smelting",
+      "stonesift:deep_drill",
+      "stonesift:deep_drill_frame",
+      "stonesift:diamond_concentrate_blasting",
+      "stonesift:diamond_concentrate_smelting",
+      "stonesift:diamond_drill_bit",
+      "stonesift:diamond_from_shards",
+      "stonesift:diamond_mesh",
+      "stonesift:diamond_stone_hammer",
+      "stonesift:emerald_from_shards",
+      "stonesift:flotation_cell",
+      "stonesift:geologist_hammer",
+      "stonesift:gold_concentrate_blasting",
+      "stonesift:gold_concentrate_smelting",
+      "stonesift:golden_stone_hammer",
+      "stonesift:grinder",
+      "stonesift:hand_sieve",
+      "stonesift:iron_concentrate_blasting",
+      "stonesift:iron_concentrate_smelting",
+      "stonesift:iron_mesh",
+      "stonesift:iron_stone_hammer",
+      "stonesift:netherite_drill_bit",
+      "stonesift:netherite_scrap_from_fragments",
+      "stonesift:raw_copper_from_fragments",
+      "stonesift:raw_gold_from_fragments",
+      "stonesift:raw_iron_from_fragments",
+      "stonesift:rock_former",
+      "stonesift:shaker_sieve",
+      "stonesift:sluice",
+      "stonesift:speed_upgrade",
+      "stonesift:stone_stone_hammer",
+      "stonesift:string_mesh",
+      "stonesift:wooden_stone_hammer"
+    ]
+  }
+}

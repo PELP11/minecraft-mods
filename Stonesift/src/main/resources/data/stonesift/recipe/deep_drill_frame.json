@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "B": "minecraft:iron_block"
+  },
+  "pattern": [
+    "I I",
+    " B ",
+    "I I"
+  ],
+  "result": {
+    "id": "stonesift:deep_drill_frame",
+    "count": 4
+  }
+}

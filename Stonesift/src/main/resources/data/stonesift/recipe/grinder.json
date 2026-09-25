@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:cobblestone",
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:grindstone",
+    "F": "minecraft:furnace"
+  },
+  "pattern": [
+    "CIC",
+    "IGI",
+    "CFC"
+  ],
+  "result": {
+    "id": "stonesift:grinder",
+    "count": 1
+  }
+}

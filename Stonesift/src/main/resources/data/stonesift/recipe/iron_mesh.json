@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:iron_bars",
+    "M": "stonesift:string_mesh"
+  },
+  "pattern": [
+    "B B",
+    " M ",
+    "B B"
+  ],
+  "result": {
+    "id": "stonesift:iron_mesh",
+    "count": 1
+  }
+}

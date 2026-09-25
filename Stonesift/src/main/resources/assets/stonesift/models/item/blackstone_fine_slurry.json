@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "stonesift:item/blackstone_fine_slurry"
+  }
+}

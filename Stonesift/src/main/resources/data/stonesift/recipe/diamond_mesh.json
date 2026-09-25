@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "M": "stonesift:iron_mesh"
+  },
+  "pattern": [
+    "D D",
+    " M ",
+    "D D"
+  ],
+  "result": {
+    "id": "stonesift:diamond_mesh",
+    "count": 1
+  }
+}

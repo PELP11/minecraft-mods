@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "stonesift:item/golden_stone_hammer"
+  }
+}
