@@ -25,8 +25,8 @@ import java.util.Map;
 
 /**
  * The overview: every tool (7 materials x 6 types, plus bow, crossbow, trident, mace, shears and fishing rod) on
- * the left, the selected tool's five milestones with progress and rewards on the right. Drawn from plain
- * rectangles and text, no GUI texture.
+ * the left, the selected tool's milestones (20 for main tools, 5 for the others) with progress and rewards on the
+ * right, scrolled to the next one. Drawn from plain rectangles and text, no GUI texture.
  */
 public final class MasteryScreen extends Screen {
     private static final int CELL = 20;
@@ -39,6 +39,8 @@ public final class MasteryScreen extends Screen {
     private int gridX, gridY, specialsY, detailX, detailY, detailWidth, detailHeight, listY, listHeight;
     private double scroll;
     private int contentHeight;
+    /** Scroll the list to the milestone being worked on at the next frame (after opening or selecting). */
+    private boolean jumpToCurrent = true;
 
     /** One row of the milestone list. */
     private record Line(@Nullable FormattedCharSequence text, int color, int indent, float progress, int height,
@@ -110,7 +112,7 @@ public final class MasteryScreen extends Screen {
         int level = stack == null ? 0 : track.level(Mastery.of(stack));
         g.fill(x, y, x + CELL - 2, y + CELL - 2, stack == null ? 0xFF1A1B1F : 0xFF2B2720);
         int border = track == selected ? MasteryText.WHITE
-                : level >= Track.MAX_LEVEL ? MasteryText.MASTERED : level > 0 ? 0xFFA07C2C : 0xFF34363C;
+                : level >= track.maxLevel() ? MasteryText.MASTERED : level > 0 ? 0xFFA07C2C : 0xFF34363C;
         g.outline(x, y, CELL - 2, CELL - 2, border);
         ItemStack shown = stack != null ? stack : track.item.getDefaultInstance();
         g.item(shown, x + 1, y + 1);
@@ -145,13 +147,23 @@ public final class MasteryScreen extends Screen {
         g.text(font, Component.translatable(LangKeys.GUI_MILESTONES, MasteryText.toolName(selected)), detailX + 20, detailY + 1, MasteryText.WHITE);
         Component sub = stack == null
                 ? Component.translatable(LangKeys.GUI_NONE_OWNED)
-                : Component.translatable(LangKeys.GUI_YOURS, MasteryText.roman(level)).append(" " + MasteryText.stars(level));
+                : Component.translatable(LangKeys.GUI_YOURS, MasteryText.roman(level), level, selected.maxLevel());
         List<FormattedCharSequence> subLines = font.split(sub, detailWidth - 20);
-        if (!subLines.isEmpty()) g.text(font, subLines.getFirst(), detailX + 20, detailY + 12, stack == null ? MasteryText.GRAY : MasteryText.levelColor(level), false);
-        g.fill(detailX, listY - 5, detailX + detailWidth, listY - 4, 0xFF3A352C);
+        if (!subLines.isEmpty()) g.text(font, subLines.getFirst(), detailX + 20, detailY + 12, stack == null ? MasteryText.GRAY : MasteryText.levelColor(selected, level), false);
+        levelBar(g, level);
 
         List<Line> lines = buildLines(mastery, level);
         contentHeight = lines.stream().mapToInt(Line::height).sum();
+        if (jumpToCurrent) {
+            jumpToCurrent = false;
+            int target = Math.min(level + 1, selected.maxLevel());
+            int offset = 0;
+            for (Line line : lines) {
+                if (line.level() >= target) break;
+                offset += line.height();
+            }
+            scroll = offset;
+        }
         scroll = Mth.clamp(scroll, 0, Math.max(0, contentHeight - listHeight));
 
         g.enableScissor(detailX, listY, detailX + detailWidth, listY + listHeight);
@@ -188,6 +200,18 @@ public final class MasteryScreen extends Screen {
         }
     }
 
+    /** One segment per level under the header: gold when reached, pink once mastered. */
+    private void levelBar(GuiGraphicsExtractor g, int level) {
+        int max = selected.maxLevel();
+        int y = listY - 7;
+        for (int i = 0; i < max; i++) {
+            int x0 = detailX + i * detailWidth / max;
+            int x1 = detailX + (i + 1) * detailWidth / max - 1;
+            int color = i >= level ? 0xFF34363C : level >= max ? MasteryText.MASTERED : MasteryText.GOLD;
+            g.fill(x0, y, x1, y + 3, color);
+        }
+    }
+
     private List<Line> buildLines(@Nullable Mastery mastery, int level) {
         List<Line> lines = new ArrayList<>();
         int textWidth = detailWidth - 6;
@@ -195,8 +219,8 @@ public final class MasteryScreen extends Screen {
             int l = milestone.level();
             boolean done = l <= level;
             boolean current = l == level + 1;
-            int headColor = done ? (l == Track.MAX_LEVEL ? MasteryText.MASTERED : MasteryText.GREEN) : current ? MasteryText.GOLD : MasteryText.GRAY;
-            Component head = Component.translatable(LangKeys.TIP_MASTERY, MasteryText.roman(l));
+            int headColor = done ? (l == selected.maxLevel() ? MasteryText.MASTERED : MasteryText.GREEN) : current ? MasteryText.GOLD : MasteryText.GRAY;
+            Component head = Component.translatable(LangKeys.GUI_LEVEL, MasteryText.roman(l));
             if (done) head = head.copy().append("  ✔ ").append(Component.translatable(LangKeys.GUI_DONE));
             lines.add(new Line(head.getVisualOrderText(), headColor, 0, -1, 11, null, l));
             if (current && mastery != null) lines.add(new Line(null, 0, 8, milestone.progress(mastery), 6, null, l));
@@ -248,7 +272,7 @@ public final class MasteryScreen extends Screen {
     private boolean select(@Nullable Track track) {
         if (track == null) return false;
         selected = track;
-        scroll = 0;
+        jumpToCurrent = true;
         if (minecraft != null) {
             minecraft.getSoundManager().play(net.minecraft.client.resources.sounds.SimpleSoundInstance.forUI(
                     net.minecraft.sounds.SoundEvents.UI_BUTTON_CLICK, 1.0F));

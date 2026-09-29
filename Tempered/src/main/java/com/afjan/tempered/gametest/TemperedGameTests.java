@@ -69,6 +69,11 @@ public final class TemperedGameTests {
         return stack;
     }
 
+    /** A fully mastered stack (level 20 for main tools, 5 for the others). */
+    static ItemStack atMax(Item item) {
+        return atLevel(item, Tracks.get(item).maxLevel());
+    }
+
     private static void fill(GameTestHelper helper, int x0, int y0, int z0, int x1, int y1, int z1, Block block) {
         for (BlockPos pos : BlockPos.betweenClosed(x0, y0, z0, x1, y1, z1)) helper.setBlock(pos, block);
     }
@@ -90,10 +95,11 @@ public final class TemperedGameTests {
         }
         for (Track track : all) {
             String name = track.tier.prefix + " " + track.kind.id;
-            helper.assertValueEqual(track.milestones.size(), Track.MAX_LEVEL, name + " milestones");
+            helper.assertValueEqual(track.milestones.size(), track.kind.tiered ? Tracks.MAIN_LEVELS : Tracks.SPECIAL_LEVELS, name + " milestones");
             Map<Stat, Integer> seen = new HashMap<>();
             Map<Perk, Double> perks = new HashMap<>();
             for (Milestone milestone : track.milestones) {
+                helper.assertValueEqual(milestone.level(), track.milestones.indexOf(milestone) + 1, name + " milestone order");
                 helper.assertFalse(milestone.reqs().isEmpty(), name + " " + milestone.level() + " has no requirement");
                 helper.assertFalse(milestone.gained().isEmpty(), name + " " + milestone.level() + " gives nothing");
                 for (Milestone.Req req : milestone.reqs()) {
@@ -113,6 +119,26 @@ public final class TemperedGameTests {
         for (Milestone.Req req : track.milestones.get(2).reqs()) stats.merge(req.stat().id, req.amount(), Math::max);
         stats.put(Stat.ORES.id, 0);
         helper.assertValueEqual(track.level(new Mastery(1L, stats)), 1, "diamond pickaxe level without ores");
+        helper.succeed();
+    }
+
+    /** The late game is a real grind: level 20 asks for 100x+ the work of level 1, plus a hard special challenge. */
+    @GameTest
+    public static void lateGameIsAGrind(GameTestHelper helper) {
+        for (Track track : Tracks.all()) {
+            if (!track.kind.tiered) continue;
+            String name = track.tier.prefix + " " + track.kind.id;
+            int first = track.milestones.getFirst().reqs().getFirst().amount();
+            Milestone last = track.milestones.getLast();
+            int main = last.reqs().getFirst().amount();
+            helper.assertTrue(main >= 100 * first, name + ": level 20 asks for " + main + ", level 1 for " + first);
+            helper.assertTrue(last.reqs().size() >= 2, name + ": level 20 has no special challenge");
+        }
+        Milestone diamond = Tracks.of(Kind.PICKAXE, Tier.DIAMOND).milestones.getLast();
+        helper.assertTrue(diamond.reqs().stream().anyMatch(r -> r.stat() == Stat.DEBRIS), "diamond pickaxe XX does not ask for Ancient Debris");
+        Milestone stone = Tracks.of(Kind.PICKAXE, Tier.STONE).milestones.getLast();
+        helper.assertTrue(stone.reqs().stream().noneMatch(r -> r.stat() == Stat.DEBRIS || r.stat() == Stat.OBSIDIAN || r.stat() == Stat.GEMS),
+                "stone pickaxe asks for blocks it cannot mine");
         helper.succeed();
     }
 
@@ -146,7 +172,7 @@ public final class TemperedGameTests {
                 md.append("\n### ").append(name).append("\n\n| Mastery | Challenge | Rewards |\n|---|---|---|\n");
                 for (Milestone milestone : track.milestones) {
                     List<String> reqs = new ArrayList<>();
-                    for (Milestone.Req req : milestone.reqs()) reqs.add(tr(lang, req.stat().requirementKey(kind), req.amount()));
+                    for (Milestone.Req req : milestone.reqs()) reqs.add(tr(lang, req.key(kind), req.amount()));
                     List<String> perks = new ArrayList<>();
                     for (Perk perk : milestone.gained()) {
                         int v = (int) Math.round(milestone.totals().get(perk));
@@ -178,10 +204,11 @@ public final class TemperedGameTests {
             for (Stat stat : Stat.values()) keys.add(stat.requirementKey(kind));
         }
         for (Tier tier : Tier.values()) keys.add(tier.translationKey());
-        for (int level = 0; level <= Track.MAX_LEVEL; level++) keys.add("mastery.tempered.level." + level);
+        for (int level = 0; level <= Track.HIGHEST_LEVEL; level++) keys.add("mastery.tempered.level." + level);
         for (Track track : Tracks.all()) {
             for (Milestone milestone : track.milestones) {
                 for (Perk perk : milestone.totals().keySet()) keys.add(perk.key(track.kind));
+                for (Milestone.Req req : milestone.reqs()) keys.add(req.key(track.kind));
             }
         }
         keys.addAll(com.afjan.tempered.mastery.LangKeys.STATIC);
@@ -253,7 +280,7 @@ public final class TemperedGameTests {
 
     @GameTest
     public static void reinforcedIgnoresWear(GameTestHelper helper) {
-        ItemStack maxed = atLevel(Items.IRON_PICKAXE, 5);
+        ItemStack maxed = atMax(Items.IRON_PICKAXE);
         double chance = Mastery.perk(maxed, Perk.REINFORCED);
         int kept = BrokenTools.reinforce(maxed, 4000);
         double expected = 4000 * (1 - chance / 100.0);
@@ -337,10 +364,10 @@ public final class TemperedGameTests {
 
     @GameTest
     public static void netheriteKeepsDiamondCounters(GameTestHelper helper) {
-        ItemStack diamond = atLevel(Items.DIAMOND_PICKAXE, 5);
+        ItemStack diamond = atMax(Items.DIAMOND_PICKAXE);
         ItemStack netherite = diamond.transmuteCopy(Items.NETHERITE_PICKAXE);
         int level = Mastery.level(netherite);
-        helper.assertTrue(level >= 1 && level < 5, "netherite level from diamond counters: " + level);
+        helper.assertTrue(level >= 1 && level < Tracks.MAIN_LEVELS, "netherite level from diamond counters: " + level);
         helper.assertValueEqual(Mastery.of(netherite).uid(), 4242L, "uid kept");
         helper.succeed();
     }
@@ -353,15 +380,18 @@ public final class TemperedGameTests {
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), plain);
         BlockState stone = Blocks.STONE.defaultBlockState();
         float base = player.getDestroySpeed(stone, null);
-        player.setItemInHand(InteractionHand.MAIN_HAND, atLevel(Items.DIAMOND_PICKAXE, 5));
+        player.setItemInHand(InteractionHand.MAIN_HAND, atMax(Items.DIAMOND_PICKAXE));
         float mastered = player.getDestroySpeed(stone, null);
         double expected = 1 + Mastery.perk(player.getMainHandItem(), Perk.SPEED) / 100.0;
         helper.assertTrue(Math.abs(mastered / base - expected) < 0.01, "speed x" + mastered / base + ", expected x" + expected);
 
-        player.setItemInHand(InteractionHand.MAIN_HAND, atLevel(Items.DIAMOND_SWORD, 5));
+        player.setItemInHand(InteractionHand.MAIN_HAND, atLevel(Items.DIAMOND_SWORD, 12));
         Zombie zombie = helper.spawn(EntityTypes.ZOMBIE, new BlockPos(2, 1, 2));
         int looting = ForgeHooks.getLootingLevel(zombie, player, player.damageSources().playerAttack(player));
-        helper.assertValueEqual(looting, 2, "looting from mastery");
+        helper.assertValueEqual(looting, 2, "looting from mastery XII");
+        player.setItemInHand(InteractionHand.MAIN_HAND, atMax(Items.DIAMOND_SWORD));
+        looting = ForgeHooks.getLootingLevel(zombie, player, player.damageSources().playerAttack(player));
+        helper.assertValueEqual(looting, 3, "looting from mastery XX");
         helper.succeed();
     }
 
@@ -398,7 +428,7 @@ public final class TemperedGameTests {
 
     @GameTest(structure = "forge:empty7x5x7")
     public static void veinMinerTakesTheVein(GameTestHelper helper) {
-        ItemStack pickaxe = atLevel(Items.IRON_PICKAXE, 5);
+        ItemStack pickaxe = atMax(Items.IRON_PICKAXE);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), pickaxe);
         fill(helper, 1, 1, 1, 3, 1, 2, Blocks.IRON_ORE);
         helper.setBlock(new BlockPos(4, 1, 1), Blocks.STONE);
@@ -412,12 +442,12 @@ public final class TemperedGameTests {
     }
 
     private static int atLevelCount(Item item, Stat stat) {
-        return count(atLevel(item, 5), stat);
+        return count(atMax(item), stat);
     }
 
     @GameTest(structure = "forge:empty7x6x7")
     public static void excavateMinesThreeByThree(GameTestHelper helper) {
-        ItemStack pickaxe = atLevel(Items.DIAMOND_PICKAXE, 5);
+        ItemStack pickaxe = atMax(Items.DIAMOND_PICKAXE);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(2, 1, 0), pickaxe);
         fill(helper, 1, 1, 3, 3, 3, 3, Blocks.STONE);
         helper.setBlock(new BlockPos(2, 2, 4), Blocks.STONE);
@@ -437,7 +467,7 @@ public final class TemperedGameTests {
 
     @GameTest(structure = "forge:empty7x9x7")
     public static void timberFellsTreesNotHouses(GameTestHelper helper) {
-        ItemStack axe = atLevel(Items.IRON_AXE, 5);
+        ItemStack axe = atMax(Items.IRON_AXE);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), axe);
         fill(helper, 2, 1, 2, 2, 5, 2, Blocks.OAK_LOG);
         fill(helper, 1, 5, 1, 3, 6, 3, Blocks.OAK_LEAVES);
@@ -454,7 +484,7 @@ public final class TemperedGameTests {
 
     @GameTest(structure = "forge:empty7x4x7", skyAccess = true)
     public static void reaperHarvestsAndReplants(GameTestHelper helper) {
-        ItemStack hoe = atLevel(Items.IRON_HOE, 5);
+        ItemStack hoe = atMax(Items.IRON_HOE);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), hoe);
         BlockState ripe = ((CropBlock) Blocks.WHEAT).getStateForAge(7);
         for (BlockPos rel : BlockPos.betweenClosed(1, 0, 1, 5, 0, 5)) {
@@ -488,7 +518,7 @@ public final class TemperedGameTests {
 
     @GameTest
     public static void fishingRodLureAndLuck(GameTestHelper helper) {
-        ItemStack rod = atLevel(Items.FISHING_ROD, 5);
+        ItemStack rod = atMax(Items.FISHING_ROD);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), rod);
         var hook = new net.minecraft.world.entity.projectile.FishingHook(player, helper.getLevel(), 0, 0);
         helper.getLevel().addFreshEntity(hook);
@@ -501,7 +531,7 @@ public final class TemperedGameTests {
 
     @GameTest
     public static void selfLoadingCrossbow(GameTestHelper helper) {
-        ItemStack crossbow = atLevel(Items.CROSSBOW, 5);
+        ItemStack crossbow = atMax(Items.CROSSBOW);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), crossbow);
         player.getInventory().add(new ItemStack(Items.ARROW, 8));
         com.afjan.tempered.ability.Abilities.tickAutoload(player);
@@ -511,7 +541,7 @@ public final class TemperedGameTests {
 
     @GameTest(structure = "forge:empty7x5x7")
     public static void bowVolleyFiresThreeArrows(GameTestHelper helper) {
-        ItemStack bow = atLevel(Items.BOW, 5);
+        ItemStack bow = atMax(Items.BOW);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(3, 1, 3), bow);
         Arrow arrow = new Arrow(helper.getLevel(), player, new ItemStack(Items.ARROW), bow.copy());
         arrow.shootFromRotation(player, 0.0F, 0.0F, 0.0F, 3.0F, 0.0F);
@@ -525,7 +555,7 @@ public final class TemperedGameTests {
 
     @GameTest
     public static void tridentCallsLightning(GameTestHelper helper) {
-        ItemStack trident = atLevel(Items.TRIDENT, 5);
+        ItemStack trident = atMax(Items.TRIDENT);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), ItemStack.EMPTY);
         ThrownTrident thrown = new ThrownTrident(helper.getLevel(), player, trident);
         Zombie zombie = helper.spawn(EntityTypes.ZOMBIE, new BlockPos(3, 1, 3));
@@ -538,7 +568,7 @@ public final class TemperedGameTests {
 
     @GameTest(structure = "forge:empty7x5x7")
     public static void maceShockwaveHitsNearbyFoes(GameTestHelper helper) {
-        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), atLevel(Items.MACE, 5));
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), atMax(Items.MACE));
         Zombie target = helper.spawn(EntityTypes.ZOMBIE, new BlockPos(3, 1, 3));
         Zombie bystander = helper.spawn(EntityTypes.ZOMBIE, new BlockPos(5, 1, 3));
         player.fallDistance = 6.0;
@@ -549,19 +579,19 @@ public final class TemperedGameTests {
 
     @GameTest(structure = "forge:empty9x4x9")
     public static void shearSweepShearsTheFlock(GameTestHelper helper) {
-        ItemStack shears = atLevel(Items.SHEARS, 5);
+        ItemStack shears = atMax(Items.SHEARS);
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), shears);
         List<net.minecraft.world.entity.animal.sheep.Sheep> flock = new ArrayList<>();
         for (int i = 0; i < 3; i++) flock.add(helper.spawn(EntityTypes.SHEEP, new BlockPos(3 + i, 1, 4)));
         player.interactOn(flock.getFirst(), InteractionHand.MAIN_HAND, net.minecraft.world.phys.Vec3.ZERO);
         for (var sheep : flock) helper.assertTrue(sheep.isSheared(), "a sheep kept its wool");
-        helper.assertValueEqual(count(shears, Stat.SHEARED) - count(atLevel(Items.SHEARS, 5), Stat.SHEARED), 3, "sheared animals");
+        helper.assertValueEqual(count(shears, Stat.SHEARED) - count(atMax(Items.SHEARS), Stat.SHEARED), 3, "sheared animals");
         helper.succeed();
     }
 
     @GameTest
     public static void lifestealHeals(GameTestHelper helper) {
-        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), atLevel(Items.DIAMOND_SWORD, 5));
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), atLevel(Items.DIAMOND_SWORD, 9));
         player.setHealth(10.0F);
         var golem = helper.spawn(EntityTypes.IRON_GOLEM, new BlockPos(2, 1, 2));
         golem.hurtServer(helper.getLevel(), player.damageSources().playerAttack(player), 10.0F);
@@ -575,6 +605,72 @@ public final class TemperedGameTests {
         ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), sword);
         for (int i = 0; i < 5; i++) Progress.record(player, sword, Stat.KILLS);
         helper.assertValueEqual(Mastery.level(sword), 1, "wooden sword level after 5 kills");
+        // Straight to the top: every level-up message (and the final one) must build without errors.
+        ItemStack maxed = atLevel(Items.WOODEN_SWORD, Tracks.MAIN_LEVELS - 1);
+        player.setItemInHand(InteractionHand.MAIN_HAND, maxed);
+        Milestone last = Tracks.get(maxed).milestones.getLast();
+        for (Milestone.Req req : last.reqs()) {
+            for (int i = Mastery.of(maxed).get(req.stat()); i < req.amount(); i++) Progress.record(player, maxed, req.stat());
+        }
+        helper.assertValueEqual(Mastery.level(maxed), Tracks.MAIN_LEVELS, "wooden sword level after the last challenge");
+        helper.succeed();
+    }
+
+    // ------------------------------------------------------------------------------------------------ capstones
+
+    @GameTest
+    public static void magnetPullsDropsIntoTheInventory(GameTestHelper helper) {
+        ItemStack pickaxe = atMax(Items.IRON_PICKAXE);
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), pickaxe);
+        player.setShiftKeyDown(true);
+        BlockPos rel = new BlockPos(2, 1, 2);
+        helper.setBlock(rel, Blocks.IRON_ORE);
+        player.gameMode.destroyBlock(helper.absolutePos(rel));
+        int raw = 0;
+        for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+            ItemStack stack = player.getInventory().getItem(i);
+            if (stack.is(Items.RAW_IRON)) raw += stack.getCount();
+        }
+        helper.assertTrue(raw >= 1, "no raw iron in the inventory");
+        var box = new net.minecraft.world.phys.AABB(helper.absolutePos(rel)).inflate(3);
+        helper.assertTrue(helper.getLevel().getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, box).isEmpty(),
+                "drops still fell on the ground");
+        helper.succeed();
+    }
+
+    @GameTest
+    public static void soulHarvestEmpowersOnKill(GameTestHelper helper) {
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), atMax(Items.IRON_SWORD));
+        Zombie zombie = helper.spawn(EntityTypes.ZOMBIE, new BlockPos(2, 1, 2));
+        zombie.hurtServer(helper.getLevel(), player.damageSources().playerAttack(player), 1000.0F);
+        helper.assertTrue(zombie.isDeadOrDying(), "zombie survived");
+        helper.assertTrue(player.hasEffect(net.minecraft.world.effect.MobEffects.STRENGTH), "no Strength after a kill");
+
+        ServerPlayer other = TestPlayers.survival(helper, new BlockPos(4, 1, 0), atLevel(Items.IRON_SWORD, 19));
+        Zombie second = helper.spawn(EntityTypes.ZOMBIE, new BlockPos(4, 1, 2));
+        second.hurtServer(helper.getLevel(), other.damageSources().playerAttack(other), 1000.0F);
+        helper.assertFalse(other.hasEffect(net.minecraft.world.effect.MobEffects.STRENGTH), "Soul Harvest before mastery XX");
+        helper.succeed();
+    }
+
+    @GameTest(structure = "forge:empty7x5x7")
+    public static void warhorseShieldsRiderAndMount(GameTestHelper helper) {
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(3, 1, 3), atMax(Items.IRON_SPEAR));
+        var horse = helper.spawn(EntityTypes.HORSE, new BlockPos(3, 1, 3));
+        helper.assertTrue(player.startRiding(horse, true, false), "could not mount the horse");
+        var source = player.damageSources().generic();
+        net.minecraftforge.event.entity.living.LivingHurtEvent rider = new net.minecraftforge.event.entity.living.LivingHurtEvent(player, source, 10.0F);
+        net.minecraftforge.event.entity.living.LivingHurtEvent.BUS.post(rider);
+        helper.assertTrue(Math.abs(rider.getAmount() - 6.0F) < 0.01F, "rider took " + rider.getAmount());
+        net.minecraftforge.event.entity.living.LivingHurtEvent mount = new net.minecraftforge.event.entity.living.LivingHurtEvent(horse, source, 10.0F);
+        net.minecraftforge.event.entity.living.LivingHurtEvent.BUS.post(mount);
+        helper.assertTrue(Math.abs(mount.getAmount() - 6.0F) < 0.01F, "mount took " + mount.getAmount());
+
+        player.setItemInHand(InteractionHand.MAIN_HAND, atLevel(Items.IRON_SPEAR, 19));
+        net.minecraftforge.event.entity.living.LivingHurtEvent plain = new net.minecraftforge.event.entity.living.LivingHurtEvent(horse, source, 10.0F);
+        net.minecraftforge.event.entity.living.LivingHurtEvent.BUS.post(plain);
+        helper.assertTrue(Math.abs(plain.getAmount() - 10.0F) < 0.01F, "Warhorse before mastery XX");
+        player.stopRiding();
         helper.succeed();
     }
 }

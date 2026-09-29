@@ -10,71 +10,176 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 15 blocks | +8% mining speed |
-| II | Mine 45 blocks<br>Mine 2 ores | 15% chance to ignore wear |
-| III | Mine 100 blocks<br>Mine 5 ores | +20% mining speed<br>10% chance for double ore drops |
-| IV | Mine 180 blocks<br>Mine 10 ores | +32% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 300 blocks<br>Mine 20 ores | +48% mining speed<br>30% chance for double ore drops<br>Vein Miner: also mines up to 4 connected ores |
+| I | Mine 15 blocks | +4% mining speed |
+| II | Mine 40 blocks<br>Mine 2 ores | +8% mining speed |
+| III | Mine 70 blocks | +12% mining speed<br>10% chance to ignore wear |
+| IV | Mine 110 blocks<br>Mine 5 ores | +16% mining speed |
+| V | Mine 150 blocks | +20% mining speed |
+| VI | Mine 210 blocks<br>Mine 30 blocks below Y 0 | +24% mining speed<br>10% chance for double ore drops |
+| VII | Mine 290 blocks | +28% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 380 blocks<br>Mine 15 ores | +32% mining speed |
+| IX | Mine 480 blocks<br>Mine 25 blocks in the Nether | +36% mining speed |
+| X | Mine 600 blocks | +40% mining speed<br>Vein Miner: also mines up to 4 connected ores |
+| XI | Mine 750 blocks<br>Mine 150 blocks below Y 0 | +44% mining speed<br>30% chance to ignore wear |
+| XII | Mine 930 blocks<br>Mine 30 ores | +48% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 1150 blocks<br>Mine 150 blocks in the Nether | +52% mining speed |
+| XIV | Mine 1400 blocks<br>Mine 50 blocks in the End | +56% mining speed |
+| XV | Mine 1650 blocks<br>Mine 60 ores | +60% mining speed<br>40% chance to ignore wear |
+| XVI | Mine 2050 blocks<br>Mine 400 blocks in the Nether | +64% mining speed<br>Vein Miner: also mines up to 8 connected ores |
+| XVII | Mine 2500 blocks<br>Mine 300 blocks in the End | +68% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 3000 blocks<br>Mine 100 ores | +72% mining speed |
+| XIX | Mine 3600 blocks<br>Mine 600 blocks below Y 0 | +76% mining speed<br>50% chance to ignore wear |
+| XX | Mine 4500 blocks<br>Mine 150 ores | +80% mining speed<br>40% chance for double ore drops<br>Magnet: drops fly straight into your inventory |
 
 ### Stone Pickaxe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 30 blocks | +9% mining speed |
-| II | Mine 90 blocks<br>Mine 4 ores | 15% chance to ignore wear |
-| III | Mine 200 blocks<br>Mine 12 ores | +23% mining speed<br>10% chance for double ore drops |
-| IV | Mine 360 blocks<br>Mine 60 blocks below Y 0 | +36% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 600 blocks<br>Mine 40 ores | +54% mining speed<br>30% chance for double ore drops<br>Vein Miner: also mines up to 6 connected ores |
+| I | Mine 30 blocks | +5% mining speed |
+| II | Mine 75 blocks<br>Mine 4 ores | +9% mining speed |
+| III | Mine 140 blocks | +14% mining speed<br>10% chance to ignore wear |
+| IV | Mine 210 blocks<br>Mine 10 ores | +18% mining speed |
+| V | Mine 300 blocks | +23% mining speed |
+| VI | Mine 420 blocks<br>Mine 60 blocks below Y 0 | +27% mining speed<br>10% chance for double ore drops |
+| VII | Mine 570 blocks | +32% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 750 blocks<br>Mine 30 ores | +36% mining speed |
+| IX | Mine 960 blocks<br>Mine 50 blocks in the Nether | +41% mining speed |
+| X | Mine 1200 blocks | +45% mining speed<br>Vein Miner: also mines up to 6 connected ores |
+| XI | Mine 1500 blocks<br>Mine 300 blocks below Y 0 | +50% mining speed<br>30% chance to ignore wear |
+| XII | Mine 1850 blocks<br>Mine 60 ores | +54% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 2300 blocks<br>Mine 300 blocks in the Nether | +59% mining speed |
+| XIV | Mine 2750 blocks<br>Mine 100 blocks in the End | +63% mining speed |
+| XV | Mine 3300 blocks<br>Mine 120 ores | +68% mining speed<br>40% chance to ignore wear |
+| XVI | Mine 4050 blocks<br>Mine 800 blocks in the Nether | +72% mining speed<br>Vein Miner: also mines up to 12 connected ores |
+| XVII | Mine 4950 blocks<br>Mine 600 blocks in the End | +77% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 6000 blocks<br>Mine 200 ores | +81% mining speed |
+| XIX | Mine 7200 blocks<br>Mine 1200 blocks below Y 0 | +86% mining speed<br>50% chance to ignore wear |
+| XX | Mine 9000 blocks<br>Mine 300 ores | +90% mining speed<br>40% chance for double ore drops<br>Magnet: drops fly straight into your inventory |
 
 ### Copper Pickaxe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 45 blocks | +10% mining speed |
-| II | Mine 140 blocks<br>Mine 6 ores | 15% chance to ignore wear |
-| III | Mine 300 blocks<br>Mine 20 ores | +25% mining speed<br>10% chance for double ore drops |
-| IV | Mine 540 blocks<br>Mine 120 blocks below Y 0 | +40% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 900 blocks<br>Mine 60 ores | +60% mining speed<br>30% chance for double ore drops<br>Vein Miner: also mines up to 8 connected ores |
+| I | Mine 45 blocks | +5% mining speed |
+| II | Mine 110 blocks<br>Mine 6 ores | +10% mining speed |
+| III | Mine 200 blocks | +15% mining speed<br>10% chance to ignore wear |
+| IV | Mine 320 blocks<br>Mine 15 ores | +20% mining speed |
+| V | Mine 450 blocks | +25% mining speed |
+| VI | Mine 630 blocks<br>Mine 90 blocks below Y 0 | +30% mining speed<br>10% chance for double ore drops |
+| VII | Mine 860 blocks | +35% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 1150 blocks<br>Mine 45 ores | +40% mining speed |
+| IX | Mine 1450 blocks<br>Mine 75 blocks in the Nether | +45% mining speed |
+| X | Mine 1800 blocks | +50% mining speed<br>Vein Miner: also mines up to 8 connected ores |
+| XI | Mine 2250 blocks<br>Mine 450 blocks below Y 0 | +55% mining speed<br>30% chance to ignore wear |
+| XII | Mine 2800 blocks<br>Mine 90 ores | +60% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 3400 blocks<br>Mine 450 blocks in the Nether | +65% mining speed |
+| XIV | Mine 4150 blocks<br>Mine 150 blocks in the End | +70% mining speed |
+| XV | Mine 4950 blocks<br>Mine 180 ores | +75% mining speed<br>40% chance to ignore wear |
+| XVI | Mine 6100 blocks<br>Mine 1200 blocks in the Nether | +80% mining speed<br>Vein Miner: also mines up to 16 connected ores |
+| XVII | Mine 7450 blocks<br>Mine 900 blocks in the End | +85% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 9000 blocks<br>Mine 300 ores | +90% mining speed |
+| XIX | Mine 11000 blocks<br>Mine 1800 blocks below Y 0 | +95% mining speed<br>50% chance to ignore wear |
+| XX | Mine 13500 blocks<br>Mine 450 ores | +100% mining speed<br>40% chance for double ore drops<br>Magnet: drops fly straight into your inventory |
 
 ### Iron Pickaxe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 60 blocks | +11% mining speed |
-| II | Mine 180 blocks<br>Mine 8 ores | 15% chance to ignore wear |
-| III | Mine 400 blocks<br>Mine 40 ores | +28% mining speed<br>10% chance for double ore drops |
-| IV | Mine 720 blocks<br>Mine 250 blocks below Y 0 | +44% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 1200 blocks<br>Mine 8 diamond or emerald ores | +66% mining speed<br>30% chance for double ore drops<br>Vein Miner: also mines up to 12 connected ores |
+| I | Mine 60 blocks | +6% mining speed |
+| II | Mine 150 blocks<br>Mine 8 ores | +11% mining speed |
+| III | Mine 270 blocks | +17% mining speed<br>10% chance to ignore wear |
+| IV | Mine 420 blocks<br>Mine 20 ores | +22% mining speed |
+| V | Mine 600 blocks | +28% mining speed |
+| VI | Mine 840 blocks<br>Mine 120 blocks below Y 0 | +33% mining speed<br>10% chance for double ore drops |
+| VII | Mine 1150 blocks | +39% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 1500 blocks<br>Mine 60 ores | +44% mining speed |
+| IX | Mine 1900 blocks<br>Mine 100 blocks in the Nether | +50% mining speed |
+| X | Mine 2400 blocks | +55% mining speed<br>Vein Miner: also mines up to 12 connected ores |
+| XI | Mine 3000 blocks<br>Mine 600 blocks below Y 0 | +61% mining speed<br>30% chance to ignore wear |
+| XII | Mine 3700 blocks<br>Mine 8 diamond or emerald ores | +66% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 4550 blocks<br>Mine 600 blocks in the Nether | +72% mining speed |
+| XIV | Mine 5500 blocks<br>Mine 200 blocks in the End | +77% mining speed |
+| XV | Mine 6600 blocks<br>Mine 240 ores | +83% mining speed<br>40% chance to ignore wear |
+| XVI | Mine 8100 blocks<br>Mine 1600 blocks in the Nether | +88% mining speed<br>Vein Miner: also mines up to 24 connected ores |
+| XVII | Mine 9900 blocks<br>Mine 1200 blocks in the End | +94% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 12000 blocks<br>Mine 25 diamond or emerald ores | +99% mining speed |
+| XIX | Mine 14500 blocks<br>Mine 2400 blocks below Y 0 | +105% mining speed<br>50% chance to ignore wear |
+| XX | Mine 18000 blocks<br>Mine 50 diamond or emerald ores | +110% mining speed<br>40% chance for double ore drops<br>Excavate: mines 3x3 blocks at once<br>Magnet: drops fly straight into your inventory |
 
 ### Golden Pickaxe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 19 blocks | +10% mining speed |
-| II | Mine 55 blocks<br>Mine 3 ores | 15% chance to ignore wear |
-| III | Mine 130 blocks<br>Mine 40 blocks in the Nether | +25% mining speed<br>10% chance for double ore drops<br>+50% experience (Gilded) |
-| IV | Mine 230 blocks<br>Mine 120 blocks in the Nether | +40% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 380 blocks<br>Mine 250 blocks in the Nether | +60% mining speed<br>30% chance for double ore drops<br>+100% experience (Gilded)<br>Vein Miner: also mines up to 8 connected ores |
+| I | Mine 15 blocks | +5% mining speed |
+| II | Mine 40 blocks<br>Mine 2 ores | +10% mining speed |
+| III | Mine 70 blocks | +15% mining speed<br>10% chance to ignore wear |
+| IV | Mine 110 blocks<br>Mine 5 ores | +20% mining speed |
+| V | Mine 150 blocks | +25% mining speed<br>+25% experience (Gilded) |
+| VI | Mine 210 blocks<br>Mine 30 blocks below Y 0 | +30% mining speed<br>10% chance for double ore drops |
+| VII | Mine 290 blocks | +35% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 380 blocks<br>Mine 15 ores | +40% mining speed |
+| IX | Mine 480 blocks<br>Mine 25 blocks in the Nether | +45% mining speed |
+| X | Mine 600 blocks | +50% mining speed<br>+50% experience (Gilded)<br>Vein Miner: also mines up to 8 connected ores |
+| XI | Mine 750 blocks<br>Mine 150 blocks below Y 0 | +55% mining speed<br>30% chance to ignore wear |
+| XII | Mine 930 blocks<br>Mine 30 ores | +60% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 1150 blocks<br>Mine 150 blocks in the Nether | +65% mining speed |
+| XIV | Mine 1400 blocks<br>Mine 50 blocks in the End | +70% mining speed |
+| XV | Mine 1650 blocks<br>Mine 60 ores | +75% mining speed<br>40% chance to ignore wear<br>+75% experience (Gilded) |
+| XVI | Mine 2050 blocks<br>Mine 400 blocks in the Nether | +80% mining speed<br>Vein Miner: also mines up to 16 connected ores |
+| XVII | Mine 2500 blocks<br>Mine 300 blocks in the End | +85% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 3000 blocks<br>Mine 100 ores | +90% mining speed |
+| XIX | Mine 3600 blocks<br>Mine 600 blocks below Y 0 | +95% mining speed<br>50% chance to ignore wear |
+| XX | Mine 4500 blocks<br>Mine 150 ores | +100% mining speed<br>40% chance for double ore drops<br>+100% experience (Gilded)<br>Magnet: drops fly straight into your inventory |
 
 ### Diamond Pickaxe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 120 blocks | +13% mining speed |
-| II | Mine 360 blocks<br>Mine 16 ores | 15% chance to ignore wear |
-| III | Mine 800 blocks<br>Mine 300 blocks in the Nether | +31% mining speed<br>10% chance for double ore drops |
-| IV | Mine 1450 blocks<br>Mine 200 blocks in the End<br>Mine 16 obsidian | +50% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 2400 blocks<br>Mine 8 Ancient Debris | +75% mining speed<br>30% chance for double ore drops<br>Vein Miner: also mines up to 24 connected ores<br>Excavate: mines 3x3 blocks at once |
+| I | Mine 120 blocks | +6% mining speed |
+| II | Mine 300 blocks<br>Mine 16 ores | +13% mining speed |
+| III | Mine 540 blocks | +19% mining speed<br>10% chance to ignore wear |
+| IV | Mine 840 blocks<br>Mine 40 ores | +25% mining speed |
+| V | Mine 1200 blocks | +31% mining speed |
+| VI | Mine 1700 blocks<br>Mine 240 blocks below Y 0 | +38% mining speed<br>10% chance for double ore drops |
+| VII | Mine 2300 blocks | +44% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 3000 blocks<br>Mine 120 ores | +50% mining speed |
+| IX | Mine 3850 blocks<br>Mine 200 blocks in the Nether | +56% mining speed |
+| X | Mine 4800 blocks | +63% mining speed<br>Vein Miner: also mines up to 24 connected ores |
+| XI | Mine 6000 blocks<br>Mine 1200 blocks below Y 0 | +69% mining speed<br>30% chance to ignore wear |
+| XII | Mine 7450 blocks<br>Mine 16 diamond or emerald ores | +75% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 9100 blocks<br>Mine 1200 blocks in the Nether | +81% mining speed |
+| XIV | Mine 11000 blocks<br>Mine 400 blocks in the End | +88% mining speed |
+| XV | Mine 13000 blocks<br>Mine 30 obsidian | +94% mining speed<br>40% chance to ignore wear<br>Excavate: mines 3x3 blocks at once |
+| XVI | Mine 16000 blocks<br>Mine 4 Ancient Debris | +100% mining speed<br>Vein Miner: also mines up to 48 connected ores |
+| XVII | Mine 20000 blocks<br>Mine 2400 blocks in the End | +106% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 24000 blocks<br>Mine 50 diamond or emerald ores | +113% mining speed |
+| XIX | Mine 29000 blocks<br>Mine 130 obsidian | +119% mining speed<br>50% chance to ignore wear |
+| XX | Mine 36000 blocks<br>Mine 30 Ancient Debris | +125% mining speed<br>40% chance for double ore drops<br>Magnet: drops fly straight into your inventory |
 
 ### Netherite Pickaxe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Mine 150 blocks | +15% mining speed |
-| II | Mine 450 blocks<br>Mine 20 ores | 15% chance to ignore wear |
-| III | Mine 1000 blocks<br>Mine 600 blocks in the Nether<br>Mine 4 Ancient Debris | +38% mining speed<br>10% chance for double ore drops |
-| IV | Mine 1800 blocks<br>Mine 500 blocks in the End<br>Mine 50 obsidian | +60% mining speed<br>35% chance to ignore wear<br>20% chance for double ore drops |
-| V | Mine 3000 blocks<br>Mine 25 Ancient Debris<br>Mine 25 diamond or emerald ores | +90% mining speed<br>30% chance for double ore drops<br>Vein Miner: also mines up to 48 connected ores<br>Excavate: mines 3x3 blocks at once |
+| I | Mine 150 blocks | +8% mining speed |
+| II | Mine 380 blocks<br>Mine 20 ores | +15% mining speed |
+| III | Mine 680 blocks | +23% mining speed<br>10% chance to ignore wear |
+| IV | Mine 1050 blocks<br>Mine 50 ores | +30% mining speed |
+| V | Mine 1500 blocks | +38% mining speed |
+| VI | Mine 2100 blocks<br>Mine 300 blocks below Y 0 | +45% mining speed<br>10% chance for double ore drops |
+| VII | Mine 2850 blocks | +53% mining speed<br>20% chance to ignore wear |
+| VIII | Mine 3750 blocks<br>Mine 150 ores | +60% mining speed |
+| IX | Mine 4800 blocks<br>Mine 250 blocks in the Nether | +68% mining speed |
+| X | Mine 6000 blocks | +75% mining speed<br>Vein Miner: also mines up to 48 connected ores |
+| XI | Mine 7500 blocks<br>Mine 1500 blocks below Y 0 | +83% mining speed<br>30% chance to ignore wear |
+| XII | Mine 9300 blocks<br>Mine 20 diamond or emerald ores | +90% mining speed<br>20% chance for double ore drops |
+| XIII | Mine 11500 blocks<br>Mine 1500 blocks in the Nether | +98% mining speed |
+| XIV | Mine 14000 blocks<br>Mine 500 blocks in the End | +105% mining speed |
+| XV | Mine 16500 blocks<br>Mine 40 obsidian | +113% mining speed<br>40% chance to ignore wear<br>Excavate: mines 3x3 blocks at once |
+| XVI | Mine 20500 blocks<br>Mine 5 Ancient Debris | +120% mining speed<br>Vein Miner: also mines up to 96 connected ores |
+| XVII | Mine 25000 blocks<br>Mine 3000 blocks in the End | +128% mining speed<br>30% chance for double ore drops |
+| XVIII | Mine 30000 blocks<br>Mine 60 diamond or emerald ores | +135% mining speed |
+| XIX | Mine 36000 blocks<br>Mine 160 obsidian | +143% mining speed<br>50% chance to ignore wear |
+| XX | Mine 45000 blocks<br>Mine 40 Ancient Debris | +150% mining speed<br>40% chance for double ore drops<br>Excavate: mines 5x5 blocks at once<br>Magnet: drops fly straight into your inventory |
 
 ## Axe
 
@@ -82,71 +187,176 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 10 logs | +8% mining speed |
-| II | Chop 30 logs | +4% damage<br>15% chance to ignore wear |
-| III | Chop 70 logs<br>Defeat 3 mobs | +20% mining speed<br>10% chance for double logs |
-| IV | Chop 130 logs<br>Defeat 8 mobs | +32% mining speed<br>+8% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 220 logs<br>Defeat 15 mobs | +48% mining speed<br>+12% damage<br>30% chance for double logs<br>Timber: fells whole trees (up to 16 logs) |
+| I | Chop 10 logs | +4% mining speed |
+| II | Chop 25 logs | +8% mining speed<br>+2% damage |
+| III | Chop 45 logs<br>Defeat a mob | +12% mining speed<br>10% chance to ignore wear |
+| IV | Chop 70 logs | +16% mining speed |
+| V | Chop 100 logs | +20% mining speed<br>10% chance for double logs |
+| VI | Chop 140 logs<br>Defeat 3 mobs | +24% mining speed<br>+5% damage |
+| VII | Chop 190 logs | +28% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 250 logs | +32% mining speed |
+| IX | Chop 320 logs<br>Chop 10 blocks in the Nether | +36% mining speed<br>20% chance for double logs |
+| X | Chop 400 logs | +40% mining speed<br>+7% damage<br>Timber: fells whole trees (up to 16 logs) |
+| XI | Chop 500 logs | +44% mining speed<br>30% chance to ignore wear |
+| XII | Chop 620 logs<br>Defeat 10 mobs | +48% mining speed |
+| XIII | Chop 760 logs<br>Chop 60 blocks in the Nether | +52% mining speed<br>30% chance for double logs |
+| XIV | Chop 920 logs | +56% mining speed<br>+10% damage |
+| XV | Chop 1100 logs<br>Chop 20 chorus plants in the End | +60% mining speed<br>40% chance to ignore wear |
+| XVI | Chop 1350 logs | +64% mining speed<br>Timber: fells whole trees (up to 32 logs) |
+| XVII | Chop 1650 logs<br>Defeat 30 mobs | +68% mining speed<br>40% chance for double logs |
+| XVIII | Chop 2000 logs<br>Chop 200 blocks in the Nether | +72% mining speed<br>+12% damage |
+| XIX | Chop 2400 logs<br>Chop 100 chorus plants in the End | +76% mining speed<br>50% chance to ignore wear |
+| XX | Chop 3000 logs<br>Defeat an elite foe | +80% mining speed<br>Magnet: drops fly straight into your inventory |
 
 ### Stone Axe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 20 logs | +9% mining speed |
-| II | Chop 60 logs | +5% damage<br>15% chance to ignore wear |
-| III | Chop 140 logs<br>Defeat 5 mobs | +23% mining speed<br>10% chance for double logs |
-| IV | Chop 260 logs<br>Defeat 12 mobs | +36% mining speed<br>+9% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 440 logs<br>Defeat 25 mobs | +54% mining speed<br>+14% damage<br>30% chance for double logs<br>Timber: fells whole trees (up to 24 logs) |
+| I | Chop 20 logs | +5% mining speed |
+| II | Chop 50 logs | +9% mining speed<br>+3% damage |
+| III | Chop 90 logs<br>Defeat 2 mobs | +14% mining speed<br>10% chance to ignore wear |
+| IV | Chop 140 logs | +18% mining speed |
+| V | Chop 200 logs | +23% mining speed<br>10% chance for double logs |
+| VI | Chop 280 logs<br>Defeat 6 mobs | +27% mining speed<br>+5% damage |
+| VII | Chop 380 logs | +32% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 500 logs | +36% mining speed |
+| IX | Chop 640 logs<br>Chop 20 blocks in the Nether | +41% mining speed<br>20% chance for double logs |
+| X | Chop 800 logs | +45% mining speed<br>+8% damage<br>Timber: fells whole trees (up to 24 logs) |
+| XI | Chop 1000 logs | +50% mining speed<br>30% chance to ignore wear |
+| XII | Chop 1250 logs<br>Defeat 20 mobs | +54% mining speed |
+| XIII | Chop 1500 logs<br>Chop 120 blocks in the Nether | +59% mining speed<br>30% chance for double logs |
+| XIV | Chop 1850 logs | +63% mining speed<br>+11% damage |
+| XV | Chop 2200 logs<br>Chop 40 chorus plants in the End | +68% mining speed<br>40% chance to ignore wear |
+| XVI | Chop 2700 logs | +72% mining speed<br>Timber: fells whole trees (up to 48 logs) |
+| XVII | Chop 3300 logs<br>Defeat 60 mobs | +77% mining speed<br>40% chance for double logs |
+| XVIII | Chop 4000 logs<br>Chop 400 blocks in the Nether | +81% mining speed<br>+14% damage |
+| XIX | Chop 4800 logs<br>Chop 200 chorus plants in the End | +86% mining speed<br>50% chance to ignore wear |
+| XX | Chop 6000 logs<br>Defeat an elite foe | +90% mining speed<br>Magnet: drops fly straight into your inventory |
 
 ### Copper Axe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 30 logs | +10% mining speed |
-| II | Chop 90 logs | +5% damage<br>15% chance to ignore wear |
-| III | Chop 210 logs<br>Defeat 8 mobs | +25% mining speed<br>10% chance for double logs |
-| IV | Chop 390 logs<br>Defeat 20 mobs | +40% mining speed<br>+10% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 660 logs<br>Defeat 40 mobs | +60% mining speed<br>+15% damage<br>30% chance for double logs<br>Timber: fells whole trees (up to 32 logs) |
+| I | Chop 30 logs | +5% mining speed |
+| II | Chop 75 logs | +10% mining speed<br>+3% damage |
+| III | Chop 140 logs<br>Defeat 3 mobs | +15% mining speed<br>10% chance to ignore wear |
+| IV | Chop 210 logs | +20% mining speed |
+| V | Chop 300 logs | +25% mining speed<br>10% chance for double logs |
+| VI | Chop 420 logs<br>Defeat 9 mobs | +30% mining speed<br>+6% damage |
+| VII | Chop 570 logs | +35% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 750 logs | +40% mining speed |
+| IX | Chop 960 logs<br>Chop 30 blocks in the Nether | +45% mining speed<br>20% chance for double logs |
+| X | Chop 1200 logs | +50% mining speed<br>+9% damage<br>Timber: fells whole trees (up to 32 logs) |
+| XI | Chop 1500 logs | +55% mining speed<br>30% chance to ignore wear |
+| XII | Chop 1850 logs<br>Defeat 30 mobs | +60% mining speed |
+| XIII | Chop 2300 logs<br>Chop 180 blocks in the Nether | +65% mining speed<br>30% chance for double logs |
+| XIV | Chop 2750 logs | +70% mining speed<br>+12% damage |
+| XV | Chop 3300 logs<br>Chop 60 chorus plants in the End | +75% mining speed<br>40% chance to ignore wear |
+| XVI | Chop 4050 logs | +80% mining speed<br>Timber: fells whole trees (up to 64 logs) |
+| XVII | Chop 4950 logs<br>Defeat 90 mobs | +85% mining speed<br>40% chance for double logs |
+| XVIII | Chop 6000 logs<br>Chop 600 blocks in the Nether | +90% mining speed<br>+15% damage |
+| XIX | Chop 7200 logs<br>Chop 300 chorus plants in the End | +95% mining speed<br>50% chance to ignore wear |
+| XX | Chop 9000 logs<br>Defeat 2 elite foes | +100% mining speed<br>Magnet: drops fly straight into your inventory |
 
 ### Iron Axe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 40 logs | +11% mining speed |
-| II | Chop 120 logs | +6% damage<br>15% chance to ignore wear |
-| III | Chop 280 logs<br>Defeat 10 mobs | +28% mining speed<br>10% chance for double logs |
-| IV | Chop 520 logs<br>Chop 65 blocks in the Nether | +44% mining speed<br>+11% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 880 logs<br>Defeat 60 mobs | +66% mining speed<br>+17% damage<br>30% chance for double logs<br>Timber: fells whole trees (up to 48 logs) |
+| I | Chop 40 logs | +6% mining speed |
+| II | Chop 100 logs | +11% mining speed<br>+3% damage |
+| III | Chop 180 logs<br>Defeat 4 mobs | +17% mining speed<br>10% chance to ignore wear |
+| IV | Chop 280 logs | +22% mining speed |
+| V | Chop 400 logs | +28% mining speed<br>10% chance for double logs |
+| VI | Chop 560 logs<br>Defeat 12 mobs | +33% mining speed<br>+7% damage |
+| VII | Chop 760 logs | +39% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 1000 logs | +44% mining speed |
+| IX | Chop 1300 logs<br>Chop 40 blocks in the Nether | +50% mining speed<br>20% chance for double logs |
+| X | Chop 1600 logs | +55% mining speed<br>+10% damage<br>Timber: fells whole trees (up to 48 logs) |
+| XI | Chop 2000 logs | +61% mining speed<br>30% chance to ignore wear |
+| XII | Chop 2500 logs<br>Defeat 40 mobs | +66% mining speed |
+| XIII | Chop 3050 logs<br>Chop 240 blocks in the Nether | +72% mining speed<br>30% chance for double logs |
+| XIV | Chop 3700 logs | +77% mining speed<br>+13% damage |
+| XV | Chop 4400 logs<br>Chop 80 chorus plants in the End | +83% mining speed<br>40% chance to ignore wear |
+| XVI | Chop 5400 logs | +88% mining speed<br>Timber: fells whole trees (up to 96 logs) |
+| XVII | Chop 6600 logs<br>Defeat 120 mobs | +94% mining speed<br>40% chance for double logs |
+| XVIII | Chop 8000 logs<br>Chop 800 blocks in the Nether | +99% mining speed<br>+17% damage |
+| XIX | Chop 9600 logs<br>Chop 400 chorus plants in the End | +105% mining speed<br>50% chance to ignore wear |
+| XX | Chop 12000 logs<br>Defeat 2 elite foes | +110% mining speed<br>Magnet: drops fly straight into your inventory |
 
 ### Golden Axe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 13 logs | +10% mining speed |
-| II | Chop 40 logs | +5% damage<br>15% chance to ignore wear |
-| III | Chop 90 logs<br>Chop 25 blocks in the Nether | +25% mining speed<br>10% chance for double logs<br>+50% experience (Gilded) |
-| IV | Chop 160 logs<br>Chop 65 blocks in the Nether | +40% mining speed<br>+10% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 280 logs<br>Chop 130 blocks in the Nether | +60% mining speed<br>+15% damage<br>30% chance for double logs<br>+100% experience (Gilded)<br>Timber: fells whole trees (up to 32 logs) |
+| I | Chop 10 logs | +5% mining speed |
+| II | Chop 25 logs | +10% mining speed<br>+3% damage |
+| III | Chop 45 logs<br>Defeat a mob | +15% mining speed<br>10% chance to ignore wear |
+| IV | Chop 70 logs | +20% mining speed |
+| V | Chop 100 logs | +25% mining speed<br>10% chance for double logs<br>+25% experience (Gilded) |
+| VI | Chop 140 logs<br>Defeat 3 mobs | +30% mining speed<br>+6% damage |
+| VII | Chop 190 logs | +35% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 250 logs | +40% mining speed |
+| IX | Chop 320 logs<br>Chop 10 blocks in the Nether | +45% mining speed<br>20% chance for double logs |
+| X | Chop 400 logs | +50% mining speed<br>+9% damage<br>+50% experience (Gilded)<br>Timber: fells whole trees (up to 32 logs) |
+| XI | Chop 500 logs | +55% mining speed<br>30% chance to ignore wear |
+| XII | Chop 620 logs<br>Defeat 10 mobs | +60% mining speed |
+| XIII | Chop 760 logs<br>Chop 60 blocks in the Nether | +65% mining speed<br>30% chance for double logs |
+| XIV | Chop 920 logs | +70% mining speed<br>+12% damage |
+| XV | Chop 1100 logs<br>Chop 20 chorus plants in the End | +75% mining speed<br>40% chance to ignore wear<br>+75% experience (Gilded) |
+| XVI | Chop 1350 logs | +80% mining speed<br>Timber: fells whole trees (up to 64 logs) |
+| XVII | Chop 1650 logs<br>Defeat 30 mobs | +85% mining speed<br>40% chance for double logs |
+| XVIII | Chop 2000 logs<br>Chop 200 blocks in the Nether | +90% mining speed<br>+15% damage |
+| XIX | Chop 2400 logs<br>Chop 100 chorus plants in the End | +95% mining speed<br>50% chance to ignore wear |
+| XX | Chop 3000 logs<br>Defeat an elite foe | +100% mining speed<br>+100% experience (Gilded)<br>Magnet: drops fly straight into your inventory |
 
 ### Diamond Axe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 80 logs | +13% mining speed |
-| II | Chop 240 logs | +6% damage<br>15% chance to ignore wear |
-| III | Chop 560 logs<br>Chop 160 blocks in the Nether | +31% mining speed<br>10% chance for double logs |
-| IV | Chop 1050 logs<br>Chop 65 chorus plants in the End | +50% mining speed<br>+13% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 1750 logs<br>Defeat 100 mobs<br>Defeat 1 elite foes | +75% mining speed<br>+19% damage<br>30% chance for double logs<br>Timber: fells whole trees (up to 96 logs) |
+| I | Chop 80 logs | +6% mining speed |
+| II | Chop 200 logs | +13% mining speed<br>+4% damage |
+| III | Chop 360 logs<br>Defeat 8 mobs | +19% mining speed<br>10% chance to ignore wear |
+| IV | Chop 560 logs | +25% mining speed |
+| V | Chop 800 logs | +31% mining speed<br>10% chance for double logs |
+| VI | Chop 1100 logs<br>Defeat 25 mobs | +38% mining speed<br>+8% damage |
+| VII | Chop 1500 logs | +44% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 2000 logs | +50% mining speed |
+| IX | Chop 2550 logs<br>Chop 80 blocks in the Nether | +56% mining speed<br>20% chance for double logs |
+| X | Chop 3200 logs | +63% mining speed<br>+11% damage<br>Timber: fells whole trees (up to 96 logs) |
+| XI | Chop 4000 logs | +69% mining speed<br>30% chance to ignore wear |
+| XII | Chop 4950 logs<br>Defeat 80 mobs | +75% mining speed |
+| XIII | Chop 6100 logs<br>Chop 480 blocks in the Nether | +81% mining speed<br>30% chance for double logs |
+| XIV | Chop 7350 logs | +88% mining speed<br>+15% damage |
+| XV | Chop 8800 logs<br>Chop 160 chorus plants in the End | +94% mining speed<br>40% chance to ignore wear |
+| XVI | Chop 11000 logs | +100% mining speed<br>Timber: fells whole trees (up to 192 logs) |
+| XVII | Chop 13000 logs<br>Defeat 240 mobs | +106% mining speed<br>40% chance for double logs |
+| XVIII | Chop 16000 logs<br>Chop 1600 blocks in the Nether | +113% mining speed<br>+19% damage |
+| XIX | Chop 19000 logs<br>Chop 800 chorus plants in the End | +119% mining speed<br>50% chance to ignore wear |
+| XX | Chop 24000 logs<br>Defeat 3 elite foes | +125% mining speed<br>Magnet: drops fly straight into your inventory |
 
 ### Netherite Axe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Chop 100 logs | +15% mining speed |
-| II | Chop 300 logs | +8% damage<br>15% chance to ignore wear |
-| III | Chop 700 logs<br>Chop 320 blocks in the Nether | +38% mining speed<br>10% chance for double logs |
-| IV | Chop 1300 logs<br>Chop 160 chorus plants in the End | +60% mining speed<br>+15% damage<br>35% chance to ignore wear<br>20% chance for double logs |
-| V | Chop 2200 logs<br>Defeat 200 mobs<br>Defeat 3 elite foes | +90% mining speed<br>+23% damage<br>30% chance for double logs<br>Timber: fells whole trees (up to 160 logs) |
+| I | Chop 100 logs | +8% mining speed |
+| II | Chop 250 logs | +15% mining speed<br>+5% damage |
+| III | Chop 450 logs<br>Defeat 10 mobs | +23% mining speed<br>10% chance to ignore wear |
+| IV | Chop 700 logs | +30% mining speed |
+| V | Chop 1000 logs | +38% mining speed<br>10% chance for double logs |
+| VI | Chop 1400 logs<br>Defeat 30 mobs | +45% mining speed<br>+9% damage |
+| VII | Chop 1900 logs | +53% mining speed<br>20% chance to ignore wear |
+| VIII | Chop 2500 logs | +60% mining speed |
+| IX | Chop 3200 logs<br>Chop 100 blocks in the Nether | +68% mining speed<br>20% chance for double logs |
+| X | Chop 4000 logs | +75% mining speed<br>+14% damage<br>Timber: fells whole trees (up to 160 logs) |
+| XI | Chop 5000 logs | +83% mining speed<br>30% chance to ignore wear |
+| XII | Chop 6200 logs<br>Defeat 100 mobs | +90% mining speed |
+| XIII | Chop 7600 logs<br>Chop 600 blocks in the Nether | +98% mining speed<br>30% chance for double logs |
+| XIV | Chop 9200 logs | +105% mining speed<br>+18% damage |
+| XV | Chop 11000 logs<br>Chop 200 chorus plants in the End | +113% mining speed<br>40% chance to ignore wear |
+| XVI | Chop 13500 logs | +120% mining speed<br>Timber: fells whole trees (up to 320 logs) |
+| XVII | Chop 16500 logs<br>Defeat 300 mobs | +128% mining speed<br>40% chance for double logs |
+| XVIII | Chop 20000 logs<br>Chop 2000 blocks in the Nether | +135% mining speed<br>+23% damage |
+| XIX | Chop 24000 logs<br>Chop 1000 chorus plants in the End | +143% mining speed<br>50% chance to ignore wear |
+| XX | Chop 30000 logs<br>Defeat 3 elite foes | +150% mining speed<br>Magnet: drops fly straight into your inventory |
 
 ## Shovel
 
@@ -154,71 +364,176 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 20 blocks | +8% mining speed |
-| II | Dig 60 blocks | 15% chance to ignore wear |
-| III | Dig 130 blocks<br>Dig 10 gravel | +20% mining speed<br>2% chance to dig up treasure |
-| IV | Dig 240 blocks<br>Dig 30 sand | +32% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 400 blocks<br>Dig 12 clay | +48% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| I | Dig 20 blocks | +4% mining speed |
+| II | Dig 50 blocks<br>Dig 3 gravel | +8% mining speed |
+| III | Dig 90 blocks | +12% mining speed<br>10% chance to ignore wear |
+| IV | Dig 140 blocks<br>Dig 10 sand | +16% mining speed |
+| V | Dig 200 blocks | +20% mining speed |
+| VI | Dig 280 blocks<br>Dig 3 clay | +24% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 380 blocks | +28% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 500 blocks<br>Dig 15 gravel | +32% mining speed |
+| IX | Dig 640 blocks<br>Dig 10 snow | +36% mining speed |
+| X | Dig 800 blocks | +40% mining speed<br>2% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 1000 blocks<br>Dig 60 sand | +44% mining speed<br>30% chance to ignore wear |
+| XII | Dig 1250 blocks<br>Dig 10 soul sand or soul soil | +48% mining speed |
+| XIII | Dig 1500 blocks<br>Dig 20 clay | +52% mining speed |
+| XIV | Dig 1850 blocks<br>Dig 50 blocks in the Nether | +56% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 2200 blocks | +60% mining speed<br>40% chance to ignore wear |
+| XVI | Dig 2700 blocks<br>Dig 80 snow | +64% mining speed |
+| XVII | Dig 3300 blocks<br>Dig 80 soul sand or soul soil | +68% mining speed |
+| XVIII | Dig 4000 blocks<br>Dig 60 clay | +72% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 4800 blocks<br>Dig 300 blocks in the Nether | +76% mining speed<br>50% chance to ignore wear |
+| XX | Dig 6000 blocks<br>Dig 400 sand | +80% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
 
 ### Stone Shovel
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 40 blocks | +9% mining speed |
-| II | Dig 120 blocks | 15% chance to ignore wear |
-| III | Dig 260 blocks<br>Dig 20 gravel | +23% mining speed<br>2% chance to dig up treasure |
-| IV | Dig 480 blocks<br>Dig 65 sand | +36% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 800 blocks<br>Dig 25 clay | +54% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| I | Dig 40 blocks | +5% mining speed |
+| II | Dig 100 blocks<br>Dig 6 gravel | +9% mining speed |
+| III | Dig 180 blocks | +14% mining speed<br>10% chance to ignore wear |
+| IV | Dig 280 blocks<br>Dig 20 sand | +18% mining speed |
+| V | Dig 400 blocks | +23% mining speed |
+| VI | Dig 560 blocks<br>Dig 6 clay | +27% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 760 blocks | +32% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 1000 blocks<br>Dig 30 gravel | +36% mining speed |
+| IX | Dig 1300 blocks<br>Dig 20 snow | +41% mining speed |
+| X | Dig 1600 blocks | +45% mining speed<br>2% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 2000 blocks<br>Dig 120 sand | +50% mining speed<br>30% chance to ignore wear |
+| XII | Dig 2500 blocks<br>Dig 20 soul sand or soul soil | +54% mining speed |
+| XIII | Dig 3050 blocks<br>Dig 40 clay | +59% mining speed |
+| XIV | Dig 3700 blocks<br>Dig 100 blocks in the Nether | +63% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 4400 blocks | +68% mining speed<br>40% chance to ignore wear |
+| XVI | Dig 5400 blocks<br>Dig 160 snow | +72% mining speed |
+| XVII | Dig 6600 blocks<br>Dig 160 soul sand or soul soil | +77% mining speed |
+| XVIII | Dig 8000 blocks<br>Dig 120 clay | +81% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 9600 blocks<br>Dig 600 blocks in the Nether | +86% mining speed<br>50% chance to ignore wear |
+| XX | Dig 12000 blocks<br>Dig 800 sand | +90% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
 
 ### Copper Shovel
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 60 blocks | +10% mining speed |
-| II | Dig 180 blocks | 15% chance to ignore wear |
-| III | Dig 390 blocks<br>Dig 100 sand | +25% mining speed<br>2% chance to dig up treasure |
-| IV | Dig 720 blocks<br>Dig 30 clay | +40% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 1200 blocks<br>Dig 65 snow | +60% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| I | Dig 60 blocks | +5% mining speed |
+| II | Dig 150 blocks<br>Dig 9 gravel | +10% mining speed |
+| III | Dig 270 blocks | +15% mining speed<br>10% chance to ignore wear |
+| IV | Dig 420 blocks<br>Dig 30 sand | +20% mining speed |
+| V | Dig 600 blocks | +25% mining speed |
+| VI | Dig 840 blocks<br>Dig 9 clay | +30% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 1150 blocks | +35% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 1500 blocks<br>Dig 45 gravel | +40% mining speed |
+| IX | Dig 1900 blocks<br>Dig 30 snow | +45% mining speed |
+| X | Dig 2400 blocks | +50% mining speed<br>2% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 3000 blocks<br>Dig 180 sand | +55% mining speed<br>30% chance to ignore wear |
+| XII | Dig 3700 blocks<br>Dig 30 soul sand or soul soil | +60% mining speed |
+| XIII | Dig 4550 blocks<br>Dig 60 clay | +65% mining speed |
+| XIV | Dig 5500 blocks<br>Dig 150 blocks in the Nether | +70% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 6600 blocks | +75% mining speed<br>40% chance to ignore wear |
+| XVI | Dig 8100 blocks<br>Dig 240 snow | +80% mining speed |
+| XVII | Dig 9900 blocks<br>Dig 240 soul sand or soul soil | +85% mining speed |
+| XVIII | Dig 12000 blocks<br>Dig 180 clay | +90% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 14500 blocks<br>Dig 900 blocks in the Nether | +95% mining speed<br>50% chance to ignore wear |
+| XX | Dig 18000 blocks<br>Dig 1200 sand | +100% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
 
 ### Iron Shovel
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 80 blocks | +11% mining speed |
-| II | Dig 240 blocks | 15% chance to ignore wear |
-| III | Dig 520 blocks<br>Dig 50 clay | +28% mining speed<br>2% chance to dig up treasure |
-| IV | Dig 960 blocks<br>Dig 130 snow | +44% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 1600 blocks<br>Dig 130 soul sand or soul soil | +66% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| I | Dig 80 blocks | +6% mining speed |
+| II | Dig 200 blocks<br>Dig 12 gravel | +11% mining speed |
+| III | Dig 360 blocks | +17% mining speed<br>10% chance to ignore wear |
+| IV | Dig 560 blocks<br>Dig 40 sand | +22% mining speed |
+| V | Dig 800 blocks | +28% mining speed |
+| VI | Dig 1100 blocks<br>Dig 12 clay | +33% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 1500 blocks | +39% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 2000 blocks<br>Dig 60 gravel | +44% mining speed |
+| IX | Dig 2550 blocks<br>Dig 40 snow | +50% mining speed |
+| X | Dig 3200 blocks | +55% mining speed<br>2% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 4000 blocks<br>Dig 240 sand | +61% mining speed<br>30% chance to ignore wear |
+| XII | Dig 4950 blocks<br>Dig 40 soul sand or soul soil | +66% mining speed |
+| XIII | Dig 6100 blocks<br>Dig 80 clay | +72% mining speed |
+| XIV | Dig 7350 blocks<br>Dig 200 blocks in the Nether | +77% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 8800 blocks | +83% mining speed<br>40% chance to ignore wear |
+| XVI | Dig 11000 blocks<br>Dig 320 snow | +88% mining speed |
+| XVII | Dig 13000 blocks<br>Dig 320 soul sand or soul soil | +94% mining speed |
+| XVIII | Dig 16000 blocks<br>Dig 240 clay | +99% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 19000 blocks<br>Dig 1200 blocks in the Nether | +105% mining speed<br>50% chance to ignore wear |
+| XX | Dig 24000 blocks<br>Dig 1600 sand | +110% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
 
 ### Golden Shovel
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 25 blocks | +10% mining speed |
-| II | Dig 75 blocks | 15% chance to ignore wear |
-| III | Dig 160 blocks<br>Dig 30 soul sand or soul soil | +25% mining speed<br>2% chance to dig up treasure<br>+50% experience (Gilded) |
-| IV | Dig 300 blocks<br>Dig 95 soul sand or soul soil | +40% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 500 blocks<br>Dig 200 blocks in the Nether | +60% mining speed<br>5% chance to dig up treasure<br>+100% experience (Gilded)<br>Excavate: mines 3x3 blocks at once |
+| I | Dig 20 blocks | +5% mining speed |
+| II | Dig 50 blocks<br>Dig 3 gravel | +10% mining speed |
+| III | Dig 90 blocks | +15% mining speed<br>10% chance to ignore wear |
+| IV | Dig 140 blocks<br>Dig 10 sand | +20% mining speed |
+| V | Dig 200 blocks | +25% mining speed<br>+25% experience (Gilded) |
+| VI | Dig 280 blocks<br>Dig 3 clay | +30% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 380 blocks | +35% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 500 blocks<br>Dig 15 gravel | +40% mining speed |
+| IX | Dig 640 blocks<br>Dig 10 snow | +45% mining speed |
+| X | Dig 800 blocks | +50% mining speed<br>2% chance to dig up treasure<br>+50% experience (Gilded)<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 1000 blocks<br>Dig 60 sand | +55% mining speed<br>30% chance to ignore wear |
+| XII | Dig 1250 blocks<br>Dig 10 soul sand or soul soil | +60% mining speed |
+| XIII | Dig 1500 blocks<br>Dig 20 clay | +65% mining speed |
+| XIV | Dig 1850 blocks<br>Dig 50 blocks in the Nether | +70% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 2200 blocks | +75% mining speed<br>40% chance to ignore wear<br>+75% experience (Gilded) |
+| XVI | Dig 2700 blocks<br>Dig 80 snow | +80% mining speed |
+| XVII | Dig 3300 blocks<br>Dig 80 soul sand or soul soil | +85% mining speed |
+| XVIII | Dig 4000 blocks<br>Dig 60 clay | +90% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 4800 blocks<br>Dig 300 blocks in the Nether | +95% mining speed<br>50% chance to ignore wear |
+| XX | Dig 6000 blocks<br>Dig 400 sand | +100% mining speed<br>5% chance to dig up treasure<br>+100% experience (Gilded)<br>Excavate: mines 5x5 blocks at once |
 
 ### Diamond Shovel
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 160 blocks | +13% mining speed |
-| II | Dig 480 blocks | 15% chance to ignore wear |
-| III | Dig 1050 blocks<br>Dig 260 soul sand or soul soil | +31% mining speed<br>2% chance to dig up treasure |
-| IV | Dig 1900 blocks<br>Dig 260 snow<br>Dig 95 clay | +50% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 3200 blocks<br>Dig 800 blocks in the Nether | +75% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| I | Dig 160 blocks | +6% mining speed |
+| II | Dig 400 blocks<br>Dig 25 gravel | +13% mining speed |
+| III | Dig 720 blocks | +19% mining speed<br>10% chance to ignore wear |
+| IV | Dig 1100 blocks<br>Dig 80 sand | +25% mining speed |
+| V | Dig 1600 blocks | +31% mining speed |
+| VI | Dig 2250 blocks<br>Dig 25 clay | +38% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 3050 blocks | +44% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 4000 blocks<br>Dig 120 gravel | +50% mining speed |
+| IX | Dig 5100 blocks<br>Dig 80 snow | +56% mining speed |
+| X | Dig 6400 blocks | +63% mining speed<br>2% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 8000 blocks<br>Dig 480 sand | +69% mining speed<br>30% chance to ignore wear |
+| XII | Dig 9900 blocks<br>Dig 80 soul sand or soul soil | +75% mining speed |
+| XIII | Dig 12000 blocks<br>Dig 160 clay | +81% mining speed |
+| XIV | Dig 14500 blocks<br>Dig 400 blocks in the Nether | +88% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 17500 blocks | +94% mining speed<br>40% chance to ignore wear |
+| XVI | Dig 21500 blocks<br>Dig 640 snow | +100% mining speed |
+| XVII | Dig 26500 blocks<br>Dig 640 soul sand or soul soil | +106% mining speed |
+| XVIII | Dig 32000 blocks<br>Dig 480 clay | +113% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 38500 blocks<br>Dig 2400 blocks in the Nether | +119% mining speed<br>50% chance to ignore wear |
+| XX | Dig 48000 blocks<br>Dig 3200 sand | +125% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
 
 ### Netherite Shovel
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Dig 200 blocks | +15% mining speed |
-| II | Dig 600 blocks | 15% chance to ignore wear |
-| III | Dig 1300 blocks<br>Dig 400 soul sand or soul soil | +38% mining speed<br>2% chance to dig up treasure |
-| IV | Dig 2400 blocks<br>Dig 400 snow<br>Dig 160 clay | +60% mining speed<br>35% chance to ignore wear<br>4% chance to dig up treasure |
-| V | Dig 4000 blocks<br>Dig 1500 blocks in the Nether | +90% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
+| I | Dig 200 blocks | +8% mining speed |
+| II | Dig 500 blocks<br>Dig 30 gravel | +15% mining speed |
+| III | Dig 900 blocks | +23% mining speed<br>10% chance to ignore wear |
+| IV | Dig 1400 blocks<br>Dig 100 sand | +30% mining speed |
+| V | Dig 2000 blocks | +38% mining speed |
+| VI | Dig 2800 blocks<br>Dig 30 clay | +45% mining speed<br>1% chance to dig up treasure |
+| VII | Dig 3800 blocks | +53% mining speed<br>20% chance to ignore wear |
+| VIII | Dig 5000 blocks<br>Dig 150 gravel | +60% mining speed |
+| IX | Dig 6400 blocks<br>Dig 100 snow | +68% mining speed |
+| X | Dig 8000 blocks | +75% mining speed<br>2% chance to dig up treasure<br>Excavate: mines 3x3 blocks at once |
+| XI | Dig 10000 blocks<br>Dig 600 sand | +83% mining speed<br>30% chance to ignore wear |
+| XII | Dig 12500 blocks<br>Dig 100 soul sand or soul soil | +90% mining speed |
+| XIII | Dig 15000 blocks<br>Dig 200 clay | +98% mining speed |
+| XIV | Dig 18500 blocks<br>Dig 500 blocks in the Nether | +105% mining speed<br>3% chance to dig up treasure |
+| XV | Dig 22000 blocks | +113% mining speed<br>40% chance to ignore wear |
+| XVI | Dig 27000 blocks<br>Dig 800 snow | +120% mining speed |
+| XVII | Dig 33000 blocks<br>Dig 800 soul sand or soul soil | +128% mining speed |
+| XVIII | Dig 40000 blocks<br>Dig 600 clay | +135% mining speed<br>4% chance to dig up treasure |
+| XIX | Dig 48000 blocks<br>Dig 3000 blocks in the Nether | +143% mining speed<br>50% chance to ignore wear |
+| XX | Dig 60000 blocks<br>Dig 4000 sand | +150% mining speed<br>5% chance to dig up treasure<br>Excavate: mines 5x5 blocks at once |
 
 ## Hoe
 
@@ -226,71 +541,176 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 12 blocks | 10% chance for double crops |
-| II | Harvest 30 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 80 ripe crops<br>Till 40 blocks | +20% mining speed<br>25% chance for double crops |
-| IV | Harvest 160 ripe crops<br>Break 25 leaves, moss, hay or sculk blocks | +32% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 280 ripe crops<br>Till 80 blocks | +48% mining speed<br>50% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| I | Till 12 blocks | 5% chance for double crops |
+| II | Harvest 30 ripe crops | +4% mining speed<br>10% chance for double crops |
+| III | Harvest 55 ripe crops<br>Till 25 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 85 ripe crops | +8% mining speed<br>20% chance for double crops |
+| V | Harvest 120 ripe crops<br>Break 10 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops |
+| VI | Harvest 170 ripe crops | +12% mining speed<br>30% chance for double crops |
+| VII | Harvest 230 ripe crops<br>Till 60 blocks | 35% chance for double crops |
+| VIII | Harvest 300 ripe crops | +16% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 380 ripe crops<br>Harvest 10 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 480 ripe crops | +20% mining speed<br>50% chance for double crops |
+| XI | Harvest 600 ripe crops<br>Break 50 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 740 ripe crops<br>Harvest 40 ripe Nether Wart | +24% mining speed<br>60% chance for double crops |
+| XIII | Harvest 910 ripe crops<br>Break 10 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 1100 ripe crops | +28% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 1300 ripe crops<br>Harvest or break 40 blocks in the Nether | 75% chance for double crops |
+| XVI | Harvest 1600 ripe crops<br>Harvest 120 ripe Nether Wart | +32% mining speed<br>80% chance for double crops |
+| XVII | Harvest 2000 ripe crops<br>Break 50 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 2400 ripe crops<br>Break 250 leaves, moss, hay or sculk blocks | +36% mining speed<br>90% chance for double crops |
+| XIX | Harvest 2900 ripe crops<br>Harvest or break 200 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 3600 ripe crops<br>Break 150 sculk blocks | +40% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>Magnet: drops fly straight into your inventory |
 
 ### Stone Hoe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 25 blocks | 10% chance for double crops |
-| II | Harvest 60 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 160 ripe crops<br>Till 60 blocks | +23% mining speed<br>25% chance for double crops |
-| IV | Harvest 320 ripe crops<br>Break 50 leaves, moss, hay or sculk blocks | +36% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 560 ripe crops<br>Break 95 leaves, moss, hay or sculk blocks | +54% mining speed<br>50% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| I | Till 25 blocks | 5% chance for double crops |
+| II | Harvest 60 ripe crops | +5% mining speed<br>10% chance for double crops |
+| III | Harvest 110 ripe crops<br>Till 50 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 170 ripe crops | +9% mining speed<br>20% chance for double crops |
+| V | Harvest 240 ripe crops<br>Break 20 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops |
+| VI | Harvest 340 ripe crops | +14% mining speed<br>30% chance for double crops |
+| VII | Harvest 460 ripe crops<br>Till 120 blocks | 35% chance for double crops |
+| VIII | Harvest 600 ripe crops | +18% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 770 ripe crops<br>Harvest 20 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 960 ripe crops | +23% mining speed<br>50% chance for double crops |
+| XI | Harvest 1200 ripe crops<br>Break 100 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 1500 ripe crops<br>Harvest 80 ripe Nether Wart | +27% mining speed<br>60% chance for double crops |
+| XIII | Harvest 1800 ripe crops<br>Break 20 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 2200 ripe crops | +32% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 2650 ripe crops<br>Harvest or break 80 blocks in the Nether | 75% chance for double crops |
+| XVI | Harvest 3250 ripe crops<br>Harvest 240 ripe Nether Wart | +36% mining speed<br>80% chance for double crops |
+| XVII | Harvest 3950 ripe crops<br>Break 100 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 4800 ripe crops<br>Break 500 leaves, moss, hay or sculk blocks | +41% mining speed<br>90% chance for double crops |
+| XIX | Harvest 5750 ripe crops<br>Harvest or break 400 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 7200 ripe crops<br>Break 300 sculk blocks | +45% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>Magnet: drops fly straight into your inventory |
 
 ### Copper Hoe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 35 blocks | 10% chance for double crops |
-| II | Harvest 90 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 240 ripe crops<br>Till 90 blocks | +25% mining speed<br>25% chance for double crops |
-| IV | Harvest 480 ripe crops<br>Break 95 leaves, moss, hay or sculk blocks | +40% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 840 ripe crops<br>Harvest 30 ripe Nether Wart | +60% mining speed<br>50% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| I | Till 35 blocks | 5% chance for double crops |
+| II | Harvest 90 ripe crops | +5% mining speed<br>10% chance for double crops |
+| III | Harvest 160 ripe crops<br>Till 75 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 250 ripe crops | +10% mining speed<br>20% chance for double crops |
+| V | Harvest 360 ripe crops<br>Break 30 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops |
+| VI | Harvest 500 ripe crops | +15% mining speed<br>30% chance for double crops |
+| VII | Harvest 680 ripe crops<br>Till 180 blocks | 35% chance for double crops |
+| VIII | Harvest 900 ripe crops | +20% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 1150 ripe crops<br>Harvest 30 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 1450 ripe crops | +25% mining speed<br>50% chance for double crops |
+| XI | Harvest 1800 ripe crops<br>Break 150 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 2250 ripe crops<br>Harvest 120 ripe Nether Wart | +30% mining speed<br>60% chance for double crops |
+| XIII | Harvest 2750 ripe crops<br>Break 30 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 3300 ripe crops | +35% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 3950 ripe crops<br>Harvest or break 120 blocks in the Nether | 75% chance for double crops |
+| XVI | Harvest 4850 ripe crops<br>Harvest 360 ripe Nether Wart | +40% mining speed<br>80% chance for double crops |
+| XVII | Harvest 5950 ripe crops<br>Break 150 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 7200 ripe crops<br>Break 750 leaves, moss, hay or sculk blocks | +45% mining speed<br>90% chance for double crops |
+| XIX | Harvest 8650 ripe crops<br>Harvest or break 600 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 11000 ripe crops<br>Break 450 sculk blocks | +50% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>Magnet: drops fly straight into your inventory |
 
 ### Iron Hoe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 50 blocks | 10% chance for double crops |
-| II | Harvest 120 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 320 ripe crops<br>Harvest 50 ripe Nether Wart | +28% mining speed<br>25% chance for double crops |
-| IV | Harvest 640 ripe crops<br>Break 160 leaves, moss, hay or sculk blocks | +44% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 1100 ripe crops<br>Break 50 sculk blocks | +66% mining speed<br>50% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| I | Till 50 blocks | 5% chance for double crops |
+| II | Harvest 120 ripe crops | +6% mining speed<br>10% chance for double crops |
+| III | Harvest 220 ripe crops<br>Till 100 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 340 ripe crops | +11% mining speed<br>20% chance for double crops |
+| V | Harvest 480 ripe crops<br>Break 40 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops |
+| VI | Harvest 670 ripe crops | +17% mining speed<br>30% chance for double crops |
+| VII | Harvest 910 ripe crops<br>Till 240 blocks | 35% chance for double crops |
+| VIII | Harvest 1200 ripe crops | +22% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 1550 ripe crops<br>Harvest 40 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 1900 ripe crops | +28% mining speed<br>50% chance for double crops |
+| XI | Harvest 2400 ripe crops<br>Break 200 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 3000 ripe crops<br>Harvest 160 ripe Nether Wart | +33% mining speed<br>60% chance for double crops |
+| XIII | Harvest 3650 ripe crops<br>Break 40 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 4400 ripe crops | +39% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 5300 ripe crops<br>Harvest or break 160 blocks in the Nether | 75% chance for double crops |
+| XVI | Harvest 6500 ripe crops<br>Harvest 480 ripe Nether Wart | +44% mining speed<br>80% chance for double crops |
+| XVII | Harvest 7900 ripe crops<br>Break 200 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 9600 ripe crops<br>Break 1000 leaves, moss, hay or sculk blocks | +50% mining speed<br>90% chance for double crops |
+| XIX | Harvest 11500 ripe crops<br>Harvest or break 800 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 14500 ripe crops<br>Break 600 sculk blocks | +55% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>Magnet: drops fly straight into your inventory |
 
 ### Golden Hoe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 15 blocks | 10% chance for double crops |
-| II | Harvest 40 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 100 ripe crops<br>Harvest 25 ripe Nether Wart | +25% mining speed<br>25% chance for double crops<br>+50% experience (Gilded) |
-| IV | Harvest 200 ripe crops<br>Harvest 65 ripe Nether Wart | +40% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 350 ripe crops<br>Harvest or break 65 blocks in the Nether | +60% mining speed<br>50% chance for double crops<br>+100% experience (Gilded)<br>Reaper: harvests ripe crops in a 5x5 area |
+| I | Till 12 blocks | 5% chance for double crops |
+| II | Harvest 30 ripe crops | +5% mining speed<br>10% chance for double crops |
+| III | Harvest 55 ripe crops<br>Till 25 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 85 ripe crops | +10% mining speed<br>20% chance for double crops |
+| V | Harvest 120 ripe crops<br>Break 10 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops<br>+25% experience (Gilded) |
+| VI | Harvest 170 ripe crops | +15% mining speed<br>30% chance for double crops |
+| VII | Harvest 230 ripe crops<br>Till 60 blocks | 35% chance for double crops |
+| VIII | Harvest 300 ripe crops | +20% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 380 ripe crops<br>Harvest 10 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 480 ripe crops | +25% mining speed<br>50% chance for double crops<br>+50% experience (Gilded) |
+| XI | Harvest 600 ripe crops<br>Break 50 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 740 ripe crops<br>Harvest 40 ripe Nether Wart | +30% mining speed<br>60% chance for double crops |
+| XIII | Harvest 910 ripe crops<br>Break 10 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 1100 ripe crops | +35% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 1300 ripe crops<br>Harvest or break 40 blocks in the Nether | 75% chance for double crops<br>+75% experience (Gilded) |
+| XVI | Harvest 1600 ripe crops<br>Harvest 120 ripe Nether Wart | +40% mining speed<br>80% chance for double crops |
+| XVII | Harvest 2000 ripe crops<br>Break 50 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 2400 ripe crops<br>Break 250 leaves, moss, hay or sculk blocks | +45% mining speed<br>90% chance for double crops |
+| XIX | Harvest 2900 ripe crops<br>Harvest or break 200 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 3600 ripe crops<br>Break 150 sculk blocks | +50% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>+100% experience (Gilded)<br>Magnet: drops fly straight into your inventory |
 
 ### Diamond Hoe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 95 blocks | 10% chance for double crops |
-| II | Harvest 240 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 640 ripe crops<br>Harvest 130 ripe Nether Wart | +31% mining speed<br>25% chance for double crops |
-| IV | Harvest 1300 ripe crops<br>Break 130 sculk blocks | +50% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 2250 ripe crops<br>Harvest or break 260 blocks in the Nether | +75% mining speed<br>50% chance for double crops<br>Reaper: harvests ripe crops in a 7x7 area |
+| I | Till 95 blocks | 5% chance for double crops |
+| II | Harvest 240 ripe crops | +6% mining speed<br>10% chance for double crops |
+| III | Harvest 430 ripe crops<br>Till 200 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 670 ripe crops | +13% mining speed<br>20% chance for double crops |
+| V | Harvest 960 ripe crops<br>Break 80 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops |
+| VI | Harvest 1350 ripe crops | +19% mining speed<br>30% chance for double crops |
+| VII | Harvest 1800 ripe crops<br>Till 480 blocks | 35% chance for double crops |
+| VIII | Harvest 2400 ripe crops | +25% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 3050 ripe crops<br>Harvest 80 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 3850 ripe crops | +31% mining speed<br>50% chance for double crops |
+| XI | Harvest 4800 ripe crops<br>Break 400 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 5950 ripe crops<br>Harvest 320 ripe Nether Wart | +38% mining speed<br>60% chance for double crops |
+| XIII | Harvest 7300 ripe crops<br>Break 80 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 8850 ripe crops | +44% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 10500 ripe crops<br>Harvest or break 320 blocks in the Nether | 75% chance for double crops |
+| XVI | Harvest 13000 ripe crops<br>Harvest 960 ripe Nether Wart | +50% mining speed<br>80% chance for double crops |
+| XVII | Harvest 16000 ripe crops<br>Break 400 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 19000 ripe crops<br>Break 2000 leaves, moss, hay or sculk blocks | +56% mining speed<br>90% chance for double crops |
+| XIX | Harvest 23000 ripe crops<br>Harvest or break 1600 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 29000 ripe crops<br>Break 1200 sculk blocks | +63% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>Reaper: harvests ripe crops in a 7x7 area<br>Magnet: drops fly straight into your inventory |
 
 ### Netherite Hoe
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Till 120 blocks | 10% chance for double crops |
-| II | Harvest 300 ripe crops | 15% chance to ignore wear<br>Replant: harvested crops plant themselves again |
-| III | Harvest 800 ripe crops<br>Harvest 260 ripe Nether Wart | +38% mining speed<br>25% chance for double crops |
-| IV | Harvest 1600 ripe crops<br>Break 260 sculk blocks | +60% mining speed<br>35% chance to ignore wear<br>35% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
-| V | Harvest 2800 ripe crops<br>Harvest or break 510 blocks in the Nether | +90% mining speed<br>50% chance for double crops<br>Reaper: harvests ripe crops in a 9x9 area |
+| I | Till 120 blocks | 5% chance for double crops |
+| II | Harvest 300 ripe crops | +8% mining speed<br>10% chance for double crops |
+| III | Harvest 540 ripe crops<br>Till 250 blocks | 15% chance for double crops<br>Replant: harvested crops plant themselves again |
+| IV | Harvest 840 ripe crops | +15% mining speed<br>20% chance for double crops |
+| V | Harvest 1200 ripe crops<br>Break 100 leaves, moss, hay or sculk blocks | 10% chance to ignore wear<br>25% chance for double crops |
+| VI | Harvest 1700 ripe crops | +23% mining speed<br>30% chance for double crops |
+| VII | Harvest 2300 ripe crops<br>Till 600 blocks | 35% chance for double crops |
+| VIII | Harvest 3000 ripe crops | +30% mining speed<br>40% chance for double crops<br>Reaper: harvests ripe crops in a 3x3 area |
+| IX | Harvest 3850 ripe crops<br>Harvest 100 ripe Nether Wart | 20% chance to ignore wear<br>45% chance for double crops |
+| X | Harvest 4800 ripe crops | +38% mining speed<br>50% chance for double crops |
+| XI | Harvest 6000 ripe crops<br>Break 500 leaves, moss, hay or sculk blocks | 55% chance for double crops |
+| XII | Harvest 7450 ripe crops<br>Harvest 400 ripe Nether Wart | +45% mining speed<br>60% chance for double crops |
+| XIII | Harvest 9100 ripe crops<br>Break 100 sculk blocks | 30% chance to ignore wear<br>65% chance for double crops |
+| XIV | Harvest 11000 ripe crops | +53% mining speed<br>70% chance for double crops<br>Reaper: harvests ripe crops in a 5x5 area |
+| XV | Harvest 13000 ripe crops<br>Harvest or break 400 blocks in the Nether | 75% chance for double crops |
+| XVI | Harvest 16000 ripe crops<br>Harvest 1200 ripe Nether Wart | +60% mining speed<br>80% chance for double crops |
+| XVII | Harvest 20000 ripe crops<br>Break 500 sculk blocks | 40% chance to ignore wear<br>85% chance for double crops |
+| XVIII | Harvest 24000 ripe crops<br>Break 2500 leaves, moss, hay or sculk blocks | +68% mining speed<br>90% chance for double crops |
+| XIX | Harvest 29000 ripe crops<br>Harvest or break 2000 blocks in the Nether | 95% chance for double crops |
+| XX | Harvest 36000 ripe crops<br>Break 1500 sculk blocks | +75% mining speed<br>50% chance to ignore wear<br>100% chance for double crops<br>Reaper: harvests ripe crops in a 9x9 area<br>Magnet: drops fly straight into your inventory |
 
 ## Sword
 
@@ -298,71 +718,176 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 5 mobs | +4% damage |
-| II | Defeat 15 mobs | +6% attack speed<br>15% chance to ignore wear |
-| III | Defeat 25 monsters | +10% damage<br>+1 Looting |
-| IV | Defeat 50 monsters | +12% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 90 monsters | +16% damage<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 4 mobs | +2% damage |
+| II | Defeat 10 mobs | +4% damage |
+| III | Defeat 18 mobs | +6% damage<br>+4% attack speed |
+| IV | Defeat 30 monsters | +8% damage<br>10% chance to ignore wear |
+| V | Defeat 40 monsters | +10% damage |
+| VI | Defeat 55 monsters<br>Defeat 3 mobs in the Nether | +12% damage<br>+1 Looting |
+| VII | Defeat 75 monsters | +14% damage<br>+8% attack speed |
+| VIII | Defeat 100 monsters | +16% damage<br>20% chance to ignore wear |
+| IX | Defeat 130 monsters<br>Defeat 10 mobs in the Nether | +18% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 160 monsters | +20% damage |
+| XI | Defeat 200 monsters<br>Defeat an elite foe | +22% damage<br>+12% attack speed |
+| XII | Defeat 250 monsters<br>Defeat 5 mobs in the End | +24% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 300 monsters | +26% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 370 monsters<br>Defeat 40 mobs in the Nether | +28% damage |
+| XV | Defeat 440 monsters<br>Defeat 2 elite foes | +30% damage<br>+16% attack speed<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 540 monsters<br>Defeat 30 mobs in the End | +32% damage<br>40% chance to ignore wear |
+| XVII | Defeat 660 monsters<br>Defeat 120 mobs in the Nether | +34% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 800 monsters<br>Defeat 4 elite foes | +36% damage<br>+3 Looting |
+| XIX | Defeat 960 monsters<br>Defeat 100 mobs in the End | +38% damage<br>+20% attack speed |
+| XX | Defeat 1200 monsters<br>Defeat 8 elite foes | +40% damage<br>50% chance to ignore wear<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ### Stone Sword
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 10 mobs | +5% damage |
-| II | Defeat 30 mobs | +7% attack speed<br>15% chance to ignore wear |
-| III | Defeat 50 monsters | +11% damage<br>+1 Looting |
-| IV | Defeat 100 monsters | +14% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 180 monsters | +18% damage<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 8 mobs | +2% damage |
+| II | Defeat 20 mobs | +5% damage |
+| III | Defeat 35 mobs | +7% damage<br>+5% attack speed |
+| IV | Defeat 55 monsters | +9% damage<br>10% chance to ignore wear |
+| V | Defeat 80 monsters | +11% damage |
+| VI | Defeat 110 monsters<br>Defeat 6 mobs in the Nether | +14% damage<br>+1 Looting |
+| VII | Defeat 150 monsters | +16% damage<br>+9% attack speed |
+| VIII | Defeat 200 monsters | +18% damage<br>20% chance to ignore wear |
+| IX | Defeat 260 monsters<br>Defeat 20 mobs in the Nether | +20% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 320 monsters | +23% damage |
+| XI | Defeat 400 monsters<br>Defeat an elite foe | +25% damage<br>+14% attack speed |
+| XII | Defeat 500 monsters<br>Defeat 10 mobs in the End | +27% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 610 monsters | +29% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 740 monsters<br>Defeat 80 mobs in the Nether | +32% damage |
+| XV | Defeat 880 monsters<br>Defeat 3 elite foes | +34% damage<br>+18% attack speed<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 1100 monsters<br>Defeat 60 mobs in the End | +36% damage<br>40% chance to ignore wear |
+| XVII | Defeat 1300 monsters<br>Defeat 240 mobs in the Nether | +38% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 1600 monsters<br>Defeat 6 elite foes | +41% damage<br>+3 Looting |
+| XIX | Defeat 1900 monsters<br>Defeat 200 mobs in the End | +43% damage<br>+23% attack speed |
+| XX | Defeat 2400 monsters<br>Defeat 11 elite foes | +45% damage<br>50% chance to ignore wear<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ### Copper Sword
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 15 mobs | +5% damage |
-| II | Defeat 45 mobs | +8% attack speed<br>15% chance to ignore wear |
-| III | Defeat 75 monsters | +12% damage<br>+1 Looting |
-| IV | Defeat 150 monsters | +15% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 270 monsters | +20% damage<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 12 mobs | +3% damage |
+| II | Defeat 30 mobs | +5% damage |
+| III | Defeat 55 mobs | +8% damage<br>+5% attack speed |
+| IV | Defeat 85 monsters | +10% damage<br>10% chance to ignore wear |
+| V | Defeat 120 monsters | +13% damage |
+| VI | Defeat 170 monsters<br>Defeat 9 mobs in the Nether | +15% damage<br>+1 Looting |
+| VII | Defeat 230 monsters | +18% damage<br>+10% attack speed |
+| VIII | Defeat 300 monsters | +20% damage<br>20% chance to ignore wear |
+| IX | Defeat 380 monsters<br>Defeat 30 mobs in the Nether | +23% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 480 monsters | +25% damage |
+| XI | Defeat 600 monsters<br>Defeat an elite foe | +28% damage<br>+15% attack speed |
+| XII | Defeat 740 monsters<br>Defeat 15 mobs in the End | +30% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 910 monsters | +33% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 1100 monsters<br>Defeat 120 mobs in the Nether | +35% damage |
+| XV | Defeat 1300 monsters<br>Defeat 3 elite foes | +38% damage<br>+20% attack speed<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 1600 monsters<br>Defeat 90 mobs in the End | +40% damage<br>40% chance to ignore wear |
+| XVII | Defeat 2000 monsters<br>Defeat 360 mobs in the Nether | +43% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 2400 monsters<br>Defeat 7 elite foes | +45% damage<br>+3 Looting |
+| XIX | Defeat 2900 monsters<br>Defeat 300 mobs in the End | +48% damage<br>+25% attack speed |
+| XX | Defeat 3600 monsters<br>Defeat 14 elite foes | +50% damage<br>50% chance to ignore wear<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ### Iron Sword
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 20 mobs | +6% damage |
-| II | Defeat 60 mobs | +9% attack speed<br>15% chance to ignore wear |
-| III | Defeat 100 monsters | +13% damage<br>+1 Looting |
-| IV | Defeat 200 monsters<br>Defeat 20 mobs in the Nether | +17% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 360 monsters<br>Defeat 2 elite foes | +22% damage<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 16 mobs | +3% damage |
+| II | Defeat 40 mobs | +6% damage |
+| III | Defeat 70 mobs | +8% damage<br>+6% attack speed |
+| IV | Defeat 110 monsters | +11% damage<br>10% chance to ignore wear |
+| V | Defeat 160 monsters | +14% damage |
+| VI | Defeat 220 monsters<br>Defeat 12 mobs in the Nether | +17% damage<br>+1 Looting |
+| VII | Defeat 300 monsters | +19% damage<br>+11% attack speed |
+| VIII | Defeat 400 monsters | +22% damage<br>20% chance to ignore wear |
+| IX | Defeat 510 monsters<br>Defeat 40 mobs in the Nether | +25% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 640 monsters | +28% damage |
+| XI | Defeat 800 monsters<br>Defeat an elite foe | +30% damage<br>+17% attack speed |
+| XII | Defeat 990 monsters<br>Defeat 20 mobs in the End | +33% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 1200 monsters | +36% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 1450 monsters<br>Defeat 160 mobs in the Nether | +39% damage |
+| XV | Defeat 1750 monsters<br>Defeat 4 elite foes | +41% damage<br>+22% attack speed<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 2150 monsters<br>Defeat 120 mobs in the End | +44% damage<br>40% chance to ignore wear |
+| XVII | Defeat 2650 monsters<br>Defeat 480 mobs in the Nether | +47% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 3200 monsters<br>Defeat 8 elite foes | +50% damage<br>+3 Looting |
+| XIX | Defeat 3850 monsters<br>Defeat 400 mobs in the End | +52% damage<br>+28% attack speed |
+| XX | Defeat 4800 monsters<br>Defeat 16 elite foes | +55% damage<br>50% chance to ignore wear<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ### Golden Sword
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 6 mobs | +5% damage |
-| II | Defeat 19 mobs | +8% attack speed<br>15% chance to ignore wear |
-| III | Defeat 30 monsters<br>Defeat 10 mobs in the Nether | +12% damage<br>+50% experience (Gilded)<br>+1 Looting |
-| IV | Defeat 65 monsters<br>Defeat 30 mobs in the Nether | +15% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 110 monsters<br>Defeat 60 mobs in the Nether | +20% damage<br>+100% experience (Gilded)<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 4 mobs | +3% damage |
+| II | Defeat 10 mobs | +5% damage |
+| III | Defeat 18 mobs | +8% damage<br>+5% attack speed |
+| IV | Defeat 30 monsters | +10% damage<br>10% chance to ignore wear |
+| V | Defeat 40 monsters | +13% damage<br>+25% experience (Gilded) |
+| VI | Defeat 55 monsters<br>Defeat 3 mobs in the Nether | +15% damage<br>+1 Looting |
+| VII | Defeat 75 monsters | +18% damage<br>+10% attack speed |
+| VIII | Defeat 100 monsters | +20% damage<br>20% chance to ignore wear |
+| IX | Defeat 130 monsters<br>Defeat 10 mobs in the Nether | +23% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 160 monsters | +25% damage<br>+50% experience (Gilded) |
+| XI | Defeat 200 monsters<br>Defeat an elite foe | +28% damage<br>+15% attack speed |
+| XII | Defeat 250 monsters<br>Defeat 5 mobs in the End | +30% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 300 monsters | +33% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 370 monsters<br>Defeat 40 mobs in the Nether | +35% damage |
+| XV | Defeat 440 monsters<br>Defeat 2 elite foes | +38% damage<br>+20% attack speed<br>+75% experience (Gilded)<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 540 monsters<br>Defeat 30 mobs in the End | +40% damage<br>40% chance to ignore wear |
+| XVII | Defeat 660 monsters<br>Defeat 120 mobs in the Nether | +43% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 800 monsters<br>Defeat 4 elite foes | +45% damage<br>+3 Looting |
+| XIX | Defeat 960 monsters<br>Defeat 100 mobs in the End | +48% damage<br>+25% attack speed |
+| XX | Defeat 1200 monsters<br>Defeat 8 elite foes | +50% damage<br>50% chance to ignore wear<br>+100% experience (Gilded)<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ### Diamond Sword
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 40 mobs | +6% damage |
-| II | Defeat 120 mobs | +10% attack speed<br>15% chance to ignore wear |
-| III | Defeat 200 monsters<br>Defeat 50 mobs in the Nether | +15% damage<br>+1 Looting |
-| IV | Defeat 400 monsters<br>Defeat 40 mobs in the End | +19% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 720 monsters<br>Defeat 5 elite foes | +25% damage<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 30 mobs | +3% damage |
+| II | Defeat 80 mobs | +6% damage |
+| III | Defeat 140 mobs | +9% damage<br>+6% attack speed |
+| IV | Defeat 220 monsters | +13% damage<br>10% chance to ignore wear |
+| V | Defeat 320 monsters | +16% damage |
+| VI | Defeat 450 monsters<br>Defeat 25 mobs in the Nether | +19% damage<br>+1 Looting |
+| VII | Defeat 610 monsters | +22% damage<br>+13% attack speed |
+| VIII | Defeat 800 monsters | +25% damage<br>20% chance to ignore wear |
+| IX | Defeat 1000 monsters<br>Defeat 80 mobs in the Nether | +28% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 1300 monsters | +31% damage |
+| XI | Defeat 1600 monsters<br>Defeat an elite foe | +34% damage<br>+19% attack speed |
+| XII | Defeat 2000 monsters<br>Defeat 40 mobs in the End | +38% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 2450 monsters | +41% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 2950 monsters<br>Defeat 320 mobs in the Nether | +44% damage |
+| XV | Defeat 3500 monsters<br>Defeat 6 elite foes | +47% damage<br>+25% attack speed<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 4300 monsters<br>Defeat 240 mobs in the End | +50% damage<br>40% chance to ignore wear |
+| XVII | Defeat 5300 monsters<br>Defeat 960 mobs in the Nether | +53% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 6400 monsters<br>Defeat 11 elite foes | +56% damage<br>+3 Looting |
+| XIX | Defeat 7700 monsters<br>Defeat 800 mobs in the End | +59% damage<br>+31% attack speed |
+| XX | Defeat 9600 monsters<br>Defeat 25 elite foes | +63% damage<br>50% chance to ignore wear<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ### Netherite Sword
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 50 mobs | +8% damage |
-| II | Defeat 150 mobs | +12% attack speed<br>15% chance to ignore wear |
-| III | Defeat 250 monsters<br>Defeat 100 mobs in the Nether | +18% damage<br>+1 Looting |
-| IV | Defeat 500 monsters<br>Defeat 100 mobs in the End | +23% attack speed<br>35% chance to ignore wear<br>Heals you for 5% of the damage dealt |
-| V | Defeat 900 monsters<br>Defeat 10 elite foes | +30% damage<br>+2 Looting<br>Heals you for 8% of the damage dealt<br>Executioner: +50% damage to foes below 35% health |
+| I | Defeat 40 mobs | +4% damage |
+| II | Defeat 100 mobs | +8% damage |
+| III | Defeat 180 mobs | +11% damage<br>+8% attack speed |
+| IV | Defeat 280 monsters | +15% damage<br>10% chance to ignore wear |
+| V | Defeat 400 monsters | +19% damage |
+| VI | Defeat 560 monsters<br>Defeat 30 mobs in the Nether | +23% damage<br>+1 Looting |
+| VII | Defeat 760 monsters | +26% damage<br>+15% attack speed |
+| VIII | Defeat 1000 monsters | +30% damage<br>20% chance to ignore wear |
+| IX | Defeat 1300 monsters<br>Defeat 100 mobs in the Nether | +34% damage<br>Heals you for 3% of the damage dealt |
+| X | Defeat 1600 monsters | +38% damage |
+| XI | Defeat 2000 monsters<br>Defeat an elite foe | +41% damage<br>+23% attack speed |
+| XII | Defeat 2500 monsters<br>Defeat 50 mobs in the End | +45% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 3050 monsters | +49% damage<br>Heals you for 6% of the damage dealt |
+| XIV | Defeat 3700 monsters<br>Defeat 400 mobs in the Nether | +53% damage |
+| XV | Defeat 4400 monsters<br>Defeat 6 elite foes | +56% damage<br>+30% attack speed<br>Executioner: +50% damage to foes below 35% health |
+| XVI | Defeat 5400 monsters<br>Defeat 300 mobs in the End | +60% damage<br>40% chance to ignore wear |
+| XVII | Defeat 6600 monsters<br>Defeat 1200 mobs in the Nether | +64% damage<br>Heals you for 9% of the damage dealt |
+| XVIII | Defeat 8000 monsters<br>Defeat 13 elite foes | +68% damage<br>+3 Looting |
+| XIX | Defeat 9600 monsters<br>Defeat 1000 mobs in the End | +71% damage<br>+38% attack speed |
+| XX | Defeat 12000 monsters<br>Defeat 25 elite foes | +75% damage<br>50% chance to ignore wear<br>Heals you for 12% of the damage dealt<br>Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds |
 
 ## Spear
 
@@ -370,71 +895,176 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 5 mobs | +4% damage |
-| II | Defeat 15 mobs | +6% attack speed<br>15% chance to ignore wear |
-| III | Defeat 25 monsters | +10% damage<br>+1 Looting |
-| IV | Defeat 50 monsters<br>Defeat 3 mobs while riding | +13% damage<br>+12% attack speed<br>35% chance to ignore wear |
-| V | Defeat 90 monsters | +18% damage<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 4 mobs | +2% damage |
+| II | Defeat 10 mobs | +4% damage |
+| III | Defeat 18 mobs | +6% damage<br>+4% attack speed |
+| IV | Defeat 30 monsters | +8% damage<br>10% chance to ignore wear |
+| V | Defeat 40 monsters<br>Defeat a mob while riding | +10% damage |
+| VI | Defeat 55 monsters | +12% damage<br>+1 Looting |
+| VII | Defeat 75 monsters | +14% damage<br>+8% attack speed |
+| VIII | Defeat 100 monsters<br>Defeat 3 mobs while riding | +16% damage<br>20% chance to ignore wear |
+| IX | Defeat 130 monsters | +18% damage |
+| X | Defeat 160 monsters<br>Defeat 5 mobs in the Nether | +20% damage<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 200 monsters | +22% damage<br>+12% attack speed |
+| XII | Defeat 250 monsters<br>Defeat 8 mobs while riding | +24% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 300 monsters | +26% damage |
+| XIV | Defeat 370 monsters<br>Defeat 30 mobs in the Nether | +28% damage |
+| XV | Defeat 440 monsters<br>Defeat an elite foe | +30% damage<br>+16% attack speed |
+| XVI | Defeat 540 monsters<br>Defeat 25 mobs while riding | +32% damage<br>40% chance to ignore wear |
+| XVII | Defeat 660 monsters<br>Defeat 30 mobs in the End | +34% damage |
+| XVIII | Defeat 800 monsters<br>Defeat 3 elite foes | +36% damage<br>+3 Looting |
+| XIX | Defeat 960 monsters<br>Defeat 60 mobs while riding | +38% damage<br>+20% attack speed |
+| XX | Defeat 1200 monsters<br>Defeat 6 elite foes | +40% damage<br>50% chance to ignore wear<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ### Stone Spear
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 10 mobs | +5% damage |
-| II | Defeat 30 mobs | +7% attack speed<br>15% chance to ignore wear |
-| III | Defeat 50 monsters | +11% damage<br>+1 Looting |
-| IV | Defeat 100 monsters<br>Defeat 5 mobs while riding | +14% damage<br>+14% attack speed<br>35% chance to ignore wear |
-| V | Defeat 180 monsters | +20% damage<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 8 mobs | +2% damage |
+| II | Defeat 20 mobs | +5% damage |
+| III | Defeat 35 mobs | +7% damage<br>+5% attack speed |
+| IV | Defeat 55 monsters | +9% damage<br>10% chance to ignore wear |
+| V | Defeat 80 monsters<br>Defeat a mob while riding | +11% damage |
+| VI | Defeat 110 monsters | +14% damage<br>+1 Looting |
+| VII | Defeat 150 monsters | +16% damage<br>+9% attack speed |
+| VIII | Defeat 200 monsters<br>Defeat 4 mobs while riding | +18% damage<br>20% chance to ignore wear |
+| IX | Defeat 260 monsters | +20% damage |
+| X | Defeat 320 monsters<br>Defeat 10 mobs in the Nether | +23% damage<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 400 monsters | +25% damage<br>+14% attack speed |
+| XII | Defeat 500 monsters<br>Defeat 11 mobs while riding | +27% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 610 monsters | +29% damage |
+| XIV | Defeat 740 monsters<br>Defeat 60 mobs in the Nether | +32% damage |
+| XV | Defeat 880 monsters<br>Defeat an elite foe | +34% damage<br>+18% attack speed |
+| XVI | Defeat 1100 monsters<br>Defeat 35 mobs while riding | +36% damage<br>40% chance to ignore wear |
+| XVII | Defeat 1300 monsters<br>Defeat 60 mobs in the End | +38% damage |
+| XVIII | Defeat 1600 monsters<br>Defeat 4 elite foes | +41% damage<br>+3 Looting |
+| XIX | Defeat 1900 monsters<br>Defeat 85 mobs while riding | +43% damage<br>+23% attack speed |
+| XX | Defeat 2400 monsters<br>Defeat 8 elite foes | +45% damage<br>50% chance to ignore wear<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ### Copper Spear
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 15 mobs | +5% damage |
-| II | Defeat 45 mobs | +8% attack speed<br>15% chance to ignore wear |
-| III | Defeat 75 monsters | +12% damage<br>+1 Looting |
-| IV | Defeat 150 monsters<br>Defeat 8 mobs while riding | +16% damage<br>+15% attack speed<br>35% chance to ignore wear |
-| V | Defeat 270 monsters | +22% damage<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 12 mobs | +3% damage |
+| II | Defeat 30 mobs | +5% damage |
+| III | Defeat 55 mobs | +8% damage<br>+5% attack speed |
+| IV | Defeat 85 monsters | +10% damage<br>10% chance to ignore wear |
+| V | Defeat 120 monsters<br>Defeat 2 mobs while riding | +13% damage |
+| VI | Defeat 170 monsters | +15% damage<br>+1 Looting |
+| VII | Defeat 230 monsters | +18% damage<br>+10% attack speed |
+| VIII | Defeat 300 monsters<br>Defeat 5 mobs while riding | +20% damage<br>20% chance to ignore wear |
+| IX | Defeat 380 monsters | +23% damage |
+| X | Defeat 480 monsters<br>Defeat 15 mobs in the Nether | +25% damage<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 600 monsters | +28% damage<br>+15% attack speed |
+| XII | Defeat 740 monsters<br>Defeat 14 mobs while riding | +30% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 910 monsters | +33% damage |
+| XIV | Defeat 1100 monsters<br>Defeat 90 mobs in the Nether | +35% damage |
+| XV | Defeat 1300 monsters<br>Defeat 2 elite foes | +38% damage<br>+20% attack speed |
+| XVI | Defeat 1600 monsters<br>Defeat 45 mobs while riding | +40% damage<br>40% chance to ignore wear |
+| XVII | Defeat 2000 monsters<br>Defeat 90 mobs in the End | +43% damage |
+| XVIII | Defeat 2400 monsters<br>Defeat 5 elite foes | +45% damage<br>+3 Looting |
+| XIX | Defeat 2900 monsters<br>Defeat 100 mobs while riding | +48% damage<br>+25% attack speed |
+| XX | Defeat 3600 monsters<br>Defeat 10 elite foes | +50% damage<br>50% chance to ignore wear<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ### Iron Spear
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 20 mobs | +6% damage |
-| II | Defeat 60 mobs | +9% attack speed<br>15% chance to ignore wear |
-| III | Defeat 100 monsters | +13% damage<br>+1 Looting |
-| IV | Defeat 200 monsters<br>Defeat 12 mobs while riding | +18% damage<br>+17% attack speed<br>35% chance to ignore wear |
-| V | Defeat 360 monsters<br>Defeat 25 mobs in the Nether | +24% damage<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 16 mobs | +3% damage |
+| II | Defeat 40 mobs | +6% damage |
+| III | Defeat 70 mobs | +8% damage<br>+6% attack speed |
+| IV | Defeat 110 monsters | +11% damage<br>10% chance to ignore wear |
+| V | Defeat 160 monsters<br>Defeat 2 mobs while riding | +14% damage |
+| VI | Defeat 220 monsters | +17% damage<br>+1 Looting |
+| VII | Defeat 300 monsters | +19% damage<br>+11% attack speed |
+| VIII | Defeat 400 monsters<br>Defeat 6 mobs while riding | +22% damage<br>20% chance to ignore wear |
+| IX | Defeat 510 monsters | +25% damage |
+| X | Defeat 640 monsters<br>Defeat 20 mobs in the Nether | +28% damage<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 800 monsters | +30% damage<br>+17% attack speed |
+| XII | Defeat 990 monsters<br>Defeat 16 mobs while riding | +33% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 1200 monsters | +36% damage |
+| XIV | Defeat 1450 monsters<br>Defeat 120 mobs in the Nether | +39% damage |
+| XV | Defeat 1750 monsters<br>Defeat 2 elite foes | +41% damage<br>+22% attack speed |
+| XVI | Defeat 2150 monsters<br>Defeat 50 mobs while riding | +44% damage<br>40% chance to ignore wear |
+| XVII | Defeat 2650 monsters<br>Defeat 120 mobs in the End | +47% damage |
+| XVIII | Defeat 3200 monsters<br>Defeat 6 elite foes | +50% damage<br>+3 Looting |
+| XIX | Defeat 3850 monsters<br>Defeat 120 mobs while riding | +52% damage<br>+28% attack speed |
+| XX | Defeat 4800 monsters<br>Defeat 12 elite foes | +55% damage<br>50% chance to ignore wear<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ### Golden Spear
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 6 mobs | +5% damage |
-| II | Defeat 19 mobs | +8% attack speed<br>15% chance to ignore wear |
-| III | Defeat 30 monsters<br>Defeat 10 mobs in the Nether | +12% damage<br>+50% experience (Gilded)<br>+1 Looting |
-| IV | Defeat 65 monsters<br>Defeat 8 mobs while riding | +16% damage<br>+15% attack speed<br>35% chance to ignore wear |
-| V | Defeat 110 monsters<br>Defeat 40 mobs in the Nether | +22% damage<br>+100% experience (Gilded)<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 4 mobs | +3% damage |
+| II | Defeat 10 mobs | +5% damage |
+| III | Defeat 18 mobs | +8% damage<br>+5% attack speed |
+| IV | Defeat 30 monsters | +10% damage<br>10% chance to ignore wear |
+| V | Defeat 40 monsters<br>Defeat a mob while riding | +13% damage<br>+25% experience (Gilded) |
+| VI | Defeat 55 monsters | +15% damage<br>+1 Looting |
+| VII | Defeat 75 monsters | +18% damage<br>+10% attack speed |
+| VIII | Defeat 100 monsters<br>Defeat 3 mobs while riding | +20% damage<br>20% chance to ignore wear |
+| IX | Defeat 130 monsters | +23% damage |
+| X | Defeat 160 monsters<br>Defeat 5 mobs in the Nether | +25% damage<br>+50% experience (Gilded)<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 200 monsters | +28% damage<br>+15% attack speed |
+| XII | Defeat 250 monsters<br>Defeat 8 mobs while riding | +30% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 300 monsters | +33% damage |
+| XIV | Defeat 370 monsters<br>Defeat 30 mobs in the Nether | +35% damage |
+| XV | Defeat 440 monsters<br>Defeat an elite foe | +38% damage<br>+20% attack speed<br>+75% experience (Gilded) |
+| XVI | Defeat 540 monsters<br>Defeat 25 mobs while riding | +40% damage<br>40% chance to ignore wear |
+| XVII | Defeat 660 monsters<br>Defeat 30 mobs in the End | +43% damage |
+| XVIII | Defeat 800 monsters<br>Defeat 3 elite foes | +45% damage<br>+3 Looting |
+| XIX | Defeat 960 monsters<br>Defeat 60 mobs while riding | +48% damage<br>+25% attack speed |
+| XX | Defeat 1200 monsters<br>Defeat 6 elite foes | +50% damage<br>50% chance to ignore wear<br>+100% experience (Gilded)<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ### Diamond Spear
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 40 mobs | +6% damage |
-| II | Defeat 120 mobs | +10% attack speed<br>15% chance to ignore wear |
-| III | Defeat 200 monsters<br>Defeat 25 mobs while riding | +15% damage<br>+1 Looting |
-| IV | Defeat 400 monsters<br>Defeat 50 mobs in the Nether | +20% damage<br>+19% attack speed<br>35% chance to ignore wear |
-| V | Defeat 720 monsters<br>Defeat 5 elite foes | +28% damage<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 30 mobs | +3% damage |
+| II | Defeat 80 mobs | +6% damage |
+| III | Defeat 140 mobs | +9% damage<br>+6% attack speed |
+| IV | Defeat 220 monsters | +13% damage<br>10% chance to ignore wear |
+| V | Defeat 320 monsters<br>Defeat 3 mobs while riding | +16% damage |
+| VI | Defeat 450 monsters | +19% damage<br>+1 Looting |
+| VII | Defeat 610 monsters | +22% damage<br>+13% attack speed |
+| VIII | Defeat 800 monsters<br>Defeat 8 mobs while riding | +25% damage<br>20% chance to ignore wear |
+| IX | Defeat 1000 monsters | +28% damage |
+| X | Defeat 1300 monsters<br>Defeat 40 mobs in the Nether | +31% damage<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 1600 monsters | +34% damage<br>+19% attack speed |
+| XII | Defeat 2000 monsters<br>Defeat 25 mobs while riding | +38% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 2450 monsters | +41% damage |
+| XIV | Defeat 2950 monsters<br>Defeat 240 mobs in the Nether | +44% damage |
+| XV | Defeat 3500 monsters<br>Defeat 3 elite foes | +47% damage<br>+25% attack speed |
+| XVI | Defeat 4300 monsters<br>Defeat 70 mobs while riding | +50% damage<br>40% chance to ignore wear |
+| XVII | Defeat 5300 monsters<br>Defeat 240 mobs in the End | +53% damage |
+| XVIII | Defeat 6400 monsters<br>Defeat 8 elite foes | +56% damage<br>+3 Looting |
+| XIX | Defeat 7700 monsters<br>Defeat 170 mobs while riding | +59% damage<br>+31% attack speed |
+| XX | Defeat 9600 monsters<br>Defeat 17 elite foes | +63% damage<br>50% chance to ignore wear<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ### Netherite Spear
 
 | Mastery | Challenge | Rewards |
 |---|---|---|
-| I | Defeat 50 mobs | +8% damage |
-| II | Defeat 150 mobs | +12% attack speed<br>15% chance to ignore wear |
-| III | Defeat 250 monsters<br>Defeat 40 mobs while riding | +18% damage<br>+1 Looting |
-| IV | Defeat 500 monsters<br>Defeat 100 mobs in the Nether | +24% damage<br>+23% attack speed<br>35% chance to ignore wear |
-| V | Defeat 900 monsters<br>Defeat 10 elite foes | +33% damage<br>+2 Looting<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| I | Defeat 40 mobs | +4% damage |
+| II | Defeat 100 mobs | +8% damage |
+| III | Defeat 180 mobs | +11% damage<br>+8% attack speed |
+| IV | Defeat 280 monsters | +15% damage<br>10% chance to ignore wear |
+| V | Defeat 400 monsters<br>Defeat 3 mobs while riding | +19% damage |
+| VI | Defeat 560 monsters | +23% damage<br>+1 Looting |
+| VII | Defeat 760 monsters | +26% damage<br>+15% attack speed |
+| VIII | Defeat 1000 monsters<br>Defeat 9 mobs while riding | +30% damage<br>20% chance to ignore wear |
+| IX | Defeat 1300 monsters | +34% damage |
+| X | Defeat 1600 monsters<br>Defeat 50 mobs in the Nether | +38% damage<br>Cavalry: +40% damage while riding, and your mount runs faster |
+| XI | Defeat 2000 monsters | +41% damage<br>+23% attack speed |
+| XII | Defeat 2500 monsters<br>Defeat 25 mobs while riding | +45% damage<br>30% chance to ignore wear<br>+2 Looting |
+| XIII | Defeat 3050 monsters | +49% damage |
+| XIV | Defeat 3700 monsters<br>Defeat 300 mobs in the Nether | +53% damage |
+| XV | Defeat 4400 monsters<br>Defeat 3 elite foes | +56% damage<br>+30% attack speed |
+| XVI | Defeat 5400 monsters<br>Defeat 80 mobs while riding | +60% damage<br>40% chance to ignore wear |
+| XVII | Defeat 6600 monsters<br>Defeat 300 mobs in the End | +64% damage |
+| XVIII | Defeat 8000 monsters<br>Defeat 9 elite foes | +68% damage<br>+3 Looting |
+| XIX | Defeat 9600 monsters<br>Defeat 190 mobs while riding | +71% damage<br>+38% attack speed |
+| XX | Defeat 12000 monsters<br>Defeat 19 elite foes | +75% damage<br>50% chance to ignore wear<br>Warhorse: while riding, you and your mount take 40% less damage |
 
 ## Bow
 
@@ -470,7 +1100,7 @@ Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Pigli
 | II | Defeat 25 mobs | 25% faster throw wind-up<br>15% chance to ignore wear |
 | III | Defeat 15 mobs with a thrown trident<br>Defeat 10 sea creatures or Drowned | +16% damage<br>+1 Looting |
 | IV | Defeat 40 mobs with a thrown trident<br>Defeat 30 sea creatures or Drowned | 50% faster throw wind-up<br>35% chance to ignore wear |
-| V | Defeat 150 mobs<br>Defeat 80 mobs with a thrown trident<br>Defeat 1 elite foes | +25% damage<br>+2 Looting<br>Stormcaller: thrown hits call down lightning in any weather |
+| V | Defeat 150 mobs<br>Defeat 80 mobs with a thrown trident<br>Defeat an elite foe | +25% damage<br>+2 Looting<br>Stormcaller: thrown hits call down lightning in any weather |
 
 ## Mace
 

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/soul_harvest_empowers_on_kill",
+  "max_ticks": 100,
+  "structure": "forge:empty5x4x5"
+}

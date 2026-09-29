@@ -22,11 +22,23 @@ import static com.afjan.tempered.mastery.Perk.*;
 import static com.afjan.tempered.mastery.Stat.*;
 
 /**
- * The whole challenge catalogue, in code: 7 materials x 6 tool types plus 6 special tools, five milestones
- * each. Amounts scale with the material ({@link Tier#scale}); the later milestones ask for work somewhere
- * specific (deep caves, the Nether, the End, rare blocks) so a tool is mastered by using it everywhere.
+ * The whole challenge catalogue, in code.
+ * <ul>
+ * <li>Main tools (7 materials x pickaxe, axe, shovel, hoe, sword, spear): 20 levels. The main stat follows
+ * {@link #CURVE} (level 20 needs 300x the work of level 1), and "rungs" add work somewhere specific (deep caves, the
+ * Nether, the End, obsidian, Ancient Debris, elite foes ...). A rung a material cannot do (a stone pickaxe and
+ * Ancient Debris) falls back to the next option. Every level raises a stat; abilities unlock on the way.</li>
+ * <li>Bow, crossbow, trident, mace, shears, fishing rod: 5 levels each.</li>
+ * </ul>
+ * Amounts scale with the material ({@link Tier#scale}); speed and damage percentages with {@link Tier#power}.
  */
 public final class Tracks {
+    public static final int MAIN_LEVELS = 20;
+    public static final int SPECIAL_LEVELS = 5;
+
+    /** Main-stat multiplier per level (level 1 = x1). */
+    static final double[] CURVE = {1, 2.5, 4.5, 7, 10, 14, 19, 25, 32, 40, 50, 62, 76, 92, 110, 135, 165, 200, 240, 300};
+
     private static final Kind[] TIERED = {Kind.PICKAXE, Kind.AXE, Kind.SHOVEL, Kind.HOE, Kind.SWORD, Kind.SPEAR};
     private static final Kind[] SPECIALS = {Kind.BOW, Kind.CROSSBOW, Kind.TRIDENT, Kind.MACE, Kind.SHEARS, Kind.FISHING_ROD};
 
@@ -106,11 +118,12 @@ public final class Tracks {
     // Building
 
     private static Track build(Kind kind, Tier tier, Item item) {
-        List<List<Req>> reqs = requirements(kind, tier);
-        List<Map<Perk, Double>> steps = rewards(kind, tier);
+        int levels = kind.tiered ? MAIN_LEVELS : SPECIAL_LEVELS;
+        List<List<Req>> reqs = kind.tiered ? mainRequirements(kind, tier) : specialRequirements(kind);
+        List<Map<Perk, Double>> steps = kind.tiered ? mainRewards(kind, tier) : specialRewards(kind, tier);
         List<Milestone> milestones = new ArrayList<>();
         EnumMap<Perk, Double> totals = new EnumMap<>(Perk.class);
-        for (int i = 0; i < Track.MAX_LEVEL; i++) {
+        for (int i = 0; i < levels; i++) {
             List<Perk> gained = new ArrayList<>();
             for (Map.Entry<Perk, Double> step : steps.get(i).entrySet()) {
                 Double before = totals.get(step.getKey());
@@ -123,13 +136,228 @@ public final class Tracks {
         return new Track(kind, tier, item, List.copyOf(milestones));
     }
 
-    /** Round a scaled amount to a number that reads well (37 -> 35, 1437 -> 1450). */
+    /** Round a scaled amount to a number that reads well (37 -> 35, 1437 -> 1450, 13200 -> 13000). */
     static int nice(double v) {
         if (v < 20) return (int) Math.max(1, Math.round(v));
         if (v < 100) return (int) (Math.round(v / 5) * 5);
         if (v < 1000) return (int) (Math.round(v / 10) * 10);
-        return (int) (Math.round(v / 50) * 50);
+        if (v < 10000) return (int) (Math.round(v / 50) * 50);
+        return (int) (Math.round(v / 500) * 500);
     }
+
+    // ------------------------------------------------------------------------------------------------
+    // Main tools: 20 levels
+
+    /** How a rung's amount grows with the material: x scale, x sqrt(scale) (elite foes, riding) or fixed. */
+    private enum Grow { S, R, F }
+
+    /** One way to meet a rung; usable once the material's mining level is at least {@code minMining}. */
+    private record Option(Stat stat, double base, Grow grow, int minMining) {
+    }
+
+    private record Rung(int level, List<Option> options) {
+        Req resolve(Tier t) {
+            for (Option o : options) {
+                if (t.miningLevel >= o.minMining) {
+                    double factor = switch (o.grow) {
+                        case S -> t.scale;
+                        case R -> Math.sqrt(t.scale);
+                        case F -> 1.0;
+                    };
+                    return new Req(o.stat, nice(o.base * factor));
+                }
+            }
+            throw new IllegalStateException("no option for " + t + " at level " + level);
+        }
+    }
+
+    /** rung(level, STAT, base, Grow, minMining, [fallback STAT, base, Grow, minMining ...]) */
+    private static Rung rung(int level, Object... spec) {
+        List<Option> options = new ArrayList<>();
+        for (int i = 0; i < spec.length; i += 4) {
+            options.add(new Option((Stat) spec[i], ((Number) spec[i + 1]).doubleValue(), (Grow) spec[i + 2], (Integer) spec[i + 3]));
+        }
+        return new Rung(level, options);
+    }
+
+    private static final Grow S = Grow.S, R = Grow.R, F = Grow.F;
+
+    private static List<Rung> rungs(Kind kind) {
+        return switch (kind) {
+            case PICKAXE -> List.of(
+                    rung(2, ORES, 2, S, 0),
+                    rung(4, ORES, 5, S, 0),
+                    rung(6, DEEP, 30, S, 0),
+                    rung(8, ORES, 15, S, 0),
+                    rung(9, NETHER_MINED, 25, S, 0),
+                    rung(11, DEEP, 150, S, 0),
+                    rung(12, GEMS, 2, S, 2, ORES, 30, S, 0),
+                    rung(13, NETHER_MINED, 150, S, 0),
+                    rung(14, END_MINED, 50, S, 0),
+                    rung(15, OBSIDIAN, 4, S, 3, ORES, 60, S, 0),
+                    rung(16, DEBRIS, 0.5, S, 3, NETHER_MINED, 400, S, 0),
+                    rung(17, END_MINED, 300, S, 0),
+                    rung(18, GEMS, 6, S, 2, ORES, 100, S, 0),
+                    rung(19, OBSIDIAN, 16, S, 3, DEEP, 600, S, 0),
+                    rung(20, DEBRIS, 4, S, 3, GEMS, 12, S, 2, ORES, 150, S, 0));
+            case AXE -> List.of(
+                    rung(3, KILLS, 1, S, 0),
+                    rung(6, KILLS, 3, S, 0),
+                    rung(9, NETHER_MINED, 10, S, 0),
+                    rung(12, KILLS, 10, S, 0),
+                    rung(13, NETHER_MINED, 60, S, 0),
+                    rung(15, END_MINED, 20, S, 0),
+                    rung(17, KILLS, 30, S, 0),
+                    rung(18, NETHER_MINED, 200, S, 0),
+                    rung(19, END_MINED, 100, S, 0),
+                    rung(20, ELITE, 1, R, 0));
+            case SHOVEL -> List.of(
+                    rung(2, GRAVEL, 3, S, 0),
+                    rung(4, SAND, 10, S, 0),
+                    rung(6, CLAY, 3, S, 0),
+                    rung(8, GRAVEL, 15, S, 0),
+                    rung(9, SNOW, 10, S, 0),
+                    rung(11, SAND, 60, S, 0),
+                    rung(12, SOUL, 10, S, 0),
+                    rung(13, CLAY, 20, S, 0),
+                    rung(14, NETHER_MINED, 50, S, 0),
+                    rung(16, SNOW, 80, S, 0),
+                    rung(17, SOUL, 80, S, 0),
+                    rung(18, CLAY, 60, S, 0),
+                    rung(19, NETHER_MINED, 300, S, 0),
+                    rung(20, SAND, 400, S, 0));
+            case HOE -> List.of(
+                    rung(3, TILLED, 25, S, 0),
+                    rung(5, MINED, 10, S, 0),
+                    rung(7, TILLED, 60, S, 0),
+                    rung(9, WARTS, 10, S, 0),
+                    rung(11, MINED, 50, S, 0),
+                    rung(12, WARTS, 40, S, 0),
+                    rung(13, SCULK, 10, S, 0),
+                    rung(15, NETHER_MINED, 40, S, 0),
+                    rung(16, WARTS, 120, S, 0),
+                    rung(17, SCULK, 50, S, 0),
+                    rung(18, MINED, 250, S, 0),
+                    rung(19, NETHER_MINED, 200, S, 0),
+                    rung(20, SCULK, 150, S, 0));
+            case SWORD -> List.of(
+                    rung(6, NETHER_KILLS, 3, S, 0),
+                    rung(9, NETHER_KILLS, 10, S, 0),
+                    rung(11, ELITE, 1, F, 0),
+                    rung(12, END_KILLS, 5, S, 0),
+                    rung(14, NETHER_KILLS, 40, S, 0),
+                    rung(15, ELITE, 2, R, 0),
+                    rung(16, END_KILLS, 30, S, 0),
+                    rung(17, NETHER_KILLS, 120, S, 0),
+                    rung(18, ELITE, 4, R, 0),
+                    rung(19, END_KILLS, 100, S, 0),
+                    rung(20, ELITE, 8, R, 0));
+            case SPEAR -> List.of(
+                    rung(5, MOUNTED, 1, R, 0),
+                    rung(8, MOUNTED, 3, R, 0),
+                    rung(10, NETHER_KILLS, 5, S, 0),
+                    rung(12, MOUNTED, 8, R, 0),
+                    rung(14, NETHER_KILLS, 30, S, 0),
+                    rung(15, ELITE, 1, R, 0),
+                    rung(16, MOUNTED, 25, R, 0),
+                    rung(17, END_KILLS, 30, S, 0),
+                    rung(18, ELITE, 3, R, 0),
+                    rung(19, MOUNTED, 60, R, 0),
+                    rung(20, ELITE, 6, R, 0));
+            default -> List.of();
+        };
+    }
+
+    /** The tool's own work, level by level: blocks, logs, crops or kills along {@link #CURVE}. */
+    private static Req mainRequirement(Kind kind, Tier t, int level) {
+        double c = CURVE[level - 1] * t.scale;
+        return switch (kind) {
+            case PICKAXE -> new Req(MINED, nice(15 * c));
+            case AXE -> new Req(LOGS, nice(10 * c));
+            case SHOVEL -> new Req(MINED, nice(20 * c));
+            case HOE -> level == 1 ? new Req(TILLED, nice(12 * t.scale)) : new Req(HARVESTED, nice(12 * c));
+            case SWORD, SPEAR -> new Req(level <= 3 ? KILLS : HOSTILE, nice(4 * c));
+            default -> throw new IllegalArgumentException(kind.id);
+        };
+    }
+
+    private static List<List<Req>> mainRequirements(Kind kind, Tier t) {
+        List<Rung> rungs = rungs(kind);
+        List<List<Req>> levels = new ArrayList<>();
+        for (int level = 1; level <= MAIN_LEVELS; level++) {
+            List<Req> reqs = new ArrayList<>();
+            reqs.add(mainRequirement(kind, t, level));
+            for (Rung rung : rungs) {
+                if (rung.level == level) reqs.add(rung.resolve(t));
+            }
+            levels.add(reqs);
+        }
+        return levels;
+    }
+
+    private static List<Map<Perk, Double>> mainRewards(Kind kind, Tier t) {
+        List<Map<Perk, Double>> steps = emptySteps(MAIN_LEVELS);
+        switch (kind) {
+            case PICKAXE -> {
+                for (int l = 1; l <= 20; l++) set(steps, t, l, SPEED, 5 * l);
+                ladder(steps, t, REINFORCED, 3, 10, 7, 20, 11, 30, 15, 40, 19, 50);
+                ladder(steps, t, YIELD, 6, 10, 12, 20, 17, 30, 20, 40);
+                set(steps, t, 10, VEIN, t.veinSize);
+                set(steps, t, 16, VEIN, 2 * t.veinSize);
+                if (t == Tier.DIAMOND || t == Tier.NETHERITE) set(steps, t, 15, EXCAVATE, 1);
+                if (t == Tier.IRON) set(steps, t, 20, EXCAVATE, 1);
+                if (t == Tier.NETHERITE) set(steps, t, 20, EXCAVATE, 2);
+                set(steps, t, 20, MAGNET, 1);
+            }
+            case AXE -> {
+                for (int l = 1; l <= 20; l++) set(steps, t, l, SPEED, 5 * l);
+                ladder(steps, t, DAMAGE, 2, 3, 6, 6, 10, 9, 14, 12, 18, 15);
+                ladder(steps, t, REINFORCED, 3, 10, 7, 20, 11, 30, 15, 40, 19, 50);
+                ladder(steps, t, YIELD, 5, 10, 9, 20, 13, 30, 17, 40);
+                set(steps, t, 10, TIMBER, t.timberSize);
+                set(steps, t, 16, TIMBER, 2 * t.timberSize);
+                set(steps, t, 20, MAGNET, 1);
+            }
+            case SHOVEL -> {
+                for (int l = 1; l <= 20; l++) set(steps, t, l, SPEED, 5 * l);
+                ladder(steps, t, REINFORCED, 3, 10, 7, 20, 11, 30, 15, 40, 19, 50);
+                ladder(steps, t, TREASURE_HUNTER, 6, 1, 10, 2, 14, 3, 18, 4, 20, 5);
+                set(steps, t, 10, EXCAVATE, 1);
+                set(steps, t, 20, EXCAVATE, 2);
+            }
+            case HOE -> {
+                for (int l = 1; l <= 20; l++) set(steps, t, l, YIELD, 5 * l);
+                for (int l = 2; l <= 20; l += 2) set(steps, t, l, SPEED, 5 * l / 2);
+                set(steps, t, 3, REPLANT, 1);
+                ladder(steps, t, REINFORCED, 5, 10, 9, 20, 13, 30, 17, 40, 20, 50);
+                ladder(steps, t, REAPER, 8, 1, 14, 2, 20, Math.max(2, t.reaperRadius));
+                set(steps, t, 20, MAGNET, 1);
+            }
+            case SWORD, SPEAR -> {
+                for (int l = 1; l <= 20; l++) set(steps, t, l, DAMAGE, 2.5 * l);
+                ladder(steps, t, ATTACK_SPEED, 3, 5, 7, 10, 11, 15, 15, 20, 19, 25);
+                ladder(steps, t, REINFORCED, 4, 10, 8, 20, 12, 30, 16, 40, 20, 50);
+                ladder(steps, t, LOOTING, 6, 1, 12, 2, 18, 3);
+                if (kind == Kind.SWORD) {
+                    ladder(steps, t, LIFESTEAL, 9, 3, 13, 6, 17, 9, 20, 12);
+                    set(steps, t, 15, EXECUTIONER, 1);
+                    set(steps, t, 20, SOUL_HARVEST, 1);
+                } else {
+                    set(steps, t, 10, CAVALRY, 1);
+                    set(steps, t, 20, WARHORSE, 1);
+                }
+            }
+            default -> throw new IllegalArgumentException(kind.id);
+        }
+        if (t == Tier.GOLD) {
+            // Gilded: golden tools are the experience tools.
+            ladder(steps, t, XP, 5, 25, 10, 50, 15, 75, 20, 100);
+        }
+        return steps;
+    }
+
+    // ------------------------------------------------------------------------------------------------
+    // Bow, crossbow, trident, mace, shears, fishing rod: 5 levels
 
     /** reqs(STAT, amount, STAT, amount, ...) */
     private static List<Req> reqs(Object... pairs) {
@@ -140,45 +368,8 @@ public final class Tracks {
         return list;
     }
 
-    private static List<Req> plus(List<Req> base, Object... extra) {
-        List<Req> list = new ArrayList<>(base);
-        list.addAll(reqs(extra));
-        return list;
-    }
-
-    private static List<List<Req>> requirements(Kind kind, Tier t) {
-        double s = t.scale;
+    private static List<List<Req>> specialRequirements(Kind kind) {
         return switch (kind) {
-            case PICKAXE -> List.of(
-                    reqs(MINED, 15 * s),
-                    reqs(MINED, 45 * s, ORES, 2 * s),
-                    plus(reqs(MINED, 100 * s), special(kind, t, 3)),
-                    plus(reqs(MINED, 180 * s), special(kind, t, 4)),
-                    plus(reqs(MINED, 300 * s), special(kind, t, 5)));
-            case AXE -> List.of(
-                    reqs(LOGS, 10 * s),
-                    reqs(LOGS, 30 * s),
-                    plus(reqs(LOGS, 70 * s), special(kind, t, 3)),
-                    plus(reqs(LOGS, 130 * s), special(kind, t, 4)),
-                    plus(reqs(LOGS, 220 * s), special(kind, t, 5)));
-            case SHOVEL -> List.of(
-                    reqs(MINED, 20 * s),
-                    reqs(MINED, 60 * s),
-                    plus(reqs(MINED, 130 * s), special(kind, t, 3)),
-                    plus(reqs(MINED, 240 * s), special(kind, t, 4)),
-                    plus(reqs(MINED, 400 * s), special(kind, t, 5)));
-            case HOE -> List.of(
-                    reqs(TILLED, 12 * s),
-                    reqs(HARVESTED, 30 * s),
-                    plus(reqs(HARVESTED, 80 * s), special(kind, t, 3)),
-                    plus(reqs(HARVESTED, 160 * s), special(kind, t, 4)),
-                    plus(reqs(HARVESTED, 280 * s), special(kind, t, 5)));
-            case SWORD, SPEAR -> List.of(
-                    reqs(KILLS, 5 * s),
-                    reqs(KILLS, 15 * s),
-                    plus(reqs(HOSTILE, 25 * s), special(kind, t, 3)),
-                    plus(reqs(HOSTILE, 50 * s), special(kind, t, 4)),
-                    plus(reqs(HOSTILE, 90 * s), special(kind, t, 5)));
             case BOW -> List.of(
                     reqs(KILLS, 10),
                     reqs(KILLS, 30),
@@ -215,133 +406,13 @@ public final class Tracks {
                     reqs(CATCHES, 40, TREASURE, 2),
                     reqs(CATCHES, 80, TREASURE, 6),
                     reqs(CATCHES, 150, TREASURE, 12));
+            default -> throw new IllegalArgumentException(kind.id);
         };
     }
 
-    /** The material-specific part of milestones III, IV and V. */
-    private static Object[] special(Kind kind, Tier t, int level) {
-        Object[][] byLevel = switch (kind) {
-            case PICKAXE -> switch (t) {
-                case WOOD -> of3(new Object[]{ORES, 5}, new Object[]{ORES, 10}, new Object[]{ORES, 20});
-                case STONE -> of3(new Object[]{ORES, 12}, new Object[]{DEEP, 60}, new Object[]{ORES, 40});
-                case COPPER -> of3(new Object[]{ORES, 20}, new Object[]{DEEP, 120}, new Object[]{ORES, 60});
-                case IRON -> of3(new Object[]{ORES, 40}, new Object[]{DEEP, 250}, new Object[]{GEMS, 8});
-                case GOLD -> of3(new Object[]{NETHER_MINED, 40}, new Object[]{NETHER_MINED, 120}, new Object[]{NETHER_MINED, 250});
-                case DIAMOND -> of3(new Object[]{NETHER_MINED, 300}, new Object[]{END_MINED, 200, OBSIDIAN, 16}, new Object[]{DEBRIS, 8});
-                case NETHERITE -> of3(new Object[]{NETHER_MINED, 600, DEBRIS, 4}, new Object[]{END_MINED, 500, OBSIDIAN, 48},
-                        new Object[]{DEBRIS, 24, GEMS, 24});
-                default -> none();
-            };
-            case AXE -> switch (t) {
-                case WOOD -> of3(new Object[]{KILLS, 3}, new Object[]{KILLS, 8}, new Object[]{KILLS, 15});
-                case STONE -> of3(new Object[]{KILLS, 5}, new Object[]{KILLS, 12}, new Object[]{KILLS, 25});
-                case COPPER -> of3(new Object[]{KILLS, 8}, new Object[]{KILLS, 20}, new Object[]{KILLS, 40});
-                case IRON -> of3(new Object[]{KILLS, 10}, new Object[]{NETHER_MINED, 64}, new Object[]{KILLS, 60});
-                case GOLD -> of3(new Object[]{NETHER_MINED, 24}, new Object[]{NETHER_MINED, 64}, new Object[]{NETHER_MINED, 128});
-                case DIAMOND -> of3(new Object[]{NETHER_MINED, 160}, new Object[]{END_MINED, 64}, new Object[]{KILLS, 100, ELITE, 1});
-                case NETHERITE -> of3(new Object[]{NETHER_MINED, 320}, new Object[]{END_MINED, 160}, new Object[]{KILLS, 200, ELITE, 3});
-                default -> none();
-            };
-            case SHOVEL -> switch (t) {
-                case WOOD -> of3(new Object[]{GRAVEL, 10}, new Object[]{SAND, 32}, new Object[]{CLAY, 12});
-                case STONE -> of3(new Object[]{GRAVEL, 20}, new Object[]{SAND, 64}, new Object[]{CLAY, 24});
-                case COPPER -> of3(new Object[]{SAND, 100}, new Object[]{CLAY, 32}, new Object[]{SNOW, 64});
-                case IRON -> of3(new Object[]{CLAY, 48}, new Object[]{SNOW, 128}, new Object[]{SOUL, 128});
-                case GOLD -> of3(new Object[]{SOUL, 32}, new Object[]{SOUL, 96}, new Object[]{NETHER_MINED, 200});
-                case DIAMOND -> of3(new Object[]{SOUL, 256}, new Object[]{SNOW, 256, CLAY, 96}, new Object[]{NETHER_MINED, 800});
-                case NETHERITE -> of3(new Object[]{SOUL, 400}, new Object[]{SNOW, 400, CLAY, 160}, new Object[]{NETHER_MINED, 1500});
-                default -> none();
-            };
-            case HOE -> switch (t) {
-                case WOOD -> of3(new Object[]{TILLED, 40}, new Object[]{MINED, 24}, new Object[]{TILLED, 80});
-                case STONE -> of3(new Object[]{TILLED, 60}, new Object[]{MINED, 48}, new Object[]{MINED, 96});
-                case COPPER -> of3(new Object[]{TILLED, 90}, new Object[]{MINED, 96}, new Object[]{WARTS, 32});
-                case IRON -> of3(new Object[]{WARTS, 48}, new Object[]{MINED, 160}, new Object[]{SCULK, 48});
-                case GOLD -> of3(new Object[]{WARTS, 24}, new Object[]{WARTS, 64}, new Object[]{NETHER_MINED, 64});
-                case DIAMOND -> of3(new Object[]{WARTS, 128}, new Object[]{SCULK, 128}, new Object[]{NETHER_MINED, 256});
-                case NETHERITE -> of3(new Object[]{WARTS, 256}, new Object[]{SCULK, 256}, new Object[]{NETHER_MINED, 512});
-                default -> none();
-            };
-            case SWORD -> switch (t) {
-                case IRON -> of3(new Object[]{}, new Object[]{NETHER_KILLS, 20}, new Object[]{ELITE, 2});
-                case GOLD -> of3(new Object[]{NETHER_KILLS, 10}, new Object[]{NETHER_KILLS, 30}, new Object[]{NETHER_KILLS, 60});
-                case DIAMOND -> of3(new Object[]{NETHER_KILLS, 50}, new Object[]{END_KILLS, 40}, new Object[]{ELITE, 5});
-                case NETHERITE -> of3(new Object[]{NETHER_KILLS, 100}, new Object[]{END_KILLS, 100}, new Object[]{ELITE, 10});
-                default -> none();
-            };
-            case SPEAR -> switch (t) {
-                case WOOD -> of3(new Object[]{}, new Object[]{MOUNTED, 3}, new Object[]{});
-                case STONE -> of3(new Object[]{}, new Object[]{MOUNTED, 5}, new Object[]{});
-                case COPPER -> of3(new Object[]{}, new Object[]{MOUNTED, 8}, new Object[]{});
-                case IRON -> of3(new Object[]{}, new Object[]{MOUNTED, 12}, new Object[]{NETHER_KILLS, 25});
-                case GOLD -> of3(new Object[]{NETHER_KILLS, 10}, new Object[]{MOUNTED, 8}, new Object[]{NETHER_KILLS, 40});
-                case DIAMOND -> of3(new Object[]{MOUNTED, 25}, new Object[]{NETHER_KILLS, 50}, new Object[]{ELITE, 5});
-                case NETHERITE -> of3(new Object[]{MOUNTED, 40}, new Object[]{NETHER_KILLS, 100}, new Object[]{ELITE, 10});
-                default -> none();
-            };
-            default -> none();
-        };
-        return byLevel[level - 3];
-    }
-
-    private static Object[][] of3(Object[] l3, Object[] l4, Object[] l5) {
-        return new Object[][]{l3, l4, l5};
-    }
-
-    private static Object[][] none() {
-        return new Object[][]{{}, {}, {}};
-    }
-
-    // ------------------------------------------------------------------------------------------------
-    // Rewards: each step sets the perk's total from that level on.
-
-    private static List<Map<Perk, Double>> rewards(Kind kind, Tier t) {
-        List<Map<Perk, Double>> steps = new ArrayList<>();
-        for (int i = 0; i < Track.MAX_LEVEL; i++) steps.add(new EnumMap<>(Perk.class));
+    private static List<Map<Perk, Double>> specialRewards(Kind kind, Tier t) {
+        List<Map<Perk, Double>> steps = emptySteps(SPECIAL_LEVELS);
         switch (kind) {
-            case PICKAXE -> {
-                set(steps, t, 1, SPEED, 10);
-                set(steps, t, 2, REINFORCED, 15);
-                set(steps, t, 3, SPEED, 25, YIELD, 10);
-                set(steps, t, 4, SPEED, 40, REINFORCED, 35, YIELD, 20);
-                set(steps, t, 5, SPEED, 60, YIELD, 30, VEIN, t.veinSize);
-                if (t == Tier.DIAMOND || t == Tier.NETHERITE) set(steps, t, 5, EXCAVATE, 1);
-            }
-            case AXE -> {
-                set(steps, t, 1, SPEED, 10);
-                set(steps, t, 2, REINFORCED, 15, DAMAGE, 5);
-                set(steps, t, 3, SPEED, 25, YIELD, 10);
-                set(steps, t, 4, SPEED, 40, REINFORCED, 35, DAMAGE, 10, YIELD, 20);
-                set(steps, t, 5, SPEED, 60, DAMAGE, 15, YIELD, 30, TIMBER, t.timberSize);
-            }
-            case SHOVEL -> {
-                set(steps, t, 1, SPEED, 10);
-                set(steps, t, 2, REINFORCED, 15);
-                set(steps, t, 3, SPEED, 25, TREASURE_HUNTER, 2);
-                set(steps, t, 4, SPEED, 40, REINFORCED, 35, TREASURE_HUNTER, 4);
-                set(steps, t, 5, SPEED, 60, TREASURE_HUNTER, 5, EXCAVATE, t == Tier.NETHERITE ? 2 : 1);
-            }
-            case HOE -> {
-                set(steps, t, 1, YIELD, 10);
-                set(steps, t, 2, REINFORCED, 15, REPLANT, 1);
-                set(steps, t, 3, YIELD, 25, SPEED, 25);
-                set(steps, t, 4, YIELD, 35, REINFORCED, 35, SPEED, 40, REAPER, 1);
-                set(steps, t, 5, YIELD, 50, SPEED, 60, REAPER, t.reaperRadius);
-            }
-            case SWORD -> {
-                set(steps, t, 1, DAMAGE, 5);
-                set(steps, t, 2, ATTACK_SPEED, 8, REINFORCED, 15);
-                set(steps, t, 3, DAMAGE, 12, LOOTING, 1);
-                set(steps, t, 4, ATTACK_SPEED, 15, REINFORCED, 35, LIFESTEAL, 5);
-                set(steps, t, 5, DAMAGE, 20, LOOTING, 2, LIFESTEAL, 8, EXECUTIONER, 1);
-            }
-            case SPEAR -> {
-                set(steps, t, 1, DAMAGE, 5);
-                set(steps, t, 2, ATTACK_SPEED, 8, REINFORCED, 15);
-                set(steps, t, 3, DAMAGE, 12, LOOTING, 1);
-                set(steps, t, 4, DAMAGE, 16, ATTACK_SPEED, 15, REINFORCED, 35);
-                set(steps, t, 5, DAMAGE, 22, LOOTING, 2, CAVALRY, 1);
-            }
             case BOW -> {
                 set(steps, t, 1, DRAW, 15);
                 set(steps, t, 2, DAMAGE, 10, REINFORCED, 15);
@@ -384,12 +455,17 @@ public final class Tracks {
                 set(steps, t, 4, LURE, 2, REINFORCED, 40, LUCK, 1);
                 set(steps, t, 5, LURE, 3, YIELD, 40, LUCK, 2);
             }
+            default -> throw new IllegalArgumentException(kind.id);
         }
-        if (t == Tier.GOLD) {
-            // Gilded: golden tools are the experience tools.
-            set(steps, t, 3, XP, 50);
-            set(steps, t, 5, XP, 100);
-        }
+        return steps;
+    }
+
+    // ------------------------------------------------------------------------------------------------
+    // Reward helpers: a step sets a perk's total from that level on.
+
+    private static List<Map<Perk, Double>> emptySteps(int levels) {
+        List<Map<Perk, Double>> steps = new ArrayList<>();
+        for (int i = 0; i < levels; i++) steps.add(new EnumMap<>(Perk.class));
         return steps;
     }
 
@@ -401,5 +477,10 @@ public final class Tracks {
             if (perk == SPEED || perk == DAMAGE || perk == ATTACK_SPEED) value = Math.round(value * t.power);
             steps.get(level - 1).put(perk, value);
         }
+    }
+
+    /** ladder(steps, tier, PERK, level, value, level, value, ...): one perk growing over several levels. */
+    private static void ladder(List<Map<Perk, Double>> steps, Tier t, Perk perk, int... levelValue) {
+        for (int i = 0; i < levelValue.length; i += 2) set(steps, t, levelValue[i], perk, levelValue[i + 1]);
     }
 }

@@ -9,6 +9,7 @@ public final class LangKeys {
     public static final String LEVEL_UP = "message.tempered.level_up";
     public static final String MASTERED = "message.tempered.mastered";
     public static final String NEXT = "message.tempered.next";
+    public static final String OVERVIEW_HINT = "message.tempered.overview_hint";
     public static final String BROKE = "message.tempered.broke";
     public static final String IS_BROKEN = "message.tempered.is_broken";
 
@@ -28,6 +29,7 @@ public final class LangKeys {
     public static final String GUI_SPECIAL = "gui.tempered.special";
     public static final String GUI_MILESTONES = "gui.tempered.milestones";
     public static final String GUI_YOURS = "gui.tempered.yours";
+    public static final String GUI_LEVEL = "gui.tempered.level";
     public static final String GUI_NONE_OWNED = "gui.tempered.none_owned";
     public static final String GUI_DONE = "gui.tempered.done";
     public static final String GUI_REWARDS = "gui.tempered.rewards";
@@ -39,10 +41,10 @@ public final class LangKeys {
     public static final String GUI_SCROLL = "gui.tempered.scroll";
 
     public static final List<String> STATIC = List.of(
-            KEY_OVERVIEW, LEVEL_UP, MASTERED, NEXT, BROKE, IS_BROKEN,
+            KEY_OVERVIEW, LEVEL_UP, MASTERED, NEXT, OVERVIEW_HINT, BROKE, IS_BROKEN,
             TIP_MASTERY, TIP_MASTERED, TIP_UNTOUCHED, TIP_NEXT, TIP_REQUIREMENT, TIP_PERKS, TIP_HOLD_SHIFT, TIP_OVERVIEW,
             TIP_SNEAK, TIP_BROKEN,
-            GUI_TITLE, GUI_TOOLS, GUI_SPECIAL, GUI_MILESTONES, GUI_YOURS, GUI_NONE_OWNED, GUI_DONE, GUI_REWARDS,
+            GUI_TITLE, GUI_TOOLS, GUI_SPECIAL, GUI_MILESTONES, GUI_YOURS, GUI_LEVEL, GUI_NONE_OWNED, GUI_DONE, GUI_REWARDS,
             GUI_HELP_1, GUI_HELP_2, GUI_HELP_3, GUI_HELP_ELITE, GUI_HELP_RAIDERS, GUI_SCROLL);
 
     private LangKeys() {

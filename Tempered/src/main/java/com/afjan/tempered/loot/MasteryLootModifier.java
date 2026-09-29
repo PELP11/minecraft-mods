@@ -15,8 +15,11 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemInstance;
 import net.minecraft.world.item.ItemStack;
@@ -31,7 +34,7 @@ import net.minecraftforge.common.loot.LootModifier;
 
 /**
  * Bonus drops from mastered tools: double ores / logs / crops / wool / catches (Yield), finds while digging
- * (Treasure), and the seed that Replant puts back into the ground.
+ * (Treasure), the seed that Replant puts back into the ground, and Magnet (drops straight into the inventory).
  */
 public final class MasteryLootModifier extends LootModifier {
     public static final MapCodec<MasteryLootModifier> CODEC = RecordCodecBuilder.mapCodec(
@@ -64,29 +67,10 @@ public final class MasteryLootModifier extends LootModifier {
             Vec3 origin = context.getOptional(LootContextParams.ORIGIN);
             BlockPos pos = origin == null ? null : BlockPos.containing(origin);
             // Blocks a player placed give no bonus at all (no place-and-break loops); crops are never "placed".
-            if (pos != null && PlacedBlocks.wasJustBroken(context.getLevel(), pos)) return loot;
-            switch (track.kind) {
-                case PICKAXE -> {
-                    if (state.is(ModTags.ORES)) doubleUp(loot, tool, random);
-                }
-                case AXE -> {
-                    if (state.is(BlockTags.LOGS)) doubleUp(loot, tool, random);
-                }
-                case HOE -> {
-                    if (ProgressEvents.isMatureCrop(state)) {
-                        doubleUp(loot, tool, random);
-                        if (pos != null && Mastery.perk(tool, Perk.REPLANT) > 0) replant(loot, context.getLevel(), pos, state);
-                    }
-                }
-                case SHEARS -> doubleUp(loot, tool, random);
-                case SHOVEL -> {
-                    double chance = Mastery.perk(tool, Perk.TREASURE_HUNTER);
-                    if (chance > 0 && ProgressEvents.isEffective(tool, state) && random.nextDouble() * 100 < chance) {
-                        loot.add(treasure(random));
-                    }
-                }
-                default -> {
-                }
+            boolean placed = pos != null && PlacedBlocks.wasJustBroken(context.getLevel(), pos);
+            if (!placed) bonuses(track, tool, state, pos, loot, context, random);
+            if (Mastery.perk(tool, Perk.MAGNET) > 0 && context.getOptional(LootContextParams.THIS_ENTITY) instanceof Player player) {
+                magnet(loot, player, random);
             }
         } else {
             Identifier id = context.getQueriedLootTableId();
@@ -95,6 +79,48 @@ public final class MasteryLootModifier extends LootModifier {
             if (track.kind == Kind.FISHING_ROD && path.equals("gameplay/fishing")) doubleUp(loot, tool, random);
         }
         return loot;
+    }
+
+    private static void bonuses(Track track, ItemStack tool, BlockState state, BlockPos pos, ObjectArrayList<ItemStack> loot,
+                                LootContext context, RandomSource random) {
+        switch (track.kind) {
+            case PICKAXE -> {
+                if (state.is(ModTags.ORES)) doubleUp(loot, tool, random);
+            }
+            case AXE -> {
+                if (state.is(BlockTags.LOGS)) doubleUp(loot, tool, random);
+            }
+            case HOE -> {
+                if (ProgressEvents.isMatureCrop(state)) {
+                    doubleUp(loot, tool, random);
+                    if (pos != null && Mastery.perk(tool, Perk.REPLANT) > 0) replant(loot, context.getLevel(), pos, state);
+                }
+            }
+            case SHEARS -> doubleUp(loot, tool, random);
+            case SHOVEL -> {
+                double chance = Mastery.perk(tool, Perk.TREASURE_HUNTER);
+                if (chance > 0 && ProgressEvents.isEffective(tool, state) && random.nextDouble() * 100 < chance) {
+                    loot.add(treasure(random));
+                }
+            }
+            default -> {
+            }
+        }
+    }
+
+    /** Magnet: drops go straight into the inventory; whatever does not fit falls as usual. */
+    private static void magnet(ObjectArrayList<ItemStack> loot, Player player, RandomSource random) {
+        boolean took = false;
+        for (ItemStack drop : loot) {
+            int before = drop.getCount();
+            player.getInventory().add(drop);
+            took |= drop.getCount() < before;
+        }
+        loot.removeIf(ItemStack::isEmpty);
+        if (took) {
+            player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS,
+                    0.2F, 1.4F + random.nextFloat() * 0.6F);
+        }
     }
 
     /** Yield: each drop has the perk's chance to come twice. */

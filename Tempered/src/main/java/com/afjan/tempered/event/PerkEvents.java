@@ -7,11 +7,15 @@ import com.afjan.tempered.mastery.Perk;
 import com.afjan.tempered.mastery.Track;
 import com.afjan.tempered.mastery.Tracks;
 import com.afjan.tempered.mixin.FishingHookAccessor;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Prediction;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
@@ -21,6 +25,7 @@ import net.minecraft.world.item.MaceItem;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -47,6 +52,10 @@ public final class PerkEvents {
         LivingHurtEvent.BUS.addListener(PerkEvents::onHurt);
         LivingDamageEvent.BUS.addListener(Priority.LOWEST, e -> {
             onDamaged(e);
+            return false;
+        });
+        LivingDeathEvent.BUS.addListener(Priority.LOWEST, e -> {
+            onKill(e);
             return false;
         });
         LootingLevelEvent.BUS.addListener(PerkEvents::onLooting);
@@ -80,6 +89,8 @@ public final class PerkEvents {
     // ------------------------------------------------------------------------------------------------ combat
 
     private static boolean onHurt(LivingHurtEvent event) {
+        LivingEntity victim = event.getEntity();
+        if (isWarhorse(victim)) event.setAmount(event.getAmount() * 0.6F);
         DamageSource source = event.getSource();
         if (!(source.getEntity() instanceof Player player) || Abilities.isShockwaveActive()) return false;
         Weapons.Hit hit = Weapons.find(player, source);
@@ -90,7 +101,6 @@ public final class PerkEvents {
             event.setAmount(Math.min(event.getAmount(), 1.0F));
             return false;
         }
-        LivingEntity victim = event.getEntity();
         float multiplier = (float) (1.0 + Mastery.perk(weapon, Perk.DAMAGE) / 100.0);
         if (Mastery.perk(weapon, Perk.EXECUTIONER) > 0 && victim.getHealth() < victim.getMaxHealth() * 0.35F) multiplier *= 1.5F;
         if (Mastery.perk(weapon, Perk.CAVALRY) > 0 && hit.how() == Weapons.How.MELEE && player.getVehicle() != null) multiplier *= 1.4F;
@@ -101,6 +111,28 @@ public final class PerkEvents {
             Abilities.shockwave(serverPlayer, victim, event.getAmount() * 0.5F);
         }
         return false;
+    }
+
+    /** Warhorse (spear capstone): a rider holding the spear and the animal under them take 40% less damage. */
+    static boolean isWarhorse(LivingEntity victim) {
+        if (victim instanceof Player rider) return rider.getVehicle() != null && Mastery.perk(rider.getMainHandItem(), Perk.WARHORSE) > 0;
+        for (Entity passenger : victim.getPassengers()) {
+            if (passenger instanceof Player rider && Mastery.perk(rider.getMainHandItem(), Perk.WARHORSE) > 0) return true;
+        }
+        return false;
+    }
+
+    /** Soul Harvest (sword capstone): every kill heals two hearts and gives Strength for five seconds. */
+    private static void onKill(LivingDeathEvent event) {
+        LivingEntity victim = event.getEntity();
+        if (victim.level().isClientSide() || victim instanceof ArmorStand) return;
+        if (!(event.getSource().getEntity() instanceof ServerPlayer player) || player == victim || !player.isAlive()) return;
+        Weapons.Hit hit = Weapons.find(player, event.getSource());
+        if (hit == null || Mastery.perk(hit.perks(), Perk.SOUL_HARVEST) <= 0) return;
+        player.heal(4.0F);
+        player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 100, 0, false, false, true));
+        player.level().sendParticles(ParticleTypes.SOUL, victim.getX(), victim.getY() + victim.getBbHeight() * 0.5, victim.getZ(),
+                8, 0.3, 0.4, 0.3, 0.02);
     }
 
     /** Lifesteal, from the damage that got through armour. */

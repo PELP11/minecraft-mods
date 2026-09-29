@@ -1,6 +1,7 @@
 package com.afjan.tempered.client;
 
 import com.afjan.tempered.mastery.Kind;
+import com.afjan.tempered.mastery.LangKeys;
 import com.afjan.tempered.mastery.Mastery;
 import com.afjan.tempered.mastery.Milestone;
 import com.afjan.tempered.mastery.Perk;
@@ -25,16 +26,18 @@ final class MasteryText {
     }
 
     static MutableComponent roman(int level) {
-        return Component.translatable("mastery.tempered.level." + Math.max(0, Math.min(Track.MAX_LEVEL, level)));
+        return Component.translatable("mastery.tempered.level." + Math.max(0, Math.min(Track.HIGHEST_LEVEL, level)));
     }
 
-    /** ★★★☆☆ */
-    static String stars(int level) {
-        return "★".repeat(level) + "☆".repeat(Track.MAX_LEVEL - level);
+    /** "Mastery VII (7/20)", or "Mastery XX - mastered". */
+    static MutableComponent masteryLine(Track track, int level) {
+        return level >= track.maxLevel()
+                ? Component.translatable(LangKeys.TIP_MASTERED, roman(level))
+                : Component.translatable(LangKeys.TIP_MASTERY, roman(level), level, track.maxLevel());
     }
 
     static MutableComponent requirement(Kind kind, Milestone.Req req) {
-        return Component.translatable(req.stat().requirementKey(kind), req.amount());
+        return Component.translatable(req.key(kind), req.amount());
     }
 
     /** "Mine 360 blocks (212/360)" when there is a tool to measure, else just the requirement. */
@@ -61,12 +64,8 @@ final class MasteryText {
         return perk.isAbility() ? ChatFormatting.AQUA : ChatFormatting.GREEN;
     }
 
-    static int levelColor(int level) {
-        return switch (level) {
-            case 0 -> DARK;
-            case 5 -> MASTERED;
-            default -> GOLD;
-        };
+    static int levelColor(Track track, int level) {
+        return level <= 0 ? DARK : level >= track.maxLevel() ? MASTERED : GOLD;
     }
 
     static MutableComponent toolName(Track track) {

@@ -29,7 +29,10 @@ public enum Perk {
     AUTOLOAD(Format.FLAG),
     STORMCALLER(Format.FLAG),
     SHOCKWAVE(Format.FLAG),
-    SHEAR_SWEEP(Format.FLAG);
+    SHEAR_SWEEP(Format.FLAG),
+    MAGNET(Format.FLAG),
+    SOUL_HARVEST(Format.FLAG),
+    WARHORSE(Format.FLAG);
 
     public enum Format { PERCENT, LEVELS, COUNT, AREA, FLAG }
 

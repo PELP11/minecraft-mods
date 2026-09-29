@@ -2,13 +2,13 @@ package com.afjan.tempered.mastery;
 
 import net.minecraft.world.item.Item;
 
-import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-/** The five milestones of one tool (e.g. the diamond pickaxe). */
+/** The milestones of one tool (e.g. the diamond pickaxe): 20 for main tools, 5 for the others. */
 public final class Track {
-    public static final int MAX_LEVEL = 5;
+    /** Highest level any track has (roman numerals and translations go this far). */
+    public static final int HIGHEST_LEVEL = Tracks.MAIN_LEVELS;
     private static final Map<Perk, Double> NONE = Map.of();
 
     public final Kind kind;
@@ -21,6 +21,10 @@ public final class Track {
         this.tier = tier;
         this.item = item;
         this.milestones = milestones;
+    }
+
+    public int maxLevel() {
+        return milestones.size();
     }
 
     /** Levels are consecutive: milestone III only counts once I and II are met. */
@@ -45,9 +49,5 @@ public final class Track {
     /** Same milestones bound to another item (modded tools borrow the nearest vanilla track). */
     Track withItem(Item other) {
         return new Track(kind, tier, other, milestones);
-    }
-
-    static Map<Perk, Double> copy(Map<Perk, Double> perks) {
-        return perks.isEmpty() ? new EnumMap<>(Perk.class) : new EnumMap<>(perks);
     }
 }

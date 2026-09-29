@@ -10,6 +10,11 @@ import java.util.Map;
 public record Milestone(int level, List<Req> reqs, Map<Perk, Double> totals, List<Perk> gained) {
 
     public record Req(Stat stat, int amount) {
+        /** Translation key of the challenge text; an amount of 1 uses the singular ("Defeat an elite foe"). */
+        public String key(Kind kind) {
+            String key = stat.requirementKey(kind);
+            return amount == 1 ? key + ".one" : key;
+        }
     }
 
     public boolean isMet(Mastery mastery) {

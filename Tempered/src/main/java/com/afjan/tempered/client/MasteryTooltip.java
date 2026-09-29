@@ -36,11 +36,10 @@ final class MasteryTooltip {
         if (level == 0 && mastery == null) {
             lines.add(Component.translatable(LangKeys.TIP_UNTOUCHED).withStyle(ChatFormatting.GRAY));
         } else {
-            lines.add(Component.translatable(level >= Track.MAX_LEVEL ? LangKeys.TIP_MASTERED : LangKeys.TIP_MASTERY, MasteryText.roman(level))
-                    .append(" " + MasteryText.stars(level))
-                    .withStyle(level >= Track.MAX_LEVEL ? ChatFormatting.LIGHT_PURPLE : ChatFormatting.GOLD));
+            lines.add(MasteryText.masteryLine(track, level)
+                    .withStyle(level >= track.maxLevel() ? ChatFormatting.LIGHT_PURPLE : ChatFormatting.GOLD));
         }
-        if (level < Track.MAX_LEVEL) {
+        if (level < track.maxLevel()) {
             Milestone next = track.milestones.get(level);
             lines.add(Component.translatable(LangKeys.TIP_NEXT, MasteryText.roman(level + 1)).withStyle(ChatFormatting.GRAY));
             for (Milestone.Req req : next.reqs()) {

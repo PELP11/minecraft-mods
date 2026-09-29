@@ -35,7 +35,7 @@ final class OwnedTools {
         Mastery mastery = Mastery.of(stack);
         if (mastery == null) return 0;
         int level = track.level(mastery);
-        if (level >= Track.MAX_LEVEL) return Track.MAX_LEVEL + 1;
+        if (level >= track.maxLevel()) return track.maxLevel() + 1;
         Milestone next = track.milestones.get(level);
         return level + next.progress(mastery) * 0.99;
     }

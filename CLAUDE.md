@@ -620,10 +620,12 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
 
 ## 15. Tempered project map (`Tempered/`, MinecraftForge 66.0.8)
 - Mod id `tempered`, package `com.afjan.tempered`, MC `[26.3,26.4)`, Forge `[66.0.8,)`. Tool mastery: 42 tiered tools
-  (wooden..netherite x pickaxe/axe/shovel/hoe/sword/spear) + bow, crossbow, trident, mace, shears, fishing rod, five
-  milestones each; tools never vanish (Broken at 0 durability, cheap anvil repair).
+  (wooden..netherite x pickaxe/axe/shovel/hoe/sword/spear) with 20 levels each + bow, crossbow, trident, mace, shears,
+  fishing rod with 5; tools never vanish (Broken at 0 durability, cheap anvil repair). User feedback on v1 (5 levels
+  everywhere): "20 levels for the main tools, late game harder" -> main work follows `Tracks.CURVE` (XX = 300x level I)
+  plus "rungs" (extra challenges with fallbacks by `Tier.miningLevel`); capstones at XX: Magnet, Soul Harvest, Warhorse.
 - `mastery/`: `Tracks` = the whole catalogue in code (requirements scale with `Tier.scale`, speed/damage perks with
-  `Tier.power`), `Mastery` = the item component (uid + lifetime counters; the level is derived, so a netherite upgrade
+  `Tier.power`; `Track.maxLevel()` differs per track, never hard-code a level count), `Mastery` = the item component (uid + lifetime counters; the level is derived, so a netherite upgrade
   re-measures the same counters), `Stat`/`Perk`/`Kind`/`Tier`/`Milestone`/`Track`, `Progress` (count + level-up chat,
   sound, particles), `MasteryAttributes` (attack speed via the forEachModifier mixin), `LangKeys`.
 - `event/`: `ProgressEvents` (counting; placed blocks via `PlacedBlocks` never count), `PerkEvents` (speed, damage,
@@ -632,7 +634,12 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   Miner, Excavate, Timber, Reaper through `gameMode.destroyBlock` + guard, Shockwave, Volley, self-loading crossbow,
   Cavalry, Stormcaller, Shear Sweep), `ability/Replanter`, `loot/MasteryLootModifier` (yield, treasure, replant),
   `mixin/` (ItemStack durability + modifiers, BlockTransformer, FishingHook accessor, CrossbowItem invoker),
-  `client/` (K = `MasteryScreen` overview drawn from rectangles, `MasteryTooltip`, `MasteryDecorator` pips/cracks).
-- `gametest/TemperedGameTests` (28 tests) + `tools/gen_tests.py`; `tools/gen_logo.py` (logo from the vanilla pickaxe).
-- Release: `./gradlew runGameTestServer build` -> `build/libs/tempered-1.0.0.jar` (a copy sits in `Tempered/`);
+  `client/` (K = `MasteryScreen` overview drawn from rectangles, auto-scrolls to the current milestone;
+  `MasteryTooltip`; `MasteryDecorator` = mastery bar along the icon's top edge + cracks).
+- Challenge texts with amount 1 use a singular key (`Milestone.Req.key` -> `stat.tempered.elite.one`); a translatable
+  with fewer args than `%s` renders the raw format string, so give every changed format its own key.
+- `gametest/TemperedGameTests` (32 tests) + `tools/gen_tests.py`; `tools/gen_logo.py` (logo from the vanilla pickaxe).
+  Connected test players are invulnerable (`ServerPlayer.isInvulnerableTo`: `!connection.hasClientLoaded()`): test
+  damage changes to them by posting a `LivingHurtEvent` yourself. `startRiding(horse, true, false)` works for them.
+- Release: `./gradlew runGameTestServer build` -> `build/libs/tempered-1.1.0.jar` (a copy sits in `Tempered/`);
   `CHALLENGES.md` is rewritten by the `write_challenge_sheet` test.

@@ -10,8 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.IItemDecorator;
 
 /**
- * Drawn on item icons in every inventory: one pip per mastery level along the top edge (pink when mastered)
- * and cracks over broken tools.
+ * Drawn on item icons in every inventory: a thin mastery bar along the top edge (pink when mastered) and cracks
+ * over broken tools.
  */
 final class MasteryDecorator implements IItemDecorator {
     static final MasteryDecorator INSTANCE = new MasteryDecorator();
@@ -30,12 +30,11 @@ final class MasteryDecorator implements IItemDecorator {
         Mastery mastery = Mastery.of(stack);
         int level = track.level(mastery);
         if (level <= 0) return false;
-        int color = level >= Track.MAX_LEVEL ? MasteryText.MASTERED : MasteryText.GOLD;
-        for (int i = 0; i < level; i++) {
-            int px = x + 1 + i * 3;
-            graphics.fill(px, y + 1, px + 2, y + 3, color);
-            graphics.fill(px, y + 3, px + 2, y + 4, 0xA0000000);
-        }
+        // Like the durability bar, but along the top edge: level / max, pink once mastered.
+        int max = track.maxLevel();
+        int filled = Math.max(1, Math.round(13.0F * Math.min(level, max) / max));
+        graphics.fill(x + 2, y + 1, x + 15, y + 3, 0xFF000000);
+        graphics.fill(x + 2, y + 1, x + 2 + filled, y + 2, level >= max ? MasteryText.MASTERED : MasteryText.GOLD);
         return false;
     }
 }
