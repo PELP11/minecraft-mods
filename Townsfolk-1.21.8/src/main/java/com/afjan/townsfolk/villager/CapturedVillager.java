@@ -1,5 +1,7 @@
 package com.afjan.townsfolk.villager;
 
+import net.minecraft.world.entity.npc.VillagerData;
+import com.afjan.townsfolk.mixin.VillagerInvoker;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -58,6 +60,12 @@ public record CapturedVillager(CompoundTag entity, ResourceLocation profession, 
         villager.ejectPassengers();
         if (villager.isLeashed()) villager.dropLeash();
         PLACES.forEach(villager::releasePoi);
+        // 1.21.8 grants a level 2 seconds after the trading screen closes and does not save that pending level, so
+        // pocket trading (or picking up right after a trade) would lose it: grant every level the XP has earned now.
+        while (VillagerData.canLevelUp(villager.getVillagerData().level())
+                && villager.getVillagerXp() >= VillagerData.getMaxXpPerLevel(villager.getVillagerData().level())) {
+            ((VillagerInvoker) villager).townsfolk$increaseMerchantCareer();
+        }
         List<ItemStack> a = new ArrayList<>(), b = new ArrayList<>(), r = new ArrayList<>();
         for (MerchantOffer offer : villager.getOffers()) {
             a.add(offer.getCostA().copy());

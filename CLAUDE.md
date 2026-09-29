@@ -745,3 +745,7 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   no `ignoreSwapAnimation` -> client mixin on `ItemInHandRenderer.shouldInstantlyReplaceVisibleItem` (ignore our
   component); no BlockTransformer -> inject `HoeItem.useOn` RETURN. `forEachModifier` injections also reach NeoForge's
   attribute tooltips (`AttributeUtil` calls the EquipmentSlotGroup overload).
+- Villagers: 1.21.8 levels a villager up 40 ticks **after** the trading screen closes (`updateMerchantTimer`,
+  not saved); 26.3 does it during the trade. Removing the villager right after trading (Townsfolk's pocket trading)
+  lost every level -> `CapturedVillager.capture` grants all earned levels first (`VillagerData.canLevelUp` +
+  `getMaxXpPerLevel`, private `increaseMerchantCareer()` via the `VillagerInvoker` mixin). Townsfolk-1.21.8 is 1.0.1.

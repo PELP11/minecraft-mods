@@ -9,6 +9,9 @@ authors="afjan"
 description='''Villagers made easy: pick them up, carry them and trade from your pocket, change or remove their job
 with a workstation, and they restock whenever you come back.'''
 
+[[mixins]]
+config="townsfolk.mixins.json"
+
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
