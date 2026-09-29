@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "M": "#minecraft:iron_tool_materials"
+  },
+  "pattern": [
+    "M",
+    "I"
+  ],
+  "result": {
+    "id": "tempered:iron_repair_kit"
+  }
+}

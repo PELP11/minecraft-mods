@@ -1,0 +1,27 @@
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+logoFile="tempered_logo.png"
+authors="afjan"
+description='''Tool mastery: every tool and weapon earns milestones through use, grows beyond vanilla,
+and breaks without vanishing so it can always be repaired.'''
+
+[[mixins]]
+config="tempered.mixins.json"
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
