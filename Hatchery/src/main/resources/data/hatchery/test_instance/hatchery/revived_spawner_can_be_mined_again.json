@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "hatchery:hatchery/revived_spawner_can_be_mined_again",
+  "max_ticks": 100,
+  "structure": "forge:empty5x4x5"
+}

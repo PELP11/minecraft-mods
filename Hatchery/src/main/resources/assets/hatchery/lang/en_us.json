@@ -1,0 +1,6 @@
+{
+  "block.hatchery.broken_spawner": "Broken Spawner",
+  "tooltip.hatchery.broken_spawner.1": "Place it and use a spawn egg on it",
+  "tooltip.hatchery.broken_spawner.2": "to bring it back as a spawner of that mob.",
+  "message.hatchery.egg_dropped": "✦ Rare drop: %s"
+}

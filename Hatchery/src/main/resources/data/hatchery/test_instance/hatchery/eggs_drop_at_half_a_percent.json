@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "hatchery:hatchery/eggs_drop_at_half_a_percent",
+  "max_ticks": 400,
+  "structure": "forge:empty5x4x5"
+}

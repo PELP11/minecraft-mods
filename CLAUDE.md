@@ -19,6 +19,8 @@ This folder is the user's private GitHub repo `minecraft-mods`; cloud sessions c
   GitHub link to download it; they put it into the CurseForge "Juicer" instance's `mods/` themselves.
   Exception: **Tempered is a MinecraftForge mod** (the user asked for "Forge 66.0.8") and needs its own Forge
   profile; NeoForge jars (Juicer, Oreborn, Arsenal) and Forge jars never share an instance (section 14).
+  **Hatchery** is Forge too: asked for as "another mod" right after Tempered without a loader, so it was built for
+  the same Forge profile (a NeoForge port was offered, not requested).
 - If a user names a loader version, check which loader it is: `66.0.8` only exists in the MinecraftForge maven
   (`26.3-66.0.8`), NeoForge 26.3 versions look like `26.3.0.x-beta`.
 - The Bash safety check can fail transiently ("no verdict"); after 10 in a row the turn ends. Don't retry blindly:
@@ -643,3 +645,33 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   damage changes to them by posting a `LivingHurtEvent` yourself. `startRiding(horse, true, false)` works for them.
 - Release: `./gradlew runGameTestServer build` -> `build/libs/tempered-1.1.0.jar` (a copy sits in `Tempered/`);
   `CHALLENGES.md` is rewritten by the `write_challenge_sheet` test.
+
+## 16. Hatchery project map (`Hatchery/`, MinecraftForge 66.0.8)
+- Mod id `hatchery`, package `com.afjan.hatchery`, same Gradle setup as Tempered minus mixins. Mined spawners (and
+  trial spawners, pickaxe only) drop a Broken Spawner; mobs killed by a player drop their spawn egg at 0.5% (+0.1% per
+  Looting level); a spawn egg used on a Broken Spawner turns it into a vanilla spawner of that mob.
+- `block/BrokenSpawnerBlock` (`useItemOn` + static `revive`), `block/BrokenSpawnerItem` (tooltip),
+  `loot/SpawnEggModifier` (GLM), `event/EggDrops` (glow, no despawn, chime, action-bar notice), `registry/`
+  (`ModBlocks` incl. creative tabs, `ModLoot`, `ModTags.NO_SPAWN_EGG`), `gametest/HatcheryGameTests` (12 tests).
+  `tools/gen_textures.py` recolours the vanilla spawner into the broken cage + logo (`build/texture_preview.png`).
+- Lessons (26.3 + Forge 66, verified):
+  - Overriding a vanilla block's drops = ship `data/minecraft/loot_table/blocks/<block>.json` in the mod (vanilla's
+    spawner/trial_spawner tables exist but are empty). Loot **pools** take one `"condition"` (combine with
+    `minecraft:all_of` + `terms`); a GLM's JSON takes a `"conditions"` list. `match_tool` = `{"predicate":{"items":"#tag"}}`.
+  - Forge routes `random_chance_with_enchanted_bonus` for Looting through `LootContext.getLootingModifier()` =
+    `LootingLevelEvent`, so Tempered's mastery Looting raises data-driven chances too.
+  - A GLM keyed on `THIS_ENTITY` must also check `context.getQueriedLootTableId()` == `entity.getLootTable()`:
+    shearing, bartering, cat gifts ... also carry THIS_ENTITY. `killed_by_player` = LAST_DAMAGE_PLAYER is present.
+  - Spawn eggs: `SpawnEggItem.getType(stack)`, `SpawnEggItem.byId(type)` -> `Optional<Holder<Item>>` (scans the items'
+    `ENTITY_DATA` default component: cache it). Vanilla 26.3 lets survival players re-type spawners with an egg;
+    `SpawnerBlockEntity.setEntityId(type, random)`, read back with `getSpawner().getOrCreateDisplayEntity(level, pos)`.
+  - `Block.useItemOn` runs before the held item's `useOn`; return `TRY_WITH_EMPTY_HAND` to let the item act.
+    `ItemStack.consume(1, player)` skips creative. Registration: `Properties.of().setId(BLOCKS.key(name))`,
+    `new Item.Properties().setId(ITEMS.key(name)).useBlockDescriptionPrefix()`; creative tabs:
+    `BuildCreativeModeTabContentsEvent.BUS` (global bus, record, `getTabKey()`, `accept(supplier)`).
+  - `LivingDropsEvent` (record) carries the captured `ItemEntity`s before they enter the world:
+    `setGlowingTag(true)` + `setUnlimitedLifetime()` mark a rare drop.
+  - Testing drop rates: build `LootParams` like `LivingEntity.dropFromLootTable` and call `table.getRandomItems(params)`
+    20,000x (GLMs apply); victims without AI from `type.create(level, EntitySpawnReason.TRIGGERED)` + `snapTo` (a
+    Wither that never enters the world). 3,000 real spawn-and-kill cycles in one GameTest take ~1 s.
+- Release: `./gradlew runGameTestServer build` -> `build/libs/hatchery-1.0.0.jar` (a copy sits in `Hatchery/`).

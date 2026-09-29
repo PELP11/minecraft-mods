@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "hatchery:block/broken_spawner"
+  }
+}
