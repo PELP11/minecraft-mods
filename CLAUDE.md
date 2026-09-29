@@ -711,3 +711,35 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   workstation stay claimed); `restock()`/`refreshBrain(level)` are public; `Inventory.placeItemBackInInventory(stack,
   Prediction.SERVER_ONLY)`. GameTests: count entities inside your own structure box only (neighbour tests' mobs).
 - Release: `./gradlew runGameTestServer build` -> `build/libs/townsfolk-1.0.0.jar` (a copy sits in `Townsfolk/`).
+
+## 18. 1.21.8 ports (NeoForge 21.8.54) — `Tempered-1.21.8/`, `Hatchery-1.21.8/`, `Townsfolk-1.21.8/`
+- The user asked for "1.12.8, neoforge 21.8.54" = Minecraft **1.21.8**. Same content as the Forge 26.3 mods except
+  what 1.21.8 lacks (Tempered: no copper tier/kit, no spears, no Cavalry/Warhorse). Jars `<modid>-1.21.8-<ver>.jar`
+  in each folder; they go into a NeoForge 21.8.54 (MC 1.21.8) profile, never next to the 26.3 jars.
+- Setup: NeoForgeMDKs `MDK-1.21.8-ModDevGradle` (MDG 2.0.147, Java 21 preinstalled, Parchment), then
+  `porting/port_setup.py <Mod>` (skeleton + mods.toml template with `[[mixins]]`, drops GameTests), `port_rename.py`
+  (mechanical renames), `port_events.py <java root> <package>` (EventBus 7 `X.BUS.addListener` -> an `Events.listen`
+  helper; its Predicate overload is bound to `ICancellableEvent`, so returning true cancels and lambdas stay unambiguous).
+  First `createMinecraftArtifacts` ≈ 4 min; sources = `build/moddev/artifacts/neoforge-21.8.54-sources.jar`, vanilla
+  data/assets = `...-client-extra-aka-minecraft-resources.jar`.
+- No GameTests in the ports: `runGameTestServer` boots, loads all data (logs broken tags/loot/advancements/mixins)
+  and exits by itself -> grep the log for ERROR. It caught `#minecraft:ores` (26.x only) and advancement keys.
+- 26.3 Forge -> 1.21.8 NeoForge: `Identifier`->`ResourceLocation`, `key.identifier()`->`location()`, `EntityTypes`->
+  `EntityType`, `npc.villager.*`->`npc.*`, `sendOverlayMessage(c)`->`displayClientMessage(c, true)`, `BlockItemTags.X
+  .block()`->`BlockTags.X`, `entity.is(tag)`->`entity.getType().is(tag)`, `SpawnEggItem.getType(stack)`-> instance
+  `getType(registries, stack)`, `byId` returns the item; GUI `GuiGraphicsExtractor`->`GuiGraphics` (`text`->`drawString`,
+  `outline`->`renderOutline`, `item`->`renderItem`, `extractRenderState`->`render`), `mouseClicked(double,double,int)`,
+  `keyPressed(int,int,int)`, `Screen.hasShiftDown()`, `mc.screen`/`mc.setScreen`, KeyMapping category is a String.
+- Events: LivingHurtEvent -> `LivingIncomingDamageEvent`; LivingDamageEvent -> `LivingDamageEvent.Post#getNewDamage`;
+  LootingLevelEvent -> `GetEnchantmentLevelEvent` (`isTargetting(Enchantments.LOOTING)`, `getEnchantments().set`);
+  BreakEvent XP -> `BlockDropsEvent#setDroppedExperience`; FinalizeSpawn -> `FinalizeSpawnEvent#getSpawner()` =
+  `Either<BlockEntity, Entity>`; `AnvilUpdateEvent#setXpCost`; `setUseItem(net.minecraft.util.TriState.FALSE)`;
+  `PlayerTickEvent#getEntity`; creative tabs, key mappings and item decorators on the **mod bus**.
+- Data: loot conditions use `"condition": "minecraft:x"`, pools a `"conditions": [...]` list; GLM list in
+  `data/neoforge/loot_modifiers/`, `doApply(ObjectArrayList, LootContext)`, `context.getOptionalParameter(...)`;
+  `recipe_unlocked` takes `"recipe"`. Render types are NOT picked from texture alpha: add `"render_type":
+  "minecraft:cutout"` to a see-through block model.
+- Mixins: NeoForge routes damage through `ItemStack.hurtAndBreak/applyDamage(..., LivingEntity, Consumer<Item>)`;
+  no `ignoreSwapAnimation` -> client mixin on `ItemInHandRenderer.shouldInstantlyReplaceVisibleItem` (ignore our
+  component); no BlockTransformer -> inject `HoeItem.useOn` RETURN. `forEachModifier` injections also reach NeoForge's
+  attribute tooltips (`AttributeUtil` calls the EquipmentSlotGroup overload).
