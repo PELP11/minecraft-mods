@@ -1,0 +1,14 @@
+{
+  "item.townsfolk.villager": "Villager",
+  "item.townsfolk.villager.of": "Villager: %s",
+  "item.townsfolk.villager.unemployed": "Unemployed",
+  "tooltip.townsfolk.level": "%s (level %s)",
+  "tooltip.townsfolk.trade": "%s → %s",
+  "tooltip.townsfolk.trade_two": "%s + %s → %s",
+  "tooltip.townsfolk.more": "... and %s more trades",
+  "tooltip.townsfolk.use": "Use on a block: set it down. Use in the air: trade with it.",
+  "message.townsfolk.nothing_to_trade": "This villager has nothing to trade",
+  "message.townsfolk.new_job": "New job: %s",
+  "message.townsfolk.lost_job": "No longer a %s",
+  "message.townsfolk.too_young": "Too young to work"
+}

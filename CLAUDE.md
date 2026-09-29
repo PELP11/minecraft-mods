@@ -20,7 +20,7 @@ This folder is the user's private GitHub repo `minecraft-mods`; cloud sessions c
   Exception: **Tempered is a MinecraftForge mod** (the user asked for "Forge 66.0.8") and needs its own Forge
   profile; NeoForge jars (Juicer, Oreborn, Arsenal) and Forge jars never share an instance (section 14).
   **Hatchery** is Forge too: asked for as "another mod" right after Tempered without a loader, so it was built for
-  the same Forge profile (a NeoForge port was offered, not requested).
+  the same Forge profile (a NeoForge port was offered, not requested). **Townsfolk** (villagers) is Forge too.
 - If a user names a loader version, check which loader it is: `66.0.8` only exists in the MinecraftForge maven
   (`26.3-66.0.8`), NeoForge 26.3 versions look like `26.3.0.x-beta`.
 - The Bash safety check can fail transiently ("no verdict"); after 10 in a row the turn ends. Don't retry blindly:
@@ -695,3 +695,19 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   does NOT stop the spawn. GameTests run real waves with `BaseSpawner.serverTick` after loading `Delay: 0`.
   `ModuleRefundModifier` (GLM on `BLOCK_ENTITY`) gives all modules back when the spawner is mined.
 - Release: `./gradlew runGameTestServer build` -> `build/libs/hatchery-1.1.0.jar` (a copy sits in `Hatchery/`).
+
+## 17. Townsfolk project map (`Townsfolk/`, MinecraftForge 66.0.8)
+- Mod id `townsfolk`, package `com.afjan.townsfolk`, Hatchery's Gradle setup. Villager QoL: sneak + empty hand picks a
+  villager up (`villager/CapturedVillager` = saved entity NBT minus UUID + a tooltip summary of the trades, component
+  `townsfolk:villager` on item `townsfolk:villager`); use on a block sets it down; use in the air = pocket trading
+  (spawn in front, `villager.mobInteract(player, hand)` opens the trades, `PlayerContainerEvent.Close` puts it back);
+  sneak + workstation item = that job (`villager/Jobs`: `PoiTypes.forState(block)` -> profession whose
+  `heldJobSite` matches), own workstation = unemployed; trades restock on opening if 5 min old (`PlayerContainerEvent.Open`,
+  the trading player is already set, offers are sent after the event; last restock in `getPersistentData()`).
+- 26.3 villager facts: `mobInteract` ignores sneaking players (sneak gestures never open trades); `setVillagerData`
+  with a new profession drops the offers (`getOffers()` regenerates them); `ResetProfession` fires a villager with
+  0 XP, level <= 1 and no job site, so a job given without the block needs XP >= 1; `releaseAllPois` is private:
+  call `releasePoi` for HOME/JOB_SITE/POTENTIAL_JOB_SITE/MEETING_POINT before removing a villager (else its bed and
+  workstation stay claimed); `restock()`/`refreshBrain(level)` are public; `Inventory.placeItemBackInInventory(stack,
+  Prediction.SERVER_ONLY)`. GameTests: count entities inside your own structure box only (neighbour tests' mobs).
+- Release: `./gradlew runGameTestServer build` -> `build/libs/townsfolk-1.0.0.jar` (a copy sits in `Townsfolk/`).
