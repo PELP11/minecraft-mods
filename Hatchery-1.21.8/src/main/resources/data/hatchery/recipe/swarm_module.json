@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "E": "minecraft:emerald",
+    "N": "minecraft:netherite_scrap"
+  },
+  "pattern": [
+    "DED",
+    "ENE",
+    "DED"
+  ],
+  "result": {
+    "id": "hatchery:swarm_module"
+  }
+}

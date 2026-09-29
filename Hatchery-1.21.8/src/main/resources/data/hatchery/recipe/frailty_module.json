@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "Q": "minecraft:quartz",
+    "F": "minecraft:fermented_spider_eye"
+  },
+  "pattern": [
+    "AQA",
+    "QFQ",
+    "AQA"
+  ],
+  "result": {
+    "id": "hatchery:frailty_module"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": "minecraft:lapis_block",
+    "D": "minecraft:diamond",
+    "X": "minecraft:daylight_detector"
+  },
+  "pattern": [
+    "LDL",
+    "DXD",
+    "LDL"
+  ],
+  "result": {
+    "id": "hatchery:daylight_module"
+  }
+}

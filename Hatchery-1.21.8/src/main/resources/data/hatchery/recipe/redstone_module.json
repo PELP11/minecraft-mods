@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "minecraft:redstone",
+    "I": "minecraft:iron_ingot",
+    "C": "minecraft:comparator"
+  },
+  "pattern": [
+    "RIR",
+    "ICI",
+    "RIR"
+  ],
+  "result": {
+    "id": "hatchery:redstone_module"
+  }
+}
