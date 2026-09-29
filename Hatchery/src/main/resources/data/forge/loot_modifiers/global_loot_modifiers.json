@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "hatchery:spawn_eggs"
+    "hatchery:spawn_eggs",
+    "hatchery:module_refund"
   ]
 }

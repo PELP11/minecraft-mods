@@ -266,4 +266,162 @@ public final class HatcheryGameTests {
         helper.assertTrue(eggs >= 1 && eggs <= 45, "eggs from 3000 zombie kills: " + eggs);
         helper.succeed();
     }
+
+    // ------------------------------------------------------------------------------------------------ modules
+
+    private static SpawnerBlockEntity spawnerAt(GameTestHelper helper, BlockPos rel, EntityType<?> type) {
+        helper.setBlock(rel, Blocks.SPAWNER);
+        SpawnerBlockEntity spawner = helper.getBlockEntity(rel, SpawnerBlockEntity.class);
+        spawner.setEntityId(type, helper.getLevel().getRandom());
+        return spawner;
+    }
+
+    private static net.minecraft.nbt.CompoundTag spawnerTag(GameTestHelper helper, SpawnerBlockEntity spawner) {
+        var out = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING,
+                helper.getLevel().registryAccess());
+        spawner.getSpawner().save(out);
+        return out.buildResult();
+    }
+
+    /** Runs one wave now (a player must be within 16 blocks). */
+    private static void spawnWave(GameTestHelper helper, SpawnerBlockEntity spawner, BlockPos rel) {
+        ServerLevel level = helper.getLevel();
+        var tag = spawnerTag(helper, spawner);
+        tag.putShort("Delay", (short) 0);
+        spawner.getSpawner().load(level, helper.absolutePos(rel), net.minecraft.world.level.storage.TagValueInput.create(
+                net.minecraft.util.ProblemReporter.DISCARDING, level.registryAccess(), tag));
+        spawner.getSpawner().serverTick(level, helper.absolutePos(rel));
+    }
+
+    private static List<? extends Entity> cowsAround(GameTestHelper helper, BlockPos rel) {
+        return helper.getLevel().getEntities(EntityTypes.COW, new AABB(helper.absolutePos(rel)).inflate(6), e -> true);
+    }
+
+    private static ItemStack modules(com.afjan.hatchery.spawner.Module module, int count) {
+        return new ItemStack(ModBlocks.MODULES.get(module).get(), count);
+    }
+
+    @GameTest
+    public static void modulesStackOnASpawner(GameTestHelper helper) {
+        BlockPos rel = new BlockPos(2, 1, 2);
+        SpawnerBlockEntity spawner = spawnerAt(helper, rel, EntityTypes.ZOMBIE);
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), modules(com.afjan.hatchery.spawner.Module.SWARM, 4));
+        useOn(player, helper, rel);
+        useOn(player, helper, rel);
+        var installed = com.afjan.hatchery.spawner.SpawnerModules.of(spawner);
+        helper.assertValueEqual(installed.swarm(), 2, "swarm level");
+        helper.assertValueEqual(player.getMainHandItem().getCount(), 1, "modules left (1 + 2 used)");
+        useOn(player, helper, rel);
+        helper.assertValueEqual(com.afjan.hatchery.spawner.SpawnerModules.of(spawner).swarm(), 2, "level III with only 1 module");
+        helper.assertValueEqual(player.getMainHandItem().getCount(), 1, "modules left after the refusal");
+        var tag = spawnerTag(helper, spawner);
+        helper.assertValueEqual(tag.getShortOr("SpawnCount", (short) 0), (short) 8, "spawn count");
+        helper.assertValueEqual(tag.getShortOr("MaxNearbyEntities", (short) 0), (short) 16, "max nearby");
+
+        player.setItemInHand(InteractionHand.MAIN_HAND, modules(com.afjan.hatchery.spawner.Module.HASTE, 1));
+        useOn(player, helper, rel);
+        tag = spawnerTag(helper, spawner);
+        helper.assertValueEqual(tag.getShortOr("MinSpawnDelay", (short) 0), (short) 140, "min delay");
+        helper.assertValueEqual(tag.getShortOr("MaxSpawnDelay", (short) 0), (short) 560, "max delay");
+        helper.assertValueEqual(tag.getShortOr("SpawnCount", (short) 0), (short) 8, "swarm kept");
+        helper.assertValueEqual(spawnerMob(helper, rel), EntityTypes.ZOMBIE, "mob kept");
+
+        player.setItemInHand(InteractionHand.MAIN_HAND, modules(com.afjan.hatchery.spawner.Module.REDSTONE, 2));
+        useOn(player, helper, rel);
+        useOn(player, helper, rel);
+        helper.assertTrue(com.afjan.hatchery.spawner.SpawnerModules.of(spawner).redstone(), "redstone not installed");
+        helper.assertValueEqual(player.getMainHandItem().getCount(), 1, "redstone modules left (one-off)");
+        helper.succeed();
+    }
+
+    /** A real wave from a cow spawner with Daylight and Frailty II: cows in daylight, at half health. */
+    @GameTest(structure = "forge:empty7x5x7", skyAccess = true)
+    public static void daylightAndFrailtyShapeTheWave(GameTestHelper helper) {
+        BlockPos rel = new BlockPos(3, 2, 3);
+        SpawnerBlockEntity spawner = spawnerAt(helper, rel, EntityTypes.COW);
+        new com.afjan.hatchery.spawner.SpawnerModules(0, 0, 2, true, false).install(helper.getLevel(), helper.absolutePos(rel), spawner);
+        helper.assertTrue(spawnerTag(helper, spawner).getCompoundOrEmpty("SpawnData").contains("custom_spawn_rules"), "no light rules");
+        TestPlayers.survival(helper, new BlockPos(0, 1, 0), ItemStack.EMPTY);
+        spawnWave(helper, spawner, rel);
+        var cows = cowsAround(helper, rel);
+        helper.assertFalse(cows.isEmpty(), "no cows in daylight");
+        for (Entity cow : cows) {
+            LivingEntity living = (LivingEntity) cow;
+            helper.assertTrue(Math.abs(living.getHealth() - living.getMaxHealth() * 0.5F) < 0.01F, "cow health " + living.getHealth());
+        }
+        cows.forEach(Entity::discard);
+        helper.succeed();
+    }
+
+    @GameTest(structure = "forge:empty7x5x7", skyAccess = true)
+    public static void redstonePausesTheSpawner(GameTestHelper helper) {
+        BlockPos rel = new BlockPos(3, 2, 3);
+        SpawnerBlockEntity spawner = spawnerAt(helper, rel, EntityTypes.COW);
+        new com.afjan.hatchery.spawner.SpawnerModules(0, 0, 0, true, true).install(helper.getLevel(), helper.absolutePos(rel), spawner);
+        TestPlayers.survival(helper, new BlockPos(0, 1, 0), ItemStack.EMPTY);
+        helper.setBlock(rel.east(), Blocks.REDSTONE_BLOCK);
+        spawnWave(helper, spawner, rel);
+        helper.assertTrue(cowsAround(helper, rel).isEmpty(), "a powered spawner spawned cows");
+        helper.setBlock(rel.east(), Blocks.AIR);
+        spawnWave(helper, spawner, rel);
+        var cows = cowsAround(helper, rel);
+        helper.assertFalse(cows.isEmpty(), "the spawner stayed off without power");
+        cows.forEach(Entity::discard);
+        helper.succeed();
+    }
+
+    @GameTest
+    public static void minedSpawnerGivesModulesBack(GameTestHelper helper) {
+        BlockPos rel = new BlockPos(2, 1, 2);
+        SpawnerBlockEntity spawner = spawnerAt(helper, rel, EntityTypes.ZOMBIE);
+        new com.afjan.hatchery.spawner.SpawnerModules(3, 0, 0, false, true).install(helper.getLevel(), helper.absolutePos(rel), spawner);
+        ServerPlayer player = TestPlayers.survival(helper, new BlockPos(0, 1, 0), new ItemStack(Items.IRON_PICKAXE));
+        player.gameMode.destroyBlock(helper.absolutePos(rel));
+        helper.assertValueEqual(dropped(helper, ModBlocks.MODULES.get(com.afjan.hatchery.spawner.Module.SWARM).get()), 6, "swarm modules (1+2+3)");
+        helper.assertValueEqual(dropped(helper, ModBlocks.MODULES.get(com.afjan.hatchery.spawner.Module.REDSTONE).get()), 1, "redstone modules");
+        helper.assertValueEqual(dropped(helper, ModBlocks.BROKEN_SPAWNER_ITEM.get()), 1, "broken spawner");
+        helper.succeed();
+    }
+
+    @GameTest
+    public static void moduleRecipes(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        Object[][] grids = {
+                {com.afjan.hatchery.spawner.Module.SWARM, Items.DIAMOND, Items.EMERALD, Items.NETHERITE_SCRAP},
+                {com.afjan.hatchery.spawner.Module.HASTE, Items.REDSTONE_BLOCK, Items.GOLD_INGOT, Items.NETHERITE_SCRAP},
+                {com.afjan.hatchery.spawner.Module.FRAILTY, Items.AMETHYST_SHARD, Items.QUARTZ, Items.FERMENTED_SPIDER_EYE},
+                {com.afjan.hatchery.spawner.Module.DAYLIGHT, Items.LAPIS_BLOCK, Items.DIAMOND, Items.DAYLIGHT_DETECTOR},
+                {com.afjan.hatchery.spawner.Module.REDSTONE, Items.REDSTONE, Items.IRON_INGOT, Items.COMPARATOR}};
+        for (Object[] g : grids) {
+            Item corner = (Item) g[1], edge = (Item) g[2], centre = (Item) g[3];
+            List<ItemStack> items = new ArrayList<>();
+            for (int i = 0; i < 9; i++) items.add(new ItemStack(i == 4 ? centre : i % 2 == 0 ? corner : edge));
+            var input = net.minecraft.world.item.crafting.CraftingInput.of(3, 3, items);
+            var recipe = level.recipeAccess().getRecipeFor(net.minecraft.world.item.crafting.RecipeType.CRAFTING, input, level);
+            helper.assertTrue(recipe.isPresent() && recipe.get().value().assemble(input).is(ModBlocks.MODULES.get(g[0]).get()), "recipe of " + g[0]);
+        }
+        helper.succeed();
+    }
+
+    @GameTest
+    public static void everyTextHasATranslation(GameTestHelper helper) {
+        com.google.gson.JsonObject lang;
+        try (var in = Hatchery.class.getResourceAsStream("/assets/hatchery/lang/en_us.json")) {
+            lang = com.google.gson.JsonParser.parseReader(new java.io.InputStreamReader(in, java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject();
+        } catch (java.io.IOException e) {
+            throw new IllegalStateException(e);
+        }
+        List<String> keys = new ArrayList<>(com.afjan.hatchery.spawner.Messages.ALL);
+        keys.add(ModBlocks.BROKEN_SPAWNER_ITEM.get().getDescriptionId());
+        keys.add(com.afjan.hatchery.block.BrokenSpawnerItem.TIP_1);
+        keys.add(com.afjan.hatchery.block.BrokenSpawnerItem.TIP_2);
+        keys.add(com.afjan.hatchery.event.EggDrops.MESSAGE);
+        for (var module : com.afjan.hatchery.spawner.Module.values()) {
+            keys.add(ModBlocks.MODULES.get(module).get().getDescriptionId());
+            keys.add(module.translationKey());
+            keys.add("tooltip.hatchery." + module.id);
+        }
+        for (String key : keys) helper.assertTrue(lang.has(key), "missing translation: " + key);
+        helper.succeed();
+    }
 }

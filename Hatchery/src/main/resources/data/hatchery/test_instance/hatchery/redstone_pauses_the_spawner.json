@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "hatchery:hatchery/redstone_pauses_the_spawner",
+  "max_ticks": 100,
+  "structure": "forge:empty7x5x7",
+  "sky_access": true
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "hatchery:hatchery/daylight_and_frailty_shape_the_wave",
+  "max_ticks": 100,
+  "structure": "forge:empty7x5x7",
+  "sky_access": true
+}

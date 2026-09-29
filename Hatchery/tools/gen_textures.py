@@ -114,6 +114,47 @@ def logo(jar, cage):
     return img
 
 
+
+# Spawner modules: a riveted iron chip with a coloured cage window and a symbol.
+MODULE_COLOURS = {
+    'swarm': ('#a8f7be', '#3ddc6e', '#16803a'),
+    'haste': ('#ffe08a', '#f0a430', '#a25e10'),
+    'frailty': ('#dcb8ff', '#a45ee8', '#5b2a8f'),
+    'daylight': ('#fffbd0', '#f5e35a', '#b89c1c'),
+    'redstone': ('#ff9a8a', '#e03a2e', '#7e140e'),
+}
+MODULE_SYMBOLS = {
+    'swarm': [(6, 6), (9, 6), (7, 9), (8, 9), (6, 7), (9, 7), (7, 8), (8, 8)],
+    'haste': [(5, 5), (6, 6), (7, 7), (6, 8), (5, 9), (8, 5), (9, 6), (10, 7), (9, 8), (8, 9)],
+    'frailty': [(5, 6), (6, 5), (7, 6), (8, 6), (9, 5), (10, 6), (5, 7), (10, 7), (6, 8), (9, 8), (7, 9), (8, 9), (8, 7), (7, 8)],
+    'daylight': [(7, 7), (8, 7), (7, 8), (8, 8), (7, 5), (8, 5), (7, 10), (8, 10), (5, 7), (5, 8), (10, 7), (10, 8)],
+    'redstone': [(8, 4), (7, 5), (8, 5), (6, 6), (7, 6), (8, 7), (9, 7), (8, 8), (7, 9), (7, 10)],
+}
+
+
+def module(name):
+    light, base, dark = (hexc(c) for c in MODULE_COLOURS[name])
+    img = Img(16, 16)
+    frame, frame_light, outline = hexc('#4b4f58'), hexc('#6d727d'), hexc('#1d1f24')
+    for y in range(1, 15):
+        for x in range(1, 15):
+            if (x, y) in ((1, 1), (14, 1), (1, 14), (14, 14)):
+                continue
+            edge = x in (1, 14) or y in (1, 14) or (x, y) in ((2, 2), (13, 2), (2, 13), (13, 13))
+            img.set(x, y, outline if edge else (frame_light if x == 2 or y == 2 else frame))
+    for x, y in ((3, 3), (12, 3), (3, 12), (12, 12)):
+        img.set(x, y, frame_light)
+    for y in range(4, 12):
+        for x in range(4, 12):
+            t = (x - 4 + y - 4) / 14.0
+            c = light if t < 0.25 else base if t < 0.7 else dark
+            img.set(x, y, outline if x in (4, 11) or y in (4, 11) else c)
+    ink = hexc('#1d1f24') if name in ('daylight', 'haste') else hexc('#ffffff')
+    for x, y in MODULE_SYMBOLS[name]:
+        img.set(x, y, ink)
+    return img
+
+
 def main():
     jar = client_jar()
     cage = vanilla(jar, 'block/spawner')
@@ -122,7 +163,12 @@ def main():
     broken.save(BLOCK_OUT)
     logo(jar, broken).save(LOGO_OUT)
     os.makedirs(os.path.dirname(PREVIEW_OUT), exist_ok=True)
-    preview_sheet([cage, broken], scale=16, cols=2).save(PREVIEW_OUT)
+    modules = []
+    for name in MODULE_COLOURS:
+        img = module(name)
+        img.save(os.path.join(os.path.dirname(os.path.dirname(BLOCK_OUT)), 'item', name + '_module.png'))
+        modules.append(img)
+    preview_sheet([cage, broken] + modules, scale=8, cols=7).save(PREVIEW_OUT)
     print('wrote', BLOCK_OUT, LOGO_OUT, PREVIEW_OUT)
 
 

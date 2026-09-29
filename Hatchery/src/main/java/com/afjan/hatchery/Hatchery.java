@@ -1,8 +1,10 @@
 package com.afjan.hatchery;
 
 import com.afjan.hatchery.event.EggDrops;
+import com.afjan.hatchery.event.SpawnerEvents;
 import com.afjan.hatchery.gametest.HatcheryGameTests;
 import com.afjan.hatchery.registry.ModBlocks;
+import com.afjan.hatchery.registry.ModComponents;
 import com.afjan.hatchery.registry.ModLoot;
 import net.minecraft.core.registries.Registries;
 import net.minecraftforge.fml.common.Mod;
@@ -20,11 +22,13 @@ public final class Hatchery {
 
     public Hatchery(FMLJavaModLoadingContext context) {
         var modBus = context.getModBusGroup();
+        ModComponents.COMPONENTS.register(modBus);
         ModBlocks.BLOCKS.register(modBus);
         ModBlocks.ITEMS.register(modBus);
         ModLoot.MODIFIERS.register(modBus);
         ModBlocks.registerCreativeTabs();
         EggDrops.register();
+        SpawnerEvents.register();
 
         // GameTests exist only in dev runs (their test_instance files are left out of the jar).
         if (ForgeGameTestHooks.isGametestEnabled()) {

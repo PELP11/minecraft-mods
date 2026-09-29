@@ -662,7 +662,7 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   Looting level); a spawn egg used on a Broken Spawner turns it into a vanilla spawner of that mob.
 - `block/BrokenSpawnerBlock` (`useItemOn` + static `revive`), `block/BrokenSpawnerItem` (tooltip),
   `loot/SpawnEggModifier` (GLM), `event/EggDrops` (glow, no despawn, chime, action-bar notice), `registry/`
-  (`ModBlocks` incl. creative tabs, `ModLoot`, `ModTags.NO_SPAWN_EGG`), `gametest/HatcheryGameTests` (12 tests).
+  (`ModBlocks` incl. creative tabs, `ModLoot`, `ModTags.NO_SPAWN_EGG`), `gametest/HatcheryGameTests` (18 tests).
   `tools/gen_textures.py` recolours the vanilla spawner into the broken cage + logo (`build/texture_preview.png`).
 - Lessons (26.3 + Forge 66, verified):
   - Overriding a vanilla block's drops = ship `data/minecraft/loot_table/blocks/<block>.json` in the mod (vanilla's
@@ -684,4 +684,14 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   - Testing drop rates: build `LootParams` like `LivingEntity.dropFromLootTable` and call `table.getRandomItems(params)`
     20,000x (GLMs apply); victims without AI from `type.create(level, EntitySpawnReason.TRIGGERED)` + `snapTo` (a
     Wither that never enters the world). 3,000 real spawn-and-kill cycles in one GameTest take ~1 s.
-- Release: `./gradlew runGameTestServer build` -> `build/libs/hatchery-1.0.0.jar` (a copy sits in `Hatchery/`).
+- 1.1.0: **spawner modules** (`spawner/Module`, `SpawnerModules`, `ModuleItem`): Swarm/Haste V, Frailty IV (level N uses
+  N modules), Daylight, Redstone. Stored as a data component on the vanilla spawner's block entity
+  (`be.setComponents(...)`, saved under "components" - Forge 66 has no BE persistent data). Swarm/Haste rewrite
+  `SpawnCount`/`MaxNearbyEntities`/`Min|MaxSpawnDelay` by a save -> edit tag -> `BaseSpawner.load` round trip; Daylight
+  adds `custom_spawn_rules` (light 0-15, also skips the mob's own placement rules) to `SpawnData` + `SpawnPotentials`.
+  Forge's `PositionCheck` gets a **null** spawner, `FinalizeSpawn.getSpawner()` works (and `getSpawnerBlockEntity()`):
+  mark the mob there, then cancel (redstone) or weaken (frailty) it in `EntityJoinLevelEvent` - after finalizeSpawn,
+  which resets slime health; a cancelled join makes the spawner wait for its next wave. Cancelling FinalizeSpawn
+  does NOT stop the spawn. GameTests run real waves with `BaseSpawner.serverTick` after loading `Delay: 0`.
+  `ModuleRefundModifier` (GLM on `BLOCK_ENTITY`) gives all modules back when the spawner is mined.
+- Release: `./gradlew runGameTestServer build` -> `build/libs/hatchery-1.1.0.jar` (a copy sits in `Hatchery/`).
