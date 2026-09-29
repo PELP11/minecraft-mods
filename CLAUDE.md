@@ -724,6 +724,8 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   data/assets = `...-client-extra-aka-minecraft-resources.jar`.
 - No GameTests in the ports: `runGameTestServer` boots, loads all data (logs broken tags/loot/advancements/mixins)
   and exits by itself -> grep the log for ERROR. It caught `#minecraft:ores` (26.x only) and advancement keys.
+  **Rebuild the jar after every fix the smoke test prompts** (runs use build/resources, not the jar): the first
+  Tempered 1.21.8 jar shipped with the broken ore tag, so no ore counted extra. Check with `unzip -p <jar> <file> | cmp`.
 - 26.3 Forge -> 1.21.8 NeoForge: `Identifier`->`ResourceLocation`, `key.identifier()`->`location()`, `EntityTypes`->
   `EntityType`, `npc.villager.*`->`npc.*`, `sendOverlayMessage(c)`->`displayClientMessage(c, true)`, `BlockItemTags.X
   .block()`->`BlockTags.X`, `entity.is(tag)`->`entity.getType().is(tag)`, `SpawnEggItem.getType(stack)`-> instance
