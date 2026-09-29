@@ -23,6 +23,10 @@ public final class LangKeys {
     public static final String TIP_OVERVIEW = "tooltip.tempered.overview";
     public static final String TIP_SNEAK = "tooltip.tempered.sneak";
     public static final String TIP_BROKEN = "tooltip.tempered.broken";
+    public static final String TIP_KIT_WHAT = "tooltip.tempered.repair_kit.what";
+    public static final String TIP_KIT_HOW_1 = "tooltip.tempered.repair_kit.how_1";
+    public static final String TIP_KIT_HOW_2 = "tooltip.tempered.repair_kit.how_2";
+    public static final String TIP_KIT_ANVIL = "tooltip.tempered.repair_kit.anvil";
 
     public static final String GUI_TITLE = "gui.tempered.title";
     public static final String GUI_TOOLS = "gui.tempered.tools";
@@ -38,14 +42,15 @@ public final class LangKeys {
     public static final String GUI_HELP_3 = "gui.tempered.help.3";
     public static final String GUI_HELP_ELITE = "gui.tempered.help.elite";
     public static final String GUI_HELP_RAIDERS = "gui.tempered.help.raiders";
+    public static final String GUI_HELP_ORES = "gui.tempered.help.ores";
     public static final String GUI_SCROLL = "gui.tempered.scroll";
 
     public static final List<String> STATIC = List.of(
             KEY_OVERVIEW, LEVEL_UP, MASTERED, NEXT, OVERVIEW_HINT, BROKE, IS_BROKEN,
             TIP_MASTERY, TIP_MASTERED, TIP_UNTOUCHED, TIP_NEXT, TIP_REQUIREMENT, TIP_PERKS, TIP_HOLD_SHIFT, TIP_OVERVIEW,
-            TIP_SNEAK, TIP_BROKEN,
+            TIP_SNEAK, TIP_BROKEN, TIP_KIT_WHAT, TIP_KIT_HOW_1, TIP_KIT_HOW_2, TIP_KIT_ANVIL,
             GUI_TITLE, GUI_TOOLS, GUI_SPECIAL, GUI_MILESTONES, GUI_YOURS, GUI_LEVEL, GUI_NONE_OWNED, GUI_DONE, GUI_REWARDS,
-            GUI_HELP_1, GUI_HELP_2, GUI_HELP_3, GUI_HELP_ELITE, GUI_HELP_RAIDERS, GUI_SCROLL);
+            GUI_HELP_1, GUI_HELP_2, GUI_HELP_3, GUI_HELP_ELITE, GUI_HELP_RAIDERS, GUI_HELP_ORES, GUI_SCROLL);
 
     private LangKeys() {
     }

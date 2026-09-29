@@ -1,6 +1,5 @@
 {
   "key.tempered.overview": "Tool Mastery overview",
-
   "kind.tempered.pickaxe": "Pickaxe",
   "kind.tempered.axe": "Axe",
   "kind.tempered.shovel": "Shovel",
@@ -13,7 +12,6 @@
   "kind.tempered.mace": "Mace",
   "kind.tempered.shears": "Shears",
   "kind.tempered.fishing_rod": "Fishing Rod",
-
   "tier.tempered.wood": "Wooden",
   "tier.tempered.stone": "Stone",
   "tier.tempered.copper": "Copper",
@@ -22,7 +20,13 @@
   "tier.tempered.diamond": "Diamond",
   "tier.tempered.netherite": "Netherite",
   "tier.tempered.special": "Special",
-
+  "item.tempered.wooden_repair_kit": "Wooden Repair Kit",
+  "item.tempered.stone_repair_kit": "Stone Repair Kit",
+  "item.tempered.copper_repair_kit": "Copper Repair Kit",
+  "item.tempered.iron_repair_kit": "Iron Repair Kit",
+  "item.tempered.golden_repair_kit": "Golden Repair Kit",
+  "item.tempered.diamond_repair_kit": "Diamond Repair Kit",
+  "item.tempered.netherite_repair_kit": "Netherite Repair Kit",
   "mastery.tempered.level.0": "-",
   "mastery.tempered.level.1": "I",
   "mastery.tempered.level.2": "II",
@@ -44,7 +48,6 @@
   "mastery.tempered.level.18": "XVIII",
   "mastery.tempered.level.19": "XIX",
   "mastery.tempered.level.20": "XX",
-
   "stat.tempered.pickaxe.mined": "Mine %s blocks",
   "stat.tempered.pickaxe.nether_mined": "Mine %s blocks in the Nether",
   "stat.tempered.pickaxe.end_mined": "Mine %s blocks in the End",
@@ -113,7 +116,6 @@
   "stat.tempered.sheared": "Shear %s animals",
   "stat.tempered.catches": "Catch %s things",
   "stat.tempered.treasure": "Fish up %s treasures",
-
   "perk.tempered.speed": "+%s%% mining speed",
   "perk.tempered.damage": "+%s%% damage",
   "perk.tempered.attack_speed": "+%s%% attack speed",
@@ -148,14 +150,12 @@
   "perk.tempered.magnet": "Magnet: drops fly straight into your inventory",
   "perk.tempered.soul_harvest": "Soul Harvest: every kill heals 2 hearts and gives Strength for 5 seconds",
   "perk.tempered.warhorse": "Warhorse: while riding, you and your mount take 40%% less damage",
-
   "message.tempered.level_up": "✦ Your %s reached Mastery %s (%s/%s)!",
   "message.tempered.mastered": "★ Your %s is fully mastered: Mastery %s!",
   "message.tempered.next": "Next, Mastery %s:",
   "message.tempered.overview_hint": "Every challenge and reward: Tool Mastery overview (default key K).",
   "message.tempered.broke": "%s broke! It is kept: repair it at an anvil (1 level per material).",
   "message.tempered.is_broken": "%s is broken. Repair it at an anvil with its material.",
-
   "tooltip.tempered.mastery": "Mastery %s (%s/%s)",
   "tooltip.tempered.mastered": "Mastery %s - mastered",
   "tooltip.tempered.untouched": "Mastery: none yet",
@@ -166,7 +166,10 @@
   "tooltip.tempered.overview": "%s: Tool Mastery overview",
   "tooltip.tempered.sneak": "Sneak to use it on a single block",
   "tooltip.tempered.broken": "BROKEN - repair it at an anvil",
-
+  "tooltip.tempered.repair_kit.what": "+%s%% durability for %s tools, weapons and armour",
+  "tooltip.tempered.repair_kit.how_1": "Right-click it onto the item in your inventory,",
+  "tooltip.tempered.repair_kit.how_2": "or use it with the item in your other hand.",
+  "tooltip.tempered.repair_kit.anvil": "An anvil repairs more: 25%% per material.",
   "gui.tempered.title": "Tool Mastery",
   "gui.tempered.tools": "Tools",
   "gui.tempered.special": "Other tools",
@@ -181,5 +184,6 @@
   "gui.tempered.help.3": "Placed blocks do not count. Area abilities are skipped while sneaking.",
   "gui.tempered.help.elite": "Elite foes: Wither, Ender Dragon, Warden, Elder Guardian, Evoker, Ravager, Piglin Brute.",
   "gui.tempered.help.raiders": "Raiders: Pillagers, Vindicators, Evokers, Ravagers, Witches and other raid mobs.",
+  "gui.tempered.help.ores": "Ores count extra toward mined blocks: coal, copper and quartz 2, nether gold 3, iron and redstone 4, gold and lapis 6, diamond 10, emerald 12, Ancient Debris 16.",
   "gui.tempered.scroll": "Scroll for more"
 }

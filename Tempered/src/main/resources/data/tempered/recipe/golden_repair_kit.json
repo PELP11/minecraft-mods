@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "#minecraft:gold_tool_materials"
+  ],
+  "result": {
+    "id": "tempered:golden_repair_kit"
+  }
+}

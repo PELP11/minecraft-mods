@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "#minecraft:copper_tool_materials"
+  ],
+  "result": {
+    "id": "tempered:copper_repair_kit"
+  }
+}

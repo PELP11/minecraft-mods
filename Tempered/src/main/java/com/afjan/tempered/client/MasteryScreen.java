@@ -196,7 +196,7 @@ public final class MasteryScreen extends Screen {
             g.fill(trackX, thumbY, trackX + 2, thumbY + thumb, 0xFF8A7A5A);
         }
         if (hoverTip != null) {
-            g.setComponentTooltipForNextFrame(font, List.of(hoverTip), mouseX, mouseY);
+            g.setTooltipForNextFrame(font.split(hoverTip, 220), mouseX, mouseY);
         }
     }
 
@@ -229,7 +229,8 @@ public final class MasteryScreen extends Screen {
                 Component text = Component.literal("• ").append(MasteryText.requirementWithProgress(selected.kind, req, done ? null : mastery));
                 int color = reqDone || done ? MasteryText.GREEN : current ? MasteryText.WHITE : MasteryText.GRAY;
                 Component tip = req.stat() == Stat.ELITE ? Component.translatable(LangKeys.GUI_HELP_ELITE)
-                        : req.stat() == Stat.RAIDERS ? Component.translatable(LangKeys.GUI_HELP_RAIDERS) : null;
+                        : req.stat() == Stat.RAIDERS ? Component.translatable(LangKeys.GUI_HELP_RAIDERS)
+                        : req.stat() == Stat.MINED && selected.kind == Kind.PICKAXE ? Component.translatable(LangKeys.GUI_HELP_ORES) : null;
                 for (FormattedCharSequence part : font.split(text, textWidth - 8)) lines.add(new Line(part, color, 8, -1, 10, tip, l));
             }
             for (Perk perk : milestone.gained()) {

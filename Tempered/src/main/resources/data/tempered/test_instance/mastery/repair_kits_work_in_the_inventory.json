@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/repair_kits_work_in_the_inventory",
+  "max_ticks": 100,
+  "structure": "forge:empty5x4x5"
+}

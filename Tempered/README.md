@@ -12,7 +12,7 @@ CurseForge profile with Forge 66.0.8 for Minecraft 26.3.
 
 ## Install (CurseForge app)
 1. *Create Custom Profile* -> Minecraft **26.3** -> Modloader **Forge** -> **66.0.8**.
-2. On the profile: `⋮` -> *Open Folder* -> put `tempered-1.1.0.jar` into `mods/` (delete an older `tempered-*.jar` first).
+2. On the profile: `⋮` -> *Open Folder* -> put `tempered-1.2.0.jar` into `mods/` (delete an older `tempered-*.jar` first).
 3. Start the profile. Press **K** in game for the Tool Mastery overview (rebindable under
    Controls -> Inventory).
 
@@ -34,7 +34,9 @@ CurseForge profile with Forge 66.0.8 for Minecraft 26.3.
 | Fishing Rod | catch fish and treasure |
 
 Counters are lifetime totals stored on the item, so work done early also counts for later
-milestones. Levels still unlock in order. Blocks you placed yourself do not count (no place-and-mine
+milestones. Ores count extra toward a pickaxe's "Mine X blocks" by rarity: coal, copper and quartz 2,
+nether gold 3, iron and redstone 4, gold and lapis 6, diamond 10, emerald 12, Ancient Debris 16
+("Mine X ores" still counts each ore once). Levels still unlock in order. Blocks you placed yourself do not count (no place-and-mine
 loops). Upgrading a diamond tool to netherite keeps its counters; it is then measured against the
 harder netherite milestones.
 
@@ -77,6 +79,17 @@ At 0 durability a tool, weapon, bow, shield, fishing rod ... stays in your inven
 keeps its enchantments and mastery.
 Repair it at an **anvil** with its material: each material restores a quarter, costs **1 level**, and
 never becomes "Too Expensive" (the prior-work penalty is ignored). Mending works as usual.
+
+### Repair kits (on the go)
+Craft a kit from **1 iron ingot + the tool's material** (planks, cobblestone, copper, gold, diamond or
+netherite ingot; any layout). The **Iron Repair Kit** is two iron ingots **on top of each other** (side by
+side they make vanilla's heavy pressure plate, diagonal makes shears).
+- Right-click the kit onto the damaged item in your inventory (like filling a bundle), or hold the item
+  in your other hand and use the kit.
+- One kit gives back **15%** of the durability (broken tools included) and costs no experience. The anvil
+  stays better: **25% per material**.
+- Kits fix anything the anvil would fix with that material: tools, weapons and armour (the Wooden kit
+  also fixes shields).
 Armour still breaks like in vanilla; add items to the tag `tempered:keep_when_broken` with a
 datapack to change that.
 
@@ -88,6 +101,7 @@ datapack to change that.
 - A thin bar along the top of the item icon shows the mastery level (pink when mastered).
 
 ## For developers
-- `./gradlew build` -> `build/libs/tempered-1.1.0.jar`; `./gradlew runGameTestServer` runs the GameTests.
+- `./gradlew build` -> `build/libs/tempered-1.2.0.jar`; `./gradlew runGameTestServer` runs the GameTests.
 - The challenge catalogue is code: `src/main/java/com/afjan/tempered/mastery/Tracks.java`.
 - `python3 tools/gen_tests.py` writes the GameTest instance files after adding a test.
+- `python3 tools/gen_textures.py` draws the repair kit icons (preview: `build/kit_preview.png`).

@@ -7,6 +7,7 @@ import com.afjan.tempered.event.PerkEvents;
 import com.afjan.tempered.event.ProgressEvents;
 import com.afjan.tempered.gametest.TemperedGameTests;
 import com.afjan.tempered.registry.ModComponents;
+import com.afjan.tempered.registry.ModItems;
 import com.afjan.tempered.registry.ModLoot;
 import net.minecraft.core.registries.Registries;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +28,8 @@ public final class Tempered {
     public Tempered(FMLJavaModLoadingContext context) {
         var modBus = context.getModBusGroup();
         ModComponents.COMPONENTS.register(modBus);
+        ModItems.ITEMS.register(modBus);
+        ModItems.registerCreativeTab();
         ModLoot.MODIFIERS.register(modBus);
 
         // GameTests exist only in dev runs (their test_instance files are left out of the jar).

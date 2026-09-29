@@ -638,12 +638,22 @@ Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts i
   `mixin/` (ItemStack durability + modifiers, BlockTransformer, FishingHook accessor, CrossbowItem invoker),
   `client/` (K = `MasteryScreen` overview drawn from rectangles, auto-scrolls to the current milestone;
   `MasteryTooltip`; `MasteryDecorator` = mastery bar along the icon's top edge + cracks).
+- 1.2.0 (user request): **repair kits** `item/RepairKitItem` x7 (`registry/ModItems`, `<prefix>_repair_kit`) = 1 iron
+  ingot + the vanilla `#<tier>_tool_materials` tag; 15% durability per kit vs the anvil's 25% per material (the user
+  wanted the anvil to stay better; `anvilBeatsRepairKits` checks every tool). Applied bundle-style
+  (`Item.overrideStackedOnOther` / `overrideOtherStackedOnMe`, right-click = `ClickAction.SECONDARY`, runs on both
+  sides; test through `player.inventoryMenu.setCarried(...)` + `clicked(slot, 1, ContainerInput.PICKUP, player)`) or
+  from the other hand (`use`). **Recipe conflicts:** two iron ingots side by side = heavy pressure plate, diagonal =
+  shears, so the iron kit is shaped (stacked); scan vanilla recipes from client.jar and GameTest every recipe
+  through `level.recipeAccess().getRecipeFor(RecipeType.CRAFTING, CraftingInput.of(w, h, items), level)`.
+  **Ore weights** (`mastery/OreWeights`: coal/copper/quartz 2, nether gold 3, iron/redstone 4, gold/lapis 6, diamond
+  10, emerald 12, debris 16) only for the pickaxe's MINED counter: `blockStats` lists MINED n times.
 - Challenge texts with amount 1 use a singular key (`Milestone.Req.key` -> `stat.tempered.elite.one`); a translatable
   with fewer args than `%s` renders the raw format string, so give every changed format its own key.
-- `gametest/TemperedGameTests` (32 tests) + `tools/gen_tests.py`; `tools/gen_logo.py` (logo from the vanilla pickaxe).
+- `gametest/TemperedGameTests` (37 tests) + `tools/gen_tests.py`; `tools/gen_logo.py` (logo from the vanilla pickaxe), `tools/gen_textures.py` (repair kit icons + `build/kit_preview.png`).
   Connected test players are invulnerable (`ServerPlayer.isInvulnerableTo`: `!connection.hasClientLoaded()`): test
   damage changes to them by posting a `LivingHurtEvent` yourself. `startRiding(horse, true, false)` works for them.
-- Release: `./gradlew runGameTestServer build` -> `build/libs/tempered-1.1.0.jar` (a copy sits in `Tempered/`);
+- Release: `./gradlew runGameTestServer build` -> `build/libs/tempered-1.2.0.jar` (a copy sits in `Tempered/`);
   `CHALLENGES.md` is rewritten by the `write_challenge_sheet` test.
 
 ## 16. Hatchery project map (`Hatchery/`, MinecraftForge 66.0.8)

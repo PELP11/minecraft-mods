@@ -2,6 +2,7 @@ package com.afjan.tempered.event;
 
 import com.afjan.tempered.mastery.Kind;
 import com.afjan.tempered.mastery.Mastery;
+import com.afjan.tempered.mastery.OreWeights;
 import com.afjan.tempered.mastery.Progress;
 import com.afjan.tempered.mastery.Stat;
 import com.afjan.tempered.mastery.Track;
@@ -96,7 +97,10 @@ public final class ProgressEvents {
         }
     }
 
-    /** What breaking this block with this tool counts as (nothing if the tool is not meant for it). */
+    /**
+     * What breaking this block with this tool counts as (nothing if the tool is not meant for it). A stat listed n times
+     * counts n: a pickaxe's ores add {@link OreWeights} to "Mine X blocks".
+     */
     public static List<Stat> blockStats(Kind kind, ItemStack tool, Level level, BlockPos pos, BlockState state, boolean placed) {
         List<Stat> stats = new ArrayList<>(4);
         boolean effective = isEffective(tool, state) && !placed;
@@ -105,7 +109,7 @@ public final class ProgressEvents {
         switch (kind) {
             case PICKAXE -> {
                 if (!effective) break;
-                stats.add(MINED);
+                for (int i = OreWeights.of(state); i > 0; i--) stats.add(MINED);
                 if (state.is(ModTags.ORES)) stats.add(ORES);
                 if (state.is(ModTags.GEM_ORES)) stats.add(GEMS);
                 if (state.is(ModTags.OBSIDIAN)) stats.add(OBSIDIAN);

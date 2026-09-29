@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "#minecraft:stone_tool_materials"
+  ],
+  "result": {
+    "id": "tempered:stone_repair_kit"
+  }
+}
