@@ -17,6 +17,12 @@ This folder is the user's private GitHub repo `minecraft-mods`; cloud sessions c
 - No game window in the cloud: test with `runGameTestServer` only. A new mod = a new top-level folder (section 3).
 - Hand-over: the user can't reach the VM. Commit the jar as `<Mod>/<modid>-<version>.jar`, push, and give them the
   GitHub link to download it; they put it into the CurseForge "Juicer" instance's `mods/` themselves.
+  Exception: **Tempered is a MinecraftForge mod** (the user asked for "Forge 66.0.8") and needs its own Forge
+  profile; NeoForge jars (Juicer, Oreborn, Arsenal) and Forge jars never share an instance (section 14).
+- If a user names a loader version, check which loader it is: `66.0.8` only exists in the MinecraftForge maven
+  (`26.3-66.0.8`), NeoForge 26.3 versions look like `26.3.0.x-beta`.
+- The Bash safety check can fail transiently ("no verdict"); after 10 in a row the turn ends. Don't retry blindly:
+  do Read/Write/Edit work in between (they don't need the check) and batch commands into fewer Bash calls.
 - User preferences (from local memory): never launch the game, the user tests in game and reports back; show
   item/weapon state on the model, not HUD bars; held items never bob or tremble; 3D item models and synthesised
   sounds are the approved style; big, powerful gameplay buffs are welcome.
@@ -544,3 +550,89 @@ MC 26.x ships **unobfuscated** (official names everywhere). Versions are year-ba
   target velocity * time-to-go, turn the velocity towards it by at most `turnRate` a tick, slerp on the unit
   sphere), proximity fuse server-side; heat seekers may switch to a flare near the target; the target vehicle gets a
   synced warning flag for the cockpit tone. Launch from the jet's velocity (+ a kick), not from rest.
+
+## 14. MinecraftForge 66 (26.3) — learned building Tempered (all verified)
+Not NeoForge: different Gradle plugin, event bus and hooks. Most MC 26.3 facts in sections 4/10 still apply.
+- Versions: `curl -s https://maven.minecraftforge.net/net/minecraftforge/forge/maven-metadata.xml | grep -o '<version>26\.3[^<]*'`;
+  MDK = `.../forge/<mc>-<ver>/forge-<mc>-<ver>-mdk.zip` (ForgeGradle 7 `net.minecraftforge.gradle` `[7.0.17,8)`, Gradle
+  9.7.1; `minecraft.dependency("net.minecraftforge:forge:26.3-66.0.8")`). First build ≈ 3 min. FG7 supports the
+  configuration cache: plain `./gradlew build` / `runGameTestServer` work (no `--no-configuration-cache` needed).
+- Sources: `~/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches/forge/net/minecraftforge/forge/<ver>/injected-sources.jar`
+  (patched MC + Forge; `...-sources.jar` there is Forge only). Vanilla assets/data: `.../mavenizer/caches/minecraft_tasks/26.3/client.jar`.
+  EventBus sources: `https://maven.minecraftforge.net/net/minecraftforge/eventbus/7.0.6/eventbus-7.0.6-sources.jar`.
+  Forge's own test mods (examples of everything): `.../net/minecraftforge/forge-tests/<ver>/forge-tests-<ver>-sources.jar`.
+- Mod class: `@Mod(ID) public Mod(FMLJavaModLoadingContext ctx)`, `var bus = ctx.getModBusGroup()`,
+  `DeferredRegister.create(Registries.X | ForgeRegistries.Keys.X, ID).register(bus)`, `RegistryObject<T>`.
+  Client-only code behind `if (FMLEnvironment.dist == Dist.CLIENT)`.
+- **EventBus 7**: every event has a static `BUS`; mod-bus events use `X.getBus(bus)`. Cancellable buses:
+  `addListener(Predicate)` (return true = cancel; cancelling stops later listeners), `addListener(byte priority, Predicate)`,
+  `addListener(ObjBooleanBiConsumer)` = monitor. **Bug in 7.0.6: an event whose only listeners are monitors gets a no-op
+  invoker, the monitors never run** (LivingDeathEvent, ItemFishedEvent, EntityPlaceEvent, LivingDamageEvent ...). Use
+  `addListener(Priority.LOWEST, e -> { ...; return false; })` instead: it runs last and only if nobody cancelled.
+  Same-priority listeners keep registration order. Use method refs / block lambdas so Predicate vs Consumer is unambiguous.
+- Events that exist: `BlockEvent.BreakEvent` (before removal, `setExpToDrop`), `BlockEvent.EntityPlaceEvent`,
+  `PlayerEvent.BreakSpeed/HarvestCheck/ItemCraftedEvent`, `LivingHurtEvent` (before armour) / `LivingDamageEvent`
+  (after), record `LivingDeathEvent`, `LootingLevelEvent` (feeds 26.x looting loot functions), `LivingExperienceDropEvent`,
+  `AnvilUpdateEvent` (setOutput/setCost/setMaterialCost -> skips vanilla anvil logic), `ItemFishedEvent`,
+  `ProjectileImpactEvent`, `EntityJoinLevelEvent`, `LivingEntityUseItemEvent.Start/Tick` (Tick: `setDuration` = remaining
+  use ticks, lower it for faster bows/crossbows/tridents), `PlayerInteractEvent.RightClickItem/RightClickBlock`
+  (`setUseItem(net.minecraftforge.common.util.Result.DENY)`) and `EntityInteractSpecific` (the only entity-interact
+  event), `TickEvent.ServerTickEvent/PlayerTickEvent/ClientTickEvent.Post` (records: `event.player()`),
+  `ItemTooltipEvent` (record: `getToolTip()` list), `RegisterKeyMappingsEvent`, `RegisterItemDecorationsEvent`
+  (`IItemDecorator.render(g, font, stack, x, y)`: pips/overlays on item icons), `TagsUpdatedEvent`, `ServerStoppedEvent`.
+  Missing vs NeoForge: ItemAttributeModifierEvent, BlockDropsEvent, BlockToolModificationEvent, FakePlayer, GetEnchantmentLevelEvent.
+- Global loot modifiers: `DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, ID)` registering a
+  `MapCodec` (`RecordCodecBuilder.mapCodec(i -> codecStart(i).apply(i, Ctor::new))`, class extends `LootModifier`) +
+  `data/forge/loot_modifiers/global_loot_modifiers.json` `{"replace":false,"entries":["ns:x"]}` + `data/ns/loot_modifiers/x.json`
+  `{"type":"ns:x","conditions":[]}`. `LootContextParams.TOOL` is an `ItemInstance` (instanceof ItemStack); block loot runs
+  inside `playerDestroy` after the block is gone; `context.getQueriedLootTableId()` tells fishing (`gameplay/fishing`)
+  and shearing (`shearing/...`) apart; only the top-level table is modified.
+- **Mixin**: Forge 66 ships Mixin 0.8.7 + MixinExtras 0.5.4. Jar manifest `MixinConfigs: x.mixins.json` (build.gradle
+  `jar { manifest { attributes['MixinConfigs'] = ... } }`) and for dev runs `args "--mixin.config=x.mixins.json"` in
+  `minecraft.runs.configureEach`. 26.x is unobfuscated: no refmap, no annotation processor. `compatibilityLevel`
+  JAVA_21 (the highest 0.8.7 knows) works with Java 25 class files. `@Mutable @Accessor` sets final fields
+  (FishingHook luck/lureSpeed); static `@Invoker` in an interface calls private static methods.
+- Durability hooks (ItemStack): `hurtAndBreak(int, ServerLevel, ServerPlayer, Consumer)` -> `processDurabilityChange`
+  (Unbreaking) -> private `applyDamage(newDamage, player, onBreak)` which shrinks the stack when `isBroken()`
+  (damage >= max). Tempered's mixin cancels `applyDamage` for tagged tools and parks them at damage == max: vanilla then
+  skips their attribute modifiers (`LivingEntity.collectEquipmentChanges` checks `isBroken()`), the durability bar is empty.
+  `forEachModifier(EquipmentSlot, BiConsumer)` and `(EquipmentSlotGroup, TriConsumer)` feed equipment attributes and
+  the tooltip: inject at TAIL to add per-stack modifiers (there is no attribute-modifier event).
+- Items: `DataComponentType.builder()...ignoreSwapAnimation()` = changing the component on a held item never replays
+  the re-equip dip (counters on every block mined). `Item.components()` can throw before a world is loaded (26.x binds
+  delayed components like BLOCK_TRANSFORMER late): never read item components during client init events.
+  Hoe/axe/shovel right-clicks are data-driven `BlockTransformer.transformBlock(UseOnContext)` (mixin at RETURN to count
+  tilling). Vanilla tags in 26.3: `minecraft:ores`, `iron_ores` ... (Java: `BlockItemTags.IRON_ORES.block()`), `spears`;
+  entity tag test = `entity.is(TagKey<EntityType<?>>)`. Forge adds `c:ores`, `c:gravels`, `c:obsidians` ... tags.
+- GameTests: `@GameTestNamespace(ID) @GameTestPrefix("x")` class with `@GameTest public static void name(GameTestHelper)`;
+  register with `ForgeGameTestHooks.gatherTests(cls, null)` inside `if (ForgeGameTestHooks.isGametestEnabled())` +
+  `RegisterEvent` for `Registries.TEST_FUNCTION`. Test instances are data: `data/<ns>/test_instance/x/<name>.json`
+  `{"type":"minecraft:function","environment":"minecraft:default","function":"ns:x/<name>","max_ticks":100,
+  "structure":"forge:empty7x5x7"}` (Forge builds `forge:emptyWxHxD` air boxes on the fly; optional `"sky_access": true`).
+  Tempered's `tools/gen_tests.py` writes them from the annotations; exclude them from the jar. `helper.addCleanup(...)`.
+  **No FakePlayer**: build a connected ServerPlayer (`CommonListenerCookie.createInitial`, `new Connection(SERVERBOUND)` +
+  `new EmbeddedChannel(connection)`, `playerList.placeNewPlayer`, `setGameMode(SURVIVAL)`, `snapTo`; Tempered
+  `gametest/TestPlayers`): `gameMode.destroyBlock`, chat and inventory syncing then work. Mock players float
+  (not on ground) -> destroy speed is 5x lower: compare ratios. A GameTest can write docs (Tempered's CHALLENGES.md; the
+  run dir is `run/`).
+- Anvil: vanilla's prior-work penalty (REPAIR_COST) makes repairs "Too Expensive"; an AnvilUpdateEvent output with
+  your own cost bypasses it (Tempered: 1 level per material).
+
+## 15. Tempered project map (`Tempered/`, MinecraftForge 66.0.8)
+- Mod id `tempered`, package `com.afjan.tempered`, MC `[26.3,26.4)`, Forge `[66.0.8,)`. Tool mastery: 42 tiered tools
+  (wooden..netherite x pickaxe/axe/shovel/hoe/sword/spear) + bow, crossbow, trident, mace, shears, fishing rod, five
+  milestones each; tools never vanish (Broken at 0 durability, cheap anvil repair).
+- `mastery/`: `Tracks` = the whole catalogue in code (requirements scale with `Tier.scale`, speed/damage perks with
+  `Tier.power`), `Mastery` = the item component (uid + lifetime counters; the level is derived, so a netherite upgrade
+  re-measures the same counters), `Stat`/`Perk`/`Kind`/`Tier`/`Milestone`/`Track`, `Progress` (count + level-up chat,
+  sound, particles), `MasteryAttributes` (attack speed via the forEachModifier mixin), `LangKeys`.
+- `event/`: `ProgressEvents` (counting; placed blocks via `PlacedBlocks` never count), `PerkEvents` (speed, damage,
+  lifesteal, looting, XP, draw speed, arrow saver, lure/luck), `BrokenTools` (broken behaviour, anvil), `Weapons`
+  (which item made a hit: arrows carry a copy of the bow, found again by the component uid). `ability/Abilities` (Vein
+  Miner, Excavate, Timber, Reaper through `gameMode.destroyBlock` + guard, Shockwave, Volley, self-loading crossbow,
+  Cavalry, Stormcaller, Shear Sweep), `ability/Replanter`, `loot/MasteryLootModifier` (yield, treasure, replant),
+  `mixin/` (ItemStack durability + modifiers, BlockTransformer, FishingHook accessor, CrossbowItem invoker),
+  `client/` (K = `MasteryScreen` overview drawn from rectangles, `MasteryTooltip`, `MasteryDecorator` pips/cracks).
+- `gametest/TemperedGameTests` (28 tests) + `tools/gen_tests.py`; `tools/gen_logo.py` (logo from the vanilla pickaxe).
+- Release: `./gradlew runGameTestServer build` -> `build/libs/tempered-1.0.0.jar` (a copy sits in `Tempered/`);
+  `CHALLENGES.md` is rewritten by the `write_challenge_sheet` test.

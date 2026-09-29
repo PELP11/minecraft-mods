@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/reaper_harvests_and_replants",
+  "max_ticks": 100,
+  "structure": "forge:empty7x4x7",
+  "sky_access": true
+}

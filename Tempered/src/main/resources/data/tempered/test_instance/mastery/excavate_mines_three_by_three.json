@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/excavate_mines_three_by_three",
+  "max_ticks": 100,
+  "structure": "forge:empty7x6x7"
+}

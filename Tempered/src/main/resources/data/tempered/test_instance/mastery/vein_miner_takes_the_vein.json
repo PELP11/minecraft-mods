@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/vein_miner_takes_the_vein",
+  "max_ticks": 100,
+  "structure": "forge:empty7x5x7"
+}

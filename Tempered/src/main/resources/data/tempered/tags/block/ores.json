@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#minecraft:ores",
+    "minecraft:ancient_debris",
+    {
+      "id": "#c:ores",
+      "required": false
+    }
+  ]
+}

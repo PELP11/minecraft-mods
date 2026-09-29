@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/timber_fells_trees_not_houses",
+  "max_ticks": 100,
+  "structure": "forge:empty7x9x7"
+}

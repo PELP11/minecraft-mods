@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/bow_volley_fires_three_arrows",
+  "max_ticks": 100,
+  "structure": "forge:empty7x5x7"
+}

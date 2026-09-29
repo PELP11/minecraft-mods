@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.afjan.tempered.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockTransformerMixin",
+    "CrossbowItemInvoker",
+    "FishingHookAccessor",
+    "ItemStackMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

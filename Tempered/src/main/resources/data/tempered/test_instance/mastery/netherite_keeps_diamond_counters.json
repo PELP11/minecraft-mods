@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/netherite_keeps_diamond_counters",
+  "max_ticks": 100,
+  "structure": "forge:empty5x4x5"
+}

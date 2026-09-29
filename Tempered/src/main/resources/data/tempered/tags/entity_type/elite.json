@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:wither",
+    "minecraft:ender_dragon",
+    "minecraft:warden",
+    "minecraft:elder_guardian",
+    "minecraft:evoker",
+    "minecraft:ravager",
+    "minecraft:piglin_brute"
+  ]
+}

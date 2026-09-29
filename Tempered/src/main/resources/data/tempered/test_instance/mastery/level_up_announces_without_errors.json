@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/level_up_announces_without_errors",
+  "max_ticks": 100,
+  "structure": "forge:empty5x4x5"
+}

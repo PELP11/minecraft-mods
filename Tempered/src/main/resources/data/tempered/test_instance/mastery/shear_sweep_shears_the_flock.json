@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/shear_sweep_shears_the_flock",
+  "max_ticks": 100,
+  "structure": "forge:empty9x4x9"
+}

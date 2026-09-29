@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/mace_shockwave_hits_nearby_foes",
+  "max_ticks": 100,
+  "structure": "forge:empty7x5x7"
+}

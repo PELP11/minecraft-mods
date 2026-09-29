@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:function",
+  "environment": "minecraft:default",
+  "function": "tempered:mastery/attack_speed_is_an_attribute",
+  "max_ticks": 100,
+  "structure": "forge:empty5x4x5"
+}
